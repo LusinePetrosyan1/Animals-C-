@@ -6,22 +6,28 @@ using System.Threading.Tasks;
 
 namespace GeometricFigureTester
 {
-    class Rectangle : GeometricFigure
+    class Rectangle : IShape
     {
         private int Length { get; set; }
         private int Width { get; set; }
-        public Rectangle()
-        {
 
+        public double Area
+        {
+            get
+            {
+                return GetArea();
+            }
         }
-        public override int GetArea()
+        public double GetArea()
         {
             return Length * Width;
         }
 
-        public override int GetPerimiter()
+        public double GetPerimiter()
         {
             return 2 * (Length + Width);
         }
+
+
     }
 }

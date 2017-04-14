@@ -6,21 +6,16 @@ using System.Threading.Tasks;
 
 namespace GeometricFigureTester
 {
-    abstract class GeometricFigure
+    interface IShape
     {
-        public GeometricFigure()
-        {
-        }
 
-        public int Area
+        double Area
         {
-            get { return GetArea(); }
+            get;
         }
-        public abstract int GetArea();
-        public abstract int GetPerimiter();
-        public void Print() {
-            Console.WriteLine("Area is :{0}, Perimeter is: {1}", Area(),GetPerimiter());
-        }
+        double GetArea();
+        double GetPerimiter();
+
 
 
     }
