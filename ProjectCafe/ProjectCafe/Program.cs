@@ -11,7 +11,7 @@ namespace ProjectCafe
         static void Main(string[] args)
         {
             String[] open = {
-                                "7:30",
+                                "7:15",
                                 "7:30",
                                 "7:30",
                                 "7:30",
