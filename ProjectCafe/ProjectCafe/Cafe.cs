@@ -17,7 +17,8 @@ namespace ProjectCafe
         public String Description { get; set; } //optional
         public int RestrictionAge { get; set; } //optional
 
-        public List<Review> Reviews { get; set; }
+        public List<Review> Reviews { get; }
+        public List<User> Visitors { get; }
 
         public Cafe(string name, Address cafeAddress, string phoneNumber, Open_Close hoursOfOpenClose, string type, string website, string optionalDescription = "", int optionalRestrictionAge = 0)
         {
@@ -30,6 +31,8 @@ namespace ProjectCafe
             Description = optionalDescription;
             RestrictionAge = optionalRestrictionAge;
             Reviews = new List<Review>();
+            Visitors = new List<User>();
+
         }
 
         public override string ToString()
@@ -59,9 +62,12 @@ namespace ProjectCafe
             }
             else
             {
+                Visitors.Add(user);
                 Console.WriteLine("Welcome to" + " " + Name + "!" + " " + user);
                 Console.WriteLine("_________________________________________________________________");
+
             }
+
         }
         public void PrintTimeTable()
         {

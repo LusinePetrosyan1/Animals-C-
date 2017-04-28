@@ -25,7 +25,7 @@ namespace ProjectCafe
 
         public override string ToString()
         {
-            return (User + " " + '\n' + Date + '\n' + Opinion + '\n' + Rate +'\n');
+            return (User + " " + '\n' + Date .ToShortDateString()+ '\n' + Opinion + '\n' + Rate +'\n');
         }
     }
 
