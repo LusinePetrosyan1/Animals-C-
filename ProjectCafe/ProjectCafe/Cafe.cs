@@ -36,7 +36,63 @@ namespace ProjectCafe
         {
             return (Name + " " + CafeAddress + " " + PhoneNumber + " " + Type + " " + Website);
         }
+        public void AddNewReview(Review rev)
+        {
+            Reviews.Add(rev);
+        }
 
+        public void PrintAllReviews()
+        {
+            for (int i = 0; i < Reviews.Count; i++)
+            {
+                Console.WriteLine(Reviews[i]);
+                Console.WriteLine();
+            }
+            Console.WriteLine("_________________________________________________________________");
+        }
+        public void Visit(User user)
+        {
+            if (user.Age < RestrictionAge)
+            {
+                Console.WriteLine("Sorry" + " " + user.Name + "!" + " Come " + " " + (RestrictionAge - user.Age) + " " + "years later!");
+                Console.WriteLine("_________________________________________________________________");
+            }
+            else
+            {
+                Console.WriteLine("Welcome to" + " " + Name + "!" + " " + user);
+                Console.WriteLine("_________________________________________________________________");
+            }
+        }
+        public void PrintTimeTable()
+        {
+            Console.WriteLine(HoursOfOpenClose);
+            Console.WriteLine("_________________________________________________________________");
+        }
+        public double DistanceFrom(Cafe cafe2)
+        {
+            return (CafeAddress.Location.GetDistanceTo(cafe2.CafeAddress.Location));
+        }
+        public void Nearby(List<Cafe> cafes)
+        {
+            foreach (var item in cafes)
+            {
+                if (DistanceFrom(item) < 1000.0)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            Console.WriteLine("_________________________________________________________________");
+        }
+        public void PrintAverageRate()
+        {
+            double sum = 0;
+            for (int i = 0; i < Reviews.Count; i++)
+            {
+                sum += Reviews[i].Rate;
+            }
+            Console.WriteLine((double)((int)(sum / Reviews.Count * 10)) / 10);
+            Console.WriteLine("_________________________________________________________________");
+        }
 
     }
 }

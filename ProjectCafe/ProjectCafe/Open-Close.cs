@@ -8,12 +8,14 @@ namespace ProjectCafe
 {
     class Open_Close
     {
-        
+
         public string[] Open { get; set; }
         public string[] Close { get; set; }
 
         public Open_Close(string[] open, string[] close)
         {
+            Open = new string[7];
+            Close = new string[7];
             for (int i = 0; i < 7; i++)
             {
                 Open[i] = open[i];
@@ -29,6 +31,17 @@ namespace ProjectCafe
             Friday,
             Saturday,
             Sunday,
+        }
+
+        public override string ToString()
+        {
+            string output = "";
+            for (int i = 0; i < 7; i++)
+            {
+                output += (DaysOfWeek)i + " " + Open[i] + " " + "-" + " " + Close[i] + '\n';
+            }
+            return output;
+
         }
     }
 
