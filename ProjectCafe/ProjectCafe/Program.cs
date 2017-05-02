@@ -53,7 +53,7 @@ namespace ProjectCafe
 
             cafe1.AddNewReview(new Review(user1, DateTime.Parse("10 / 01 / 1999"), "Very Good!", 5));
             cafe1.AddNewReview(new Review(user2, DateTime.Parse("10 / 01 / 1999"), "Normal!", 4));
-            cafe1.AddNewReview(new Review(user12, DateTime.Parse("10/01/1987"), "BAD!", 2));
+            cafe1.AddNewReview(new Review(user11, DateTime.Parse("10/01/1987"), "BAD!", 2));
 
             //cafe1.PrintAllReviews();
             //cafe1.PrintAverageRate();
@@ -63,6 +63,7 @@ namespace ProjectCafe
             user1.SaveCafe(cafe1);
             user1.SaveCafe(cafe11);
             user1.SaveCafe(cafe10);
+
 
             //user1.PrintFavoriteCafes();
 
