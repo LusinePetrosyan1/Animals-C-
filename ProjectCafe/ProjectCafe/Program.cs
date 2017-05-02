@@ -65,6 +65,13 @@ namespace ProjectCafe
             user1.SaveCafe(cafe10);
 
             user1.PrintFavoriteCafes();
+            List<Cafe> Cafes = new List<Cafe>();
+            Cafes.Add(cafe1);
+            Cafes.Add(cafe2);
+            Cafes.Add(cafe3);
+            Cafes.Add(cafe10);
+            Cafes.Add(cafe11);
+
         }
     }
 }

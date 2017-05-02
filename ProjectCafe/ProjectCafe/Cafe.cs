@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectCafe
 {
-    class Cafe
+    class Cafe: IComparable<Cafe>
     {
         public String Name { get; set; }
         public Address CafeAddress { get; set; }
@@ -17,8 +17,8 @@ namespace ProjectCafe
         public String Description { get; set; } //optional
         public int RestrictionAge { get; set; } //optional
 
-        public List<Review> Reviews { get; }
-        public List<User> Visitors { get; }
+        public List<Review> Reviews { get; set; }
+        public List<User> Visitors { get; set; }
 
         public Cafe(string name, Address cafeAddress, string phoneNumber, Open_Close hoursOfOpenClose, string type, string website, string optionalDescription = "", int optionalRestrictionAge = 0)
         {
@@ -89,6 +89,15 @@ namespace ProjectCafe
             }
             Console.WriteLine("_________________________________________________________________");
         }
+        public double GetAverageRate()
+        {
+            double sum = 0;
+            for (int i = 0; i < Reviews.Count; i++)
+            {
+                sum += Reviews[i].Rate;
+            }
+            return((double)((int)(sum / Reviews.Count * 10)) / 10);        
+        }
         public void PrintAverageRate()
         {
             double sum = 0;
@@ -99,6 +108,20 @@ namespace ProjectCafe
             Console.WriteLine((double)((int)(sum / Reviews.Count * 10)) / 10);
             Console.WriteLine("_________________________________________________________________");
         }
+        public int GetVisitorsCount()
+        {
+            return Visitors.Count;
+        }
 
+        public int CompareTo(Cafe that)
+        {
+           
+                if (that.GetVisitorsCount() > this.GetVisitorsCount())
+                    return 1;
+                else if (that.GetVisitorsCount() < this.GetVisitorsCount())
+                    return -1;
+                else
+                    return 0;
+        }
     }
 }
