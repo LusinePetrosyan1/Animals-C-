@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectCafe
 {
-    class Cafe: IComparable<Cafe>
+    class Cafe : IComparable<Cafe>
     {
         public String Name { get; set; }
         public Address CafeAddress { get; set; }
@@ -67,7 +67,10 @@ namespace ProjectCafe
                 Console.WriteLine("_________________________________________________________________");
 
             }
-
+        }
+        public int GetVisitorsCount()
+        {
+            return Visitors.Count();
         }
         public void PrintTimeTable()
         {
@@ -82,21 +85,12 @@ namespace ProjectCafe
         {
             foreach (var item in cafes)
             {
-                if (DistanceFrom(item) < 1000.0)
+                if (DistanceFrom(item) < 1000.0 && DistanceFrom(item) > 0)
                 {
                     Console.WriteLine(item);
                 }
             }
             Console.WriteLine("_________________________________________________________________");
-        }
-        public double GetAverageRate()
-        {
-            double sum = 0;
-            for (int i = 0; i < Reviews.Count; i++)
-            {
-                sum += Reviews[i].Rate;
-            }
-            return((double)((int)(sum / Reviews.Count * 10)) / 10);        
         }
         public void PrintAverageRate()
         {
@@ -108,20 +102,19 @@ namespace ProjectCafe
             Console.WriteLine((double)((int)(sum / Reviews.Count * 10)) / 10);
             Console.WriteLine("_________________________________________________________________");
         }
-        public int GetVisitorsCount()
-        {
-            return Visitors.Count;
-        }
 
         public int CompareTo(Cafe that)
         {
-           
-                if (that.GetVisitorsCount() > this.GetVisitorsCount())
-                    return 1;
-                else if (that.GetVisitorsCount() < this.GetVisitorsCount())
-                    return -1;
-                else
-                    return 0;
+            if (that.GetVisitorsCount() > this.GetVisitorsCount())
+            {
+                return 1;
+            }
+            else if (that.GetVisitorsCount() < this.GetVisitorsCount())
+            {
+                return -1;
+            }
+            else
+                return 0;
         }
     }
 }
