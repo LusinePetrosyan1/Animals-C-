@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectCafe
 {
-    class Cafe
+    class Cafe:IComparable<Cafe>
     {
         public String Name { get; set; }
         public Address CafeAddress { get; set; }
@@ -17,8 +17,8 @@ namespace ProjectCafe
         public String Description { get; set; } //optional
         public int RestrictionAge { get; set; } //optional
 
-        public List<Review> Reviews { get; }
-        public List<User> Visitors { get; }
+        public List<Review> Reviews { get; set; }
+        public List<User> Visitors { get; set; }
 
         public Cafe(string name, Address cafeAddress, string phoneNumber, Open_Close hoursOfOpenClose, string type, string website, string optionalDescription = "", int optionalRestrictionAge = 0)
         {
@@ -67,7 +67,10 @@ namespace ProjectCafe
                 Console.WriteLine("_________________________________________________________________");
 
             }
-
+        }
+        public int GetVisitorsCount()
+        {
+            return Visitors.Count();
         }
         public void PrintTimeTable()
         {
@@ -82,7 +85,7 @@ namespace ProjectCafe
         {
             foreach (var item in cafes)
             {
-                if (DistanceFrom(item) < 1000.0)
+                if (DistanceFrom(item) < 1000.0 &&DistanceFrom(item)>0)
                 {
                     Console.WriteLine(item);
                 }
@@ -100,5 +103,18 @@ namespace ProjectCafe
             Console.WriteLine("_________________________________________________________________");
         }
 
+        public int CompareTo(Cafe that)
+        {
+            if (that.GetVisitorsCount() > this.GetVisitorsCount())
+            {
+                return 1;
+            }
+            else if (that.GetVisitorsCount() < this.GetVisitorsCount())
+            {
+                return -1;
+            }
+            else
+                return 0;
+        }
     }
 }

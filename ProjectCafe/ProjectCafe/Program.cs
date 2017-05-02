@@ -55,16 +55,28 @@ namespace ProjectCafe
             cafe1.AddNewReview(new Review(user2, DateTime.Parse("10 / 01 / 1999"), "Normal!", 4));
             cafe1.AddNewReview(new Review(user12, DateTime.Parse("10/01/1987"), "BAD!", 2));
 
-            cafe1.PrintAllReviews();
-            cafe1.PrintAverageRate();
+            //cafe1.PrintAllReviews();
+            //cafe1.PrintAverageRate();
 
-            cafe1.PrintTimeTable();
+            //cafe1.PrintTimeTable();
 
             user1.SaveCafe(cafe1);
             user1.SaveCafe(cafe11);
             user1.SaveCafe(cafe10);
 
-            user1.PrintFavoriteCafes();
+            //user1.PrintFavoriteCafes();
+
+            List<Cafe> cafes = new List<Cafe>();
+            cafes.Add(cafe1);
+            cafes.Add(cafe2);
+            cafes.Add(cafe3);
+            cafes.Add(cafe10);
+            cafes.Add(cafe11);
+            cafes.Sort();
+            for (int i = 0; i < cafes.Count; i++)
+            {
+                Console.WriteLine(cafes[i]);
+            }
         }
     }
 }
