@@ -146,17 +146,41 @@ namespace ProjectCafe
                         Console.WriteLine("Enter country");
                         string country = Console.ReadLine();
                         Console.WriteLine("Enter latitude");
-                        double latitude = Convert.ToDouble(Console.ReadLine());
+                        double latitude;
+                        while (true)
+                        {
+                            try
+                            {
+                                latitude = Convert.ToDouble(Console.ReadLine());
+                                break;
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Invalid latitude! Please try again!");
+                            }
+                        }
                         Console.WriteLine("Enter longitude");
-                        double longitude = Convert.ToDouble(Console.ReadLine());
+                        double longitude;
+                        while (true)
+                        {
+                            try
+                            {
+                                longitude = Convert.ToDouble(Console.ReadLine());
+                                break;
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Invalid longitude! Please try again!");
+                            }
+                        }
                         Console.WriteLine("Enter phone number");
                         string phoneNumber = Console.ReadLine();
                         Console.WriteLine("Enter Hours of opening (in one line, 23:59 format)");
                         String[] opentime = new String[7];
                         
                             opentime = Console.ReadLine().Split(' ');
-                        
-                        Console.WriteLine("Enter Hours of closeing (in one line, 23:59 format)");
+
+                        Console.WriteLine("Enter Hours of closing (in one line, 23:59 format)");
                         String[] closetime = new String[7];
                         
                             closetime = Console.ReadLine().Split(' ');
@@ -199,9 +223,17 @@ namespace ProjectCafe
                                     break;
                                 case "4":
                                     goto x;
+                                default:
+                                    Console.WriteLine("Invalid number!Please try again!");
+                                    break;
                             }
                         }
                 x:
+                        break;
+                    case "4":
+                        break;
+                    default:
+                        Console.WriteLine("Invalid number! Please try again!");
                         break;
                 }
 
