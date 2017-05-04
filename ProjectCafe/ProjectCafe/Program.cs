@@ -262,7 +262,7 @@ namespace ProjectCafe
                             Console.WriteLine(cafes[i].Name);
                         }
                         Console.WriteLine();
-                        string c;
+                        string c ;
                         Console.WriteLine();
                         
 
