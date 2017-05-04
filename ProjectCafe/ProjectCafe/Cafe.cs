@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ProjectCafe
 {
     class Cafe : IComparable<Cafe>
     {
+        
+
         public String Name { get; set; }
         public Address CafeAddress { get; set; }
         public String PhoneNumber { get; set; }
@@ -32,7 +35,6 @@ namespace ProjectCafe
             RestrictionAge = optionalRestrictionAge;
             Reviews = new List<Review>();
             Visitors = new List<User>();
-
         }
 
         public override string ToString()
@@ -46,6 +48,7 @@ namespace ProjectCafe
 
         public void PrintAllReviews()
         {
+            Console.WriteLine(this);
             for (int i = 0; i < Reviews.Count; i++)
             {
                 Console.WriteLine(Reviews[i]);
@@ -83,6 +86,8 @@ namespace ProjectCafe
         }
         public void Nearby(List<Cafe> cafes)
         {
+            Console.WriteLine(this.Name + "Nearby");
+            Console.WriteLine();
             foreach (var item in cafes)
             {
                 if (DistanceFrom(item) < 1000.0 && DistanceFrom(item) > 0)
@@ -94,6 +99,7 @@ namespace ProjectCafe
         }
         public void PrintAverageRate()
         {
+            Console.WriteLine(this);
             double sum = 0;
             for (int i = 0; i < Reviews.Count; i++)
             {
