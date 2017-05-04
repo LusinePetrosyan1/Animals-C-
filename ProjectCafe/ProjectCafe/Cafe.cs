@@ -55,6 +55,7 @@ namespace ProjectCafe
                 Console.WriteLine();
             }
             Console.WriteLine("_________________________________________________________________");
+            Console.WriteLine();
         }
         public void Visit(User user)
         {
