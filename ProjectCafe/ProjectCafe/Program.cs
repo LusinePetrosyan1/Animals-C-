@@ -11,7 +11,7 @@ namespace ProjectCafe
     {
         static void Main(string[] args)
         {
-            //StreamReader reader = new StreamReader("Users.txt");
+            StreamReader reader = new StreamReader("Users.txt");
             List<User> Users = new List<User>();
             String[] open = {
                                 "7:05",
@@ -108,7 +108,18 @@ namespace ProjectCafe
                             Console.WriteLine("Enter User's Surname");
                             string userSurname = Console.ReadLine();
                             Console.WriteLine("Enter User's Age");
-                            int age = Convert.ToInt32(Console.ReadLine());
+                            while (true)
+                            {
+                                try
+                                {
+                                    int age = Convert.ToInt32(Console.ReadLine());
+                                    break;
+                                }
+                                catch
+                                {
+
+                                }
+                            }
                             Console.WriteLine("Enter User's Mail");
                             string userMail = Console.ReadLine();
                             try
@@ -131,7 +142,7 @@ namespace ProjectCafe
                         string streetNum = Console.ReadLine();
                         Console.WriteLine("Enter city");
                         string city = Console.ReadLine();
-                        Console.WriteLine("Enter city");
+                        Console.WriteLine("Enter country");
                         string country = Console.ReadLine();
                         Console.WriteLine("Enter latitude");
                         double latitude = Convert.ToDouble(Console.ReadLine());
@@ -190,16 +201,17 @@ namespace ProjectCafe
             }
 
         }
-        public Cafe SearchByName(String Name, List<Cafe> Cafes)
+        public List<Cafe> SearchByName(String Name, List<Cafe> Cafes)
         {
+            List<Cafe> list = new List<Cafe>();
             for (int i = 0; i < Cafes.Count; i++)
             {
-                if (Cafes[i].Name == Name)
+                if (Cafes[i].Name.Contains(Name))
                 {
-                    return Cafes[i];
+                    list.Add(Cafes[i]);
                 }
             }
-            return null;
+            return list;
         }
     }
 }
