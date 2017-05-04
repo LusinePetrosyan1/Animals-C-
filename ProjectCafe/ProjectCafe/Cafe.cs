@@ -86,7 +86,7 @@ namespace ProjectCafe
         }
         public void Nearby(List<Cafe> cafes)
         {
-            Console.WriteLine(this.Name + "Nearby");
+            Console.WriteLine(this.Name+"'s" +" "+ "nearby cafes");
             Console.WriteLine();
             foreach (var item in cafes)
             {
@@ -99,8 +99,12 @@ namespace ProjectCafe
         }
         public void PrintAverageRate()
         {
-            Console.WriteLine(this);
+            Console.WriteLine(this.Name);
             double sum = 0;
+            if (Reviews.Count == 0) {
+                Console.WriteLine(0);
+                return;
+            }
             for (int i = 0; i < Reviews.Count; i++)
             {
                 sum += Reviews[i].Rate;

@@ -93,11 +93,16 @@ namespace ProjectCafe
             //    }
             while (true)
             {
+                Console.WriteLine("Welcome!");
+                Console.WriteLine("Choose what you want to do.");
+                Console.WriteLine();
                 Console.WriteLine("1.Create new User");
                 Console.WriteLine("2.Create new Cafe");
                 Console.WriteLine("3.Show list of Cafes");
                 Console.WriteLine("4.Show list of Users");
+                Console.WriteLine();
                 String l = Console.ReadLine();
+                Console.WriteLine();
                 switch (l)
                 {
                     case "1":
@@ -105,8 +110,10 @@ namespace ProjectCafe
                         {
                             Console.WriteLine("Enter User's Name");
                             string userName = Console.ReadLine();
+                            Console.WriteLine();
                             Console.WriteLine("Enter User's Surname");
                             string userSurname = Console.ReadLine();
+                            Console.WriteLine();
                             Console.WriteLine("Enter User's Age");
                             int age;
                             while (true)
@@ -118,11 +125,19 @@ namespace ProjectCafe
                                 }
                                 catch(Exception)
                                 {
+                                    Console.WriteLine();
                                     Console.WriteLine("Invalid age! Please try again!");
+                                    Console.WriteLine();
                                 }
                             }
+                            Console.WriteLine();
                             Console.WriteLine("Enter User's Mail");
                             string userMail = Console.ReadLine();
+                            Console.WriteLine();
+                            Console.WriteLine("User have successfully been created!");
+                            Console.WriteLine();
+
+                           
                             try
                             {
                                 Users.Add(new User(userName, userSurname, age, userMail));
@@ -137,14 +152,19 @@ namespace ProjectCafe
                     case "2":
                         Console.WriteLine("Enter Cafe's Name");
                         string cafeName = Console.ReadLine();
+                        Console.WriteLine();
                         Console.WriteLine("Enter street name");
                         string streetName = Console.ReadLine();
+                        Console.WriteLine();
                         Console.WriteLine("Enter street num");
                         string streetNum = Console.ReadLine();
+                        Console.WriteLine();
                         Console.WriteLine("Enter city");
                         string city = Console.ReadLine();
+                        Console.WriteLine();
                         Console.WriteLine("Enter country");
                         string country = Console.ReadLine();
+                        Console.WriteLine();
                         Console.WriteLine("Enter latitude");
                         double latitude;
                         while (true)
@@ -156,9 +176,12 @@ namespace ProjectCafe
                             }
                             catch (Exception)
                             {
+                                Console.WriteLine();
                                 Console.WriteLine("Invalid latitude! Please try again!");
+                                Console.WriteLine();
                             }
                         }
+                        Console.WriteLine();
                         Console.WriteLine("Enter longitude");
                         double longitude;
                         while (true)
@@ -170,61 +193,99 @@ namespace ProjectCafe
                             }
                             catch (Exception)
                             {
+                                Console.WriteLine();
                                 Console.WriteLine("Invalid longitude! Please try again!");
+                                Console.WriteLine();
                             }
                         }
+                        Console.WriteLine();
                         Console.WriteLine("Enter phone number");
                         string phoneNumber = Console.ReadLine();
+                        Console.WriteLine();
                         Console.WriteLine("Enter Hours of opening (in one line, 23:59 format)");
                         String[] opentime = new String[7];
                         
-                            opentime = Console.ReadLine().Split(' ');
+                        opentime = Console.ReadLine().Split(' ');
+                        Console.WriteLine();
 
                         Console.WriteLine("Enter Hours of closing (in one line, 23:59 format)");
                         String[] closetime = new String[7];
                         
                             closetime = Console.ReadLine().Split(' ');
-                        
+                        Console.WriteLine();
                         Console.WriteLine("Enter type(cafe, bar...)");
                         string type = Console.ReadLine();
-                         Console.WriteLine("Enter web site");
+                        Console.WriteLine();
+                         Console.WriteLine("Enter website");
                         string webSite = Console.ReadLine();
+                        Console.WriteLine();
                         Console.WriteLine("Write description");
                         string description = Console.ReadLine();
+                        Console.WriteLine();
                         Console.WriteLine("Enter Restriction Age");
-                        int RestrictionAge= Convert.ToInt32(Console.ReadLine());
+                        int RestrictionAge;
+                        while (true)
+                        {
+                            try
+                            {
+                               RestrictionAge = Convert.ToInt32(Console.ReadLine());
+                                break;
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Invalid age! Please try again!");
+                                Console.WriteLine();
+                            }
+                        }
+                        
+                        Console.WriteLine();
+                        Console.WriteLine("Cafe have successfully been created!");
+                        Console.WriteLine();
                         cafes.Add(new Cafe(cafeName,new Address(streetName,streetNum,city,country,latitude,longitude),phoneNumber,new Open_Close(open,close),type,webSite,description,RestrictionAge));
                         break;
                     case "3":
                         Console.WriteLine("Choose cafe");
+                        Console.WriteLine();
                         for (int i = 0; i < cafes.Count; i++)
                         {
-                            Console.Write(i+1);
-                            Console.WriteLine(cafes[i]);
+                            Console.Write(i+1+".");
+                            Console.WriteLine(cafes[i].Name);
                         }
+                        Console.WriteLine();
                         string c = Console.ReadLine();
+                        Console.WriteLine();
+                        Console.WriteLine(cafes[int.Parse(c)-1].ToString());
+                        Console.WriteLine();
+
                         while (true)
                         {
-                            Console.WriteLine("1.Show nearby cafes");
-                            Console.WriteLine("2.Show Reviewes");
-                            Console.WriteLine("3.Print Average rate");
-                            Console.WriteLine("4.Exit to main menu");
+                            Console.WriteLine("1.Show Nearby Cafes");
+                            Console.WriteLine("2.Show Reviews");
+                            Console.WriteLine("3.Print Average Rate");
+                            Console.WriteLine("4.Exit To Main Menu");
+                            Console.WriteLine();
                             string k = Console.ReadLine();
+                            Console.WriteLine();
                             switch (k)
                             {
                                 case "1":
                                     cafes[Convert.ToInt32(c) - 1].Nearby(cafes);
+                                    Console.WriteLine();
                                     break;
                                 case "2":
                                     cafes[Convert.ToInt32(c) - 1].PrintAllReviews();
+                                    Console.WriteLine();
                                     break;
                                 case "3":
                                     cafes[Convert.ToInt32(c) - 1].PrintAverageRate();
+                                    Console.WriteLine();
                                     break;
                                 case "4":
                                     goto x;
                                 default:
                                     Console.WriteLine("Invalid number!Please try again!");
+                                    Console.WriteLine();
                                     break;
                             }
                         }
