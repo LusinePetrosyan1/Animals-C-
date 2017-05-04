@@ -23,7 +23,7 @@ namespace ProjectCafe
                                 "9:30"
                             };
             String[] close = {
-                                "22:30",
+                                "22:35",
                                 "22:30",
                                 "22:30",
                                 "22:30",
