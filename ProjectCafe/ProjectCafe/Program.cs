@@ -11,7 +11,7 @@ namespace ProjectCafe
     {
         static void Main(string[] args)
         {
-            StreamReader reader = new StreamReader("Users.txt");
+          //StreamReader reader = new StreamReader("Users.txt");
             List<User> Users = new List<User>();
             String[] open = {
                                 "7:05",
@@ -108,16 +108,17 @@ namespace ProjectCafe
                             Console.WriteLine("Enter User's Surname");
                             string userSurname = Console.ReadLine();
                             Console.WriteLine("Enter User's Age");
+                            int age;
                             while (true)
                             {
                                 try
                                 {
-                                    int age = Convert.ToInt32(Console.ReadLine());
+                                    age = Convert.ToInt32(Console.ReadLine());
                                     break;
                                 }
-                                catch
+                                catch(Exception)
                                 {
-
+                                    Console.WriteLine("Invalid age! Please try again!");
                                 }
                             }
                             Console.WriteLine("Enter User's Mail");
