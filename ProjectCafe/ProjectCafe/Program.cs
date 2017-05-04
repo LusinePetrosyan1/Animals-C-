@@ -11,8 +11,32 @@ namespace ProjectCafe
     {
         static void Main(string[] args)
         {
-            //           StreamReader reader = new StreamReader("Users.txt");
             List<User> Users = new List<User>();
+            List<Cafe> cafes = new List<Cafe>();
+            StreamReader reader;
+            StreamWriter writer;
+            using (reader = new StreamReader("Users.txt"))
+            {
+                String line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    String[] linearr = line.Split(' ');
+                    Users.Add(new User(linearr[0], linearr[1], Convert.ToInt32(linearr[2]), linearr[3]));
+                }
+                reader.Close();
+            }
+            using (reader = new StreamReader("Cafes.txt"))
+            {
+                String line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    String[] linearr = line.Split(' ');
+                    String[] Open= {linearr[8],linearr[9],linearr[10],linearr[11],linearr[12],linearr[13],linearr[14]};
+                    String[] Close= {linearr[15],linearr[16],linearr[17],linearr[18],linearr[19],linearr[20],linearr[21]};
+                    cafes.Add(new Cafe(linearr[0],new Address(linearr[1],linearr[2],linearr[3],linearr[4],Convert.ToDouble(linearr[5]),Convert.ToDouble(linearr[6])),linearr[7],new Open_Close(Open,Close),linearr[22],linearr[23],linearr[24],Convert.ToInt32(linearr[25])));
+                }
+                reader.Close();
+            }
             String[] open = {
                                 "7:05",
                                 "7:30",
@@ -38,70 +62,70 @@ namespace ProjectCafe
             Cafe cafe3 = new Cafe("Havana", new Address("Leningradyan", "1/6", "Yerevan", "Armenia", 40.19033280000001, 44.48103570000001), "010380606", hours1, "Restaurant", "havana.am", optionalRestrictionAge: 14);
             Cafe cafe10 = new Cafe("Cinnabon", new Address("Northern ave", "8", "Yerevan", "Armenia", 40.182053751571125, 44.51447993516922), "010433535", new Open_Close(open, close), "cafe", "cinnabon.am", optionalRestrictionAge: 18);
             Cafe cafe11 = new Cafe("La Piazza", new Address("Northern ave", "10", "Yerevan", "Armenia", 40.18187751990506, 44.514833986759186), "010434343", new Open_Close(open, close), "cafe", "lapizza.am", optionalRestrictionAge: 15);
-            User user1 = new User("Lusine", "Petrosyan", 18, "lusinecfc1@gmail.com");
-            User user2 = new User("Khachatur", "Khechoyan", 5, "khachatur1998@mail.ru");
-            User user3 = new User("Ragnar", "Lothbrock", 30, "RagnarL@mail.ru");
-            User user4 = new User("Crocodile", "Gena", 14, "Gena2003@mail.ru");
-            User user5 = new User("Holden", "Caulfield", 16, "TheCatcher@gmail.com");
-            User user10 = new User("Bob", "Marley", 98, "BobMarley@gmail.com");
-            User user11 = new User("Emin", "Davidov", 40, "EminDav@gmail.com");
-            User user12 = new User("Lusine", "Petrosyan", 4, "lusinecfc1@gmail.com");
-            User user13 = new User("Tigran", "Jamkochyan", 43, "tikorabiz@gmail.com");
-            User user14 = new User("Jor", "Dilbaryan", 56, "jorikjorik@gmail.com");
+            //User user1 = new User("Lusine", "Petrosyan", 18, "lusinecfc1@gmail.com");
+            //User user2 = new User("Khachatur", "Khechoyan", 5, "khachatur1998@mail.ru");
+            //User user3 = new User("Ragnar", "Lothbrock", 30, "RagnarL@mail.ru");
+            //User user4 = new User("Crocodile", "Gena", 14, "Gena2003@mail.ru");
+            //User user5 = new User("Holden", "Caulfield", 16, "TheCatcher@gmail.com");
+            //User user10 = new User("Bob", "Marley", 98, "BobMarley@gmail.com");
+            //User user11 = new User("Emin", "Davidov", 40, "EminDav@gmail.com");
+            //User user12 = new User("Lusine", "Petrosyan", 4, "lusinecfc1@gmail.com");
+            //User user13 = new User("Tigran", "Jamkochyan", 43, "tikorabiz@gmail.com");
+            //User user14 = new User("Jor", "Dilbaryan", 56, "jorikjorik@gmail.com");
 
-            //cafe1.Visit(user13);
-            //cafe11.Visit(user3);
-            //cafe11.Visit(user1);
-            //cafe10.Visit(user2);
+            ////cafe1.Visit(user13);
+            ////cafe11.Visit(user3);
+            ////cafe11.Visit(user1);
+            ////cafe10.Visit(user2);
 
-            cafe1.AddNewReview(new Review(user1, DateTime.Parse("10 / 01 / 1999"), "Very Good!", 5));
-            cafe1.AddNewReview(new Review(user2, DateTime.Parse("10 / 01 / 1999"), "Normal!", 4));
-            cafe1.AddNewReview(new Review(user11, DateTime.Parse("10/01/1987"), "BAD!", 2));
+            //cafe1.AddNewReview(new Review(user1, DateTime.Parse("10 / 01 / 1999"), "Very Good!", 5));
+            //cafe1.AddNewReview(new Review(user2, DateTime.Parse("10 / 01 / 1999"), "Normal!", 4));
+            //cafe1.AddNewReview(new Review(user11, DateTime.Parse("10/01/1987"), "BAD!", 2));
 
-            //cafe1.PrintAllReviews();
-            //cafe1.PrintAverageRate();
-            //cafe1.PrintTimeTable();
+            ////cafe1.PrintAllReviews();
+            ////cafe1.PrintAverageRate();
+            ////cafe1.PrintTimeTable();
 
-            user1.SaveCafe(cafe1);
-            user1.SaveCafe(cafe11);
-            user1.SaveCafe(cafe10);
+            //user1.SaveCafe(cafe1);
+            //user1.SaveCafe(cafe11);
+            //user1.SaveCafe(cafe10);
 
-            Users.Add(user1);
-            Users.Add(user2);
-            Users.Add(user3);
-            Users.Add(user4);
-            Users.Add(user5);
-            Users.Add(user10);
-            Users.Add(user11);
-            Users.Add(user12);
-            Users.Add(user13);
-            Users.Add(user14);
+            //Users.Add(user1);
+            //Users.Add(user2);
+            //Users.Add(user3);
+            //Users.Add(user4);
+            //Users.Add(user5);
+            //Users.Add(user10);
+            //Users.Add(user11);
+            //Users.Add(user12);
+            //Users.Add(user13);
+            //Users.Add(user14);
 
-            //user1.PrintFavoriteCafes();
+            ////user1.PrintFavoriteCafes();
 
-            List<Cafe> cafes = new List<Cafe>();
-            cafes.Add(cafe1);
-            cafes.Add(cafe2);
-            cafes.Add(cafe3);
-            cafes.Add(cafe10);
-            cafes.Add(cafe11);
-            cafes.Sort();
-            //for (int i = 0; i < cafes.Count; i++)
-            //{
-            //    Console.WriteLine(cafes[i]);
-            //}
-            //string line;
-            //try {
-            //    while ((line=reader.ReadLine())!= null)
-            //    {
-            //        String[] info = line.Split(' ');
-            //        Users.Add(new User(info[0],info[1],Convert.ToInt32(info[2]),info[3]));
-            //    }
-            //}
-            //    catch{
-            //    }
+            //cafes.Add(cafe1);
+            //cafes.Add(cafe2);
+            //cafes.Add(cafe3);
+            //cafes.Add(cafe10);
+            //cafes.Add(cafe11);
+            //cafes.Sort();
+            ////for (int i = 0; i < cafes.Count; i++)
+            ////{
+            ////    Console.WriteLine(cafes[i]);
+            ////}
+            ////string line;
+            ////try {
+            ////    while ((line=reader.ReadLine())!= null)
+            ////    {
+            ////        String[] info = line.Split(' ');
+            ////        Users.Add(new User(info[0],info[1],Convert.ToInt32(info[2]),info[3]));
+            ////    }
+            ////}
+            ////    catch{
+            ////    }
             while (true)
             {
+                z:
                 Console.WriteLine("Welcome!");
                 Console.WriteLine("Choose what you want to do.");
                 Console.WriteLine();
@@ -115,8 +139,7 @@ namespace ProjectCafe
                 switch (l)
                 {
                     case "1":
-                        while (true)
-                        {
+                        while (true){
                             Console.WriteLine("Enter User's Name");
                             string userName = Console.ReadLine();
                             Console.WriteLine();
@@ -146,7 +169,12 @@ namespace ProjectCafe
                             Console.WriteLine("User have successfully been created!");
                             Console.WriteLine();
 
-
+                            using (writer = new StreamWriter("Users.txt", true))
+                            {
+                                writer.Write(userName + " " + userSurname + " " + age + " " + userMail + "\r\n");
+                                writer.Flush();
+                                writer.Close();
+                            }
                             try
                             {
                                 Users.Add(new User(userName, userSurname, age, userMail));
@@ -156,6 +184,7 @@ namespace ProjectCafe
                             {
                                 Console.WriteLine("Error,Try again");
                             }
+                            
                         }
                         break;
                     case "2":
@@ -252,6 +281,21 @@ namespace ProjectCafe
                         Console.WriteLine("Cafe have successfully been created!");
                         Console.WriteLine();
                         cafes.Add(new Cafe(cafeName, new Address(streetName, streetNum, city, country, latitude, longitude), phoneNumber, new Open_Close(open, close), type, webSite, description, RestrictionAge));
+                        using (writer = new StreamWriter("Cafes.txt",true))
+                        {
+                            writer.Write(cafeName + " " + streetName + " " + streetNum + " " + city + " " + country + " " + latitude + " " + longitude + " " + phoneNumber + " ");
+                            for (int i = 0; i < 7; i++)
+                            {
+                                writer.Write(opentime[i] + " ");
+                            }
+                            for (int i = 0; i < 7; i++)
+                            {
+                                writer.Write(closetime[i] + " ");
+                            }
+                            writer.Write(type + " " + webSite + " " + "." + " " + RestrictionAge + "\r\n");
+                            writer.Flush();
+                            writer.Close();
+                        }
                         break;
                     case "3":
                         Console.WriteLine("Choose cafe");
@@ -261,16 +305,16 @@ namespace ProjectCafe
                             Console.Write(i + 1 + ".");
                             Console.WriteLine(cafes[i].Name);
                         }
+                        Console.WriteLine(cafes.Count+1 + ".Exit To Main Menu");
                         Console.WriteLine();
                         string c;
-
 
                         while (true)
                         {
                             c = Console.ReadLine();
                             try
                             {
-                                if (Convert.ToInt32(c) > cafes.Count || Convert.ToInt32(c) <= 0)
+                                if (Convert.ToInt32(c) > cafes.Count+1 || Convert.ToInt32(c) <= 0)
                                 {
                                     Console.WriteLine("Error! Invalid number!");
                                 }
@@ -281,6 +325,10 @@ namespace ProjectCafe
                             {
                                 Console.WriteLine("Error! Invalid number!");
                             }
+                        }
+                        if (Convert.ToInt32(c) == (cafes.Count+1))
+                        {
+                            goto z;
                         }
                         Console.WriteLine();
                         Console.WriteLine(cafes[int.Parse(c) - 1].ToString());
@@ -376,13 +424,14 @@ namespace ProjectCafe
                             Console.Write(i + 1 + ".");
                             Console.WriteLine(Users[i]);
                         }
+                        Console.WriteLine(Users.Count+1 +"."+ "Exit To Main Menu");
                         string u;
                         while (true)
                         {
                             u = Console.ReadLine();
                             try
                             {
-                                if (Convert.ToInt32(u) > Users.Count || Convert.ToInt32(u) <= 0)
+                                if (Convert.ToInt32(u) > Users.Count+1 || Convert.ToInt32(u) <= 0)
                                 {
                                     Console.WriteLine("Error! Invalid number!");
                                 }
@@ -393,6 +442,10 @@ namespace ProjectCafe
                             {
                                 Console.WriteLine("Error! Invalid number!");
                             }
+                        }
+                        if (Convert.ToInt32(u) == (Users.Count + 1))
+                        {
+                            goto z;
                         }
                         Console.WriteLine();
                         Console.WriteLine(Users[Convert.ToInt32(u) - 1]);
