@@ -262,10 +262,9 @@ namespace ProjectCafe
                             Console.WriteLine(cafes[i].Name);
                         }
                         Console.WriteLine();
-                        string c = Console.ReadLine();
+                        string c;
                         Console.WriteLine();
-                        Console.WriteLine(cafes[int.Parse(c)-1].ToString());
-                        Console.WriteLine();
+                        
 
                         while (true)
                         {
@@ -284,6 +283,8 @@ namespace ProjectCafe
                                 Console.WriteLine("Error! Invalid number!");
                             }
                         }
+                        Console.WriteLine(cafes[int.Parse(c) - 1].ToString());
+                        Console.WriteLine();
                         while (true)
                         {
                             Console.WriteLine("1.Show nearby cafes");
