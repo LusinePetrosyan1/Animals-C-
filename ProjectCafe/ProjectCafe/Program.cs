@@ -49,18 +49,18 @@ namespace ProjectCafe
             User user13 = new User("Tigran", "Jamkochyan", 43, "tikorabiz@gmail.com");
             User user14 = new User("Jor", "Dilbaryan", 56, "jorikjorik@gmail.com");
 
-            cafe1.Visit(user13);
-            cafe11.Visit(user3);
-            cafe11.Visit(user1);
-            cafe10.Visit(user2);
+            //cafe1.Visit(user13);
+            //cafe11.Visit(user3);
+            //cafe11.Visit(user1);
+            //cafe10.Visit(user2);
 
             cafe1.AddNewReview(new Review(user1, DateTime.Parse("10 / 01 / 1999"), "Very Good!", 5));
             cafe1.AddNewReview(new Review(user2, DateTime.Parse("10 / 01 / 1999"), "Normal!", 4));
             cafe1.AddNewReview(new Review(user11, DateTime.Parse("10/01/1987"), "BAD!", 2));
 
-            cafe1.PrintAllReviews();
-            cafe1.PrintAverageRate();
-            cafe1.PrintTimeTable();
+            //cafe1.PrintAllReviews();
+            //cafe1.PrintAverageRate();
+            //cafe1.PrintTimeTable();
 
             user1.SaveCafe(cafe1);
             user1.SaveCafe(cafe11);
@@ -76,10 +76,10 @@ namespace ProjectCafe
             cafes.Add(cafe10);
             cafes.Add(cafe11);
             cafes.Sort();
-            for (int i = 0; i < cafes.Count; i++)
-            {
-                Console.WriteLine(cafes[i]);
-            }
+            //for (int i = 0; i < cafes.Count; i++)
+            //{
+            //    Console.WriteLine(cafes[i]);
+            //}
             //string line;
             //try {
             //    while ((line=reader.ReadLine())!= null)
@@ -116,9 +116,9 @@ namespace ProjectCafe
                                     age = Convert.ToInt32(Console.ReadLine());
                                     break;
                                 }
-                                catch
+                                catch(Exception)
                                 {
-
+                                    Console.WriteLine("Invalid age! Please try again!");
                                 }
                             }
                             Console.WriteLine("Enter User's Mail");
@@ -168,34 +168,40 @@ namespace ProjectCafe
                         Console.WriteLine("Write description");
                         string description = Console.ReadLine();
                         Console.WriteLine("Enter Restriction Age");
-                        int Restrictionage= Convert.ToInt32(Console.ReadLine());
-                        cafes.Add(new Cafe(cafeName,new Address(streetName,streetNum,city,country,latitude,longitude),phoneNumber,new Open_Close(open,close),type,webSite,description,Restrictionage));
+                        int RestrictionAge= Convert.ToInt32(Console.ReadLine());
+                        cafes.Add(new Cafe(cafeName,new Address(streetName,streetNum,city,country,latitude,longitude),phoneNumber,new Open_Close(open,close),type,webSite,description,RestrictionAge));
                         break;
                     case "3":
+                        Console.WriteLine("Choose cafe");
                         for (int i = 0; i < cafes.Count; i++)
                         {
                             Console.Write(i+1);
                             Console.WriteLine(cafes[i]);
                         }
-                        Console.WriteLine("Choose cafe");
                         string c = Console.ReadLine();
-                        Console.WriteLine("1.Show nearby cafes");
-                        Console.WriteLine("2.Show Reviewes");
-                        Console.WriteLine("3.Print Average rate");
-                        string k=Console.ReadLine();
-                        switch (k)
+                        while (true)
                         {
-                            case "1":
-                                cafes[Convert.ToInt32(c)-1].Nearby(cafes);
-                                break;
-                            case "2":
-                                cafes[Convert.ToInt32(c) - 1].PrintAllReviews();
-                                break;
-                            case "3":
-                                cafes[Convert.ToInt32(c) - 1].PrintAverageRate();
-                                break;
+                            Console.WriteLine("1.Show nearby cafes");
+                            Console.WriteLine("2.Show Reviewes");
+                            Console.WriteLine("3.Print Average rate");
+                            Console.WriteLine("4.Exit to main menu");
+                            string k = Console.ReadLine();
+                            switch (k)
+                            {
+                                case "1":
+                                    cafes[Convert.ToInt32(c) - 1].Nearby(cafes);
+                                    break;
+                                case "2":
+                                    cafes[Convert.ToInt32(c) - 1].PrintAllReviews();
+                                    break;
+                                case "3":
+                                    cafes[Convert.ToInt32(c) - 1].PrintAverageRate();
+                                    break;
+                                case "4":
+                                    goto x;
+                            }
                         }
-
+                x:
                         break;
                 }
 
