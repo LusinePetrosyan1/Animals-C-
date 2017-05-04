@@ -68,7 +68,6 @@ namespace ProjectCafe
                 Visitors.Add(user);
                 Console.WriteLine("Welcome to" + " " + Name + "!" + " " + user);
                 Console.WriteLine("_________________________________________________________________");
-
             }
         }
         public int GetVisitorsCount()

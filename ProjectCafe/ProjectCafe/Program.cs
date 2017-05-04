@@ -11,7 +11,7 @@ namespace ProjectCafe
     {
         static void Main(string[] args)
         {
- //           StreamReader reader = new StreamReader("Users.txt");
+            //           StreamReader reader = new StreamReader("Users.txt");
             List<User> Users = new List<User>();
             String[] open = {
                                 "7:05",
@@ -66,6 +66,16 @@ namespace ProjectCafe
             user1.SaveCafe(cafe11);
             user1.SaveCafe(cafe10);
 
+            Users.Add(user1);
+            Users.Add(user2);
+            Users.Add(user3);
+            Users.Add(user4);
+            Users.Add(user5);
+            Users.Add(user10);
+            Users.Add(user11);
+            Users.Add(user12);
+            Users.Add(user13);
+            Users.Add(user14);
 
             //user1.PrintFavoriteCafes();
 
@@ -89,7 +99,6 @@ namespace ProjectCafe
             //    }
             //}
             //    catch{
-
             //    }
             while (true)
             {
@@ -123,7 +132,7 @@ namespace ProjectCafe
                                     age = Convert.ToInt32(Console.ReadLine());
                                     break;
                                 }
-                                catch(Exception)
+                                catch (Exception)
                                 {
                                     Console.WriteLine();
                                     Console.WriteLine("Invalid age! Please try again!");
@@ -143,7 +152,7 @@ namespace ProjectCafe
                                 Users.Add(new User(userName, userSurname, age, userMail));
                                 break;
                             }
-                            catch (Exception e)
+                            catch (Exception)
                             {
                                 Console.WriteLine("Error,Try again");
                             }
@@ -260,11 +269,27 @@ namespace ProjectCafe
 
                         while (true)
                         {
-                            Console.WriteLine("1.Show Nearby Cafes");
-                            Console.WriteLine("2.Show Reviews");
-                            Console.WriteLine("3.Print Average Rate");
-                            Console.WriteLine("4.Exit To Main Menu");
-                            Console.WriteLine();
+                            c = Console.ReadLine();
+                            try
+                            {
+                                if (Convert.ToInt32(c) > cafes.Count || Convert.ToInt32(c) <= 0)
+                                {
+                                    Console.WriteLine("Error! Invalid number!");
+                                }
+                                else
+                                    break;
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Error! Invalid number!");
+                            }
+                        }
+                        while (true)
+                        {
+                            Console.WriteLine("1.Show nearby cafes");
+                            Console.WriteLine("2.Show Reviewes");
+                            Console.WriteLine("3.Print Average rate");
+                            Console.WriteLine("4.Exit to main menu");
                             string k = Console.ReadLine();
                             Console.WriteLine();
                             switch (k)
@@ -289,9 +314,83 @@ namespace ProjectCafe
                                     break;
                             }
                         }
-                x:
+                    x:
                         break;
                     case "4":
+                        for (int i = 0; i < Users.Count; i++)
+                        {
+                            Console.Write(i + 1 + ".");
+                            Console.WriteLine(Users[i]);
+                        }
+                        string u;
+                        while (true)
+                        {
+                            u = Console.ReadLine();
+                            try
+                            {
+                                if (Convert.ToInt32(u) > Users.Count || Convert.ToInt32(u) <= 0)
+                                {
+                                    Console.WriteLine("Error! Invalid number!");
+                                }
+                                else
+                                    break;
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Error! Invalid number!");
+                            }
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine(Users[Convert.ToInt32(u) - 1]);
+                        Console.WriteLine();
+                        while (true)
+                        {
+                            Console.WriteLine("1.Save Cafe");
+                            Console.WriteLine("2.Favorite Cafes");
+                            Console.WriteLine("3.Exit To Main Menu");
+                            Console.WriteLine();
+                            String z = Console.ReadLine();
+                            switch (z)
+                            {
+                                case "1":
+                                    Console.WriteLine("Choose cafe");
+                                    for (int i = 0; i < cafes.Count; i++)
+                                    {
+                                        Console.Write(i + 1);
+                                        Console.WriteLine(cafes[i]);
+                                    }
+                                    string m;
+                                    while (true)
+                                    {
+                                        m = Console.ReadLine();
+                                        try
+                                        {
+                                            if (Convert.ToInt32(m) > cafes.Count || Convert.ToInt32(m) <= 0)
+                                            {
+                                                Console.WriteLine("Error! Invalid number!");
+                                            }
+                                            else
+                                                break;
+                                        }
+                                        catch (Exception)
+                                        {
+                                            Console.WriteLine("Error! Invalid number!");
+                                        }
+                                    }
+                                    if(!Users[Convert.ToInt32(u) - 1].favoriteCafes.Contains(cafes[Convert.ToInt32(m) - 1]))
+                                    Users[Convert.ToInt32(u) - 1].favoriteCafes.Add(cafes[Convert.ToInt32(m) - 1]);
+                                    break;
+                                case "2":
+                                    foreach (var item in Users[Convert.ToInt32(u) - 1].favoriteCafes)
+                                    {
+                                        Console.WriteLine(item);
+                                    }
+                                    break;
+                                case "3":
+                                    goto p;
+                            }
+                        }
+                        p:
                         break;
                     default:
                         Console.WriteLine("Invalid number! Please try again!");
