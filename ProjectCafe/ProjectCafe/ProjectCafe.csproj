@@ -60,7 +60,6 @@
     <Content Include="Cafes.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reviewes.txt" />
     <Content Include="Users.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
