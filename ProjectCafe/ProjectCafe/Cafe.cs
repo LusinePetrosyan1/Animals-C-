@@ -48,7 +48,7 @@ namespace ProjectCafe
 
         public void PrintAllReviews()
         {
-            Console.WriteLine(this.Name);
+            Console.WriteLine(this);
             for (int i = 0; i < Reviews.Count; i++)
             {
                 Console.WriteLine(Reviews[i]);
@@ -77,23 +77,20 @@ namespace ProjectCafe
         }
         public void PrintTimeTable()
         {
-            Console.WriteLine(this.Name);
-            Console.WriteLine();
             Console.WriteLine(HoursOfOpenClose);
             Console.WriteLine("_________________________________________________________________");
-            Console.WriteLine();
         }
         public double DistanceFrom(Cafe cafe2)
         {
             return (CafeAddress.Location.GetDistanceTo(cafe2.CafeAddress.Location));
         }
-        public void Nearby(List<Cafe> cafes,double x)
+        public void Nearby(List<Cafe> cafes)
         {
             Console.WriteLine(this.Name+"'s" +" "+ "nearby cafes");
             Console.WriteLine();
             foreach (var item in cafes)
             {
-                if (DistanceFrom(item) < x && DistanceFrom(item) > 0)
+                if (DistanceFrom(item) < 1000.0 && DistanceFrom(item) > 0)
                 {
                     Console.WriteLine(item);
                 }
