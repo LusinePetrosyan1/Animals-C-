@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace ProjectCafe
 {
@@ -82,7 +83,21 @@ namespace ProjectCafe
                             }
                             Console.WriteLine();
                             Console.WriteLine("Enter User's Mail");
-                            string userMail = Console.ReadLine();
+                            MailAddress Mail;
+                            string userMail;
+                            while (true)
+                            {
+                                userMail = Console.ReadLine();
+                                try
+                                {
+                                    Mail = new MailAddress(userMail);
+                                    break;
+                                }
+                                catch (Exception)
+                                {
+                                    MessageBox.Show("Invalid mail! Please try again!");
+                                }
+                            }
                             Console.WriteLine();
                             MessageBox.Show("User has successfully been created!");
                             Console.WriteLine();
