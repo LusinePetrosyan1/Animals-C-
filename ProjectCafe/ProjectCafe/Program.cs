@@ -37,7 +37,7 @@ namespace ProjectCafe
                 }
                 reader.Close();
             }
-
+            
             while (true)
             {
             z:
@@ -198,7 +198,7 @@ namespace ProjectCafe
                         Console.WriteLine("Cafe have successfully been created!");
                         Console.WriteLine();
                         cafes.Add(new Cafe(cafeName, new Address(streetName, streetNum, city, country, latitude, longitude), phoneNumber, new Open_Close(opentime, closetime), type, webSite, description, RestrictionAge));
-                        using (writer = new StreamWriter("Cafes.txt", true))
+                        using (writer = new StreamWriter("Cafes.txt",true))
                         {
                             writer.Write(cafeName + " " + streetName + " " + streetNum + " " + city + " " + country + " " + latitude + " " + longitude + " " + phoneNumber + " ");
                             for (int i = 0; i < 7; i++)
