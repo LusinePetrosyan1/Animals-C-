@@ -633,6 +633,7 @@ namespace ProjectCafe
                     default:
                         MessageBox.Show("Invalid number! Please try again!");
                         Console.WriteLine();
+
                         break;
                 }
 
