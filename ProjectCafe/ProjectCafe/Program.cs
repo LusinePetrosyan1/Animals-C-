@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ProjectCafe
 {
@@ -37,7 +38,7 @@ namespace ProjectCafe
                 }
                 reader.Close();
             }
-            
+
             while (true)
             {
             z:
@@ -75,15 +76,15 @@ namespace ProjectCafe
                                 catch (Exception)
                                 {
                                     Console.WriteLine();
-                                    Console.WriteLine("Invalid age! Please try again!");
-                                    Console.WriteLine();
+                                    MessageBox.Show("Invalid age! Please try again!");
+                                    
                                 }
                             }
                             Console.WriteLine();
                             Console.WriteLine("Enter User's Mail");
                             string userMail = Console.ReadLine();
                             Console.WriteLine();
-                            Console.WriteLine("User have successfully been created!");
+                            MessageBox.Show("User has successfully been created!");
                             Console.WriteLine();
 
                             using (writer = new StreamWriter("Users.txt", true))
@@ -99,7 +100,7 @@ namespace ProjectCafe
                             }
                             catch (Exception)
                             {
-                                Console.WriteLine("Error,Try again");
+                                MessageBox.Show("Error!Pleases try again!");
                             }
 
                         }
@@ -131,8 +132,8 @@ namespace ProjectCafe
                             }
                             catch (Exception)
                             {
-                                Console.WriteLine();
-                                Console.WriteLine("Invalid latitude! Please try again!");
+                               
+                                MessageBox.Show("Invalid latitude! Please try again!");
                                 Console.WriteLine();
                             }
                         }
@@ -149,8 +150,8 @@ namespace ProjectCafe
                             catch (Exception)
                             {
                                 Console.WriteLine();
-                                Console.WriteLine("Invalid longitude! Please try again!");
-                                Console.WriteLine();
+                                MessageBox.Show("Invalid longitude! Please try again!"); ;
+                               
                             }
                         }
                         Console.WriteLine();
@@ -189,16 +190,15 @@ namespace ProjectCafe
                             catch (Exception)
                             {
                                 Console.WriteLine();
-                                Console.WriteLine("Invalid age! Please try again!");
-                                Console.WriteLine();
+                                MessageBox.Show("Invalid age! Please try again!");
+                                
                             }
                         }
 
                         Console.WriteLine();
-                        Console.WriteLine("Cafe have successfully been created!");
-                        Console.WriteLine();
+                       MessageBox.Show("Cafe has successfully been created!");
                         cafes.Add(new Cafe(cafeName, new Address(streetName, streetNum, city, country, latitude, longitude), phoneNumber, new Open_Close(opentime, closetime), type, webSite, description, RestrictionAge));
-                        using (writer = new StreamWriter("Cafes.txt",true))
+                        using (writer = new StreamWriter("Cafes.txt", true))
                         {
                             writer.Write(cafeName + " " + streetName + " " + streetNum + " " + city + " " + country + " " + latitude + " " + longitude + " " + phoneNumber + " ");
                             for (int i = 0; i < 7; i++)
@@ -233,14 +233,16 @@ namespace ProjectCafe
                             {
                                 if (Convert.ToInt32(c) > cafes.Count + 1 || Convert.ToInt32(c) <= 0)
                                 {
-                                    Console.WriteLine("Error! Invalid number!");
+                                    MessageBox.Show("Invalid number! Please try again!");
+                                    Console.WriteLine();
                                 }
                                 else
                                     break;
                             }
                             catch (Exception)
                             {
-                                Console.WriteLine("Error! Invalid number!");
+                                MessageBox.Show("Invalid number! Please try again!");
+                                Console.WriteLine();
                             }
                         }
                         if (Convert.ToInt32(c) == (cafes.Count + 1))
@@ -266,7 +268,26 @@ namespace ProjectCafe
                             switch (k)
                             {
                                 case "1":
-                                    cafes[Convert.ToInt32(c) - 1].Nearby(cafes);
+                                    Console.WriteLine("How far?");
+                                    double x;
+
+                                    while (true)
+                                    {
+                                        try
+                                        {
+                                            x = Convert.ToDouble(Console.ReadLine());
+                                            break;
+                                        }
+                                        catch (Exception)
+                                        {
+                                            Console.WriteLine();
+                                            MessageBox.Show("Invalid number! Please try again!");
+
+                                        }
+                                    }
+
+
+                                    cafes[Convert.ToInt32(c) - 1].Nearby(cafes,Convert.ToDouble(x));
                                     Console.WriteLine();
                                     break;
                                 case "2":
@@ -292,23 +313,23 @@ namespace ProjectCafe
                                         {
                                             if (Convert.ToInt32(q) > Users.Count || Convert.ToInt32(q) <= 0)
                                             {
-                                                Console.WriteLine("Error! Invalid number!");
+                                                MessageBox.Show("Invalid number! Please try again!");
+                                                Console.WriteLine();
                                             }
                                             else
                                                 break;
                                         }
                                         catch (Exception)
                                         {
-                                            Console.WriteLine("Error! Invalid number!");
+                                            MessageBox.Show("Invalid number! Please try again!");
+                                            Console.WriteLine();
                                         }
                                     }
                                     Console.WriteLine();
                                     Console.WriteLine("Write Your Oppinion");
-                                    Console.WriteLine();
                                     String op = Console.ReadLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Write Your Rate (0-5)");
-                                    Console.WriteLine();
                                     String ra;
                                     while (true)
                                     {
@@ -317,8 +338,8 @@ namespace ProjectCafe
                                         {
                                             if (Convert.ToInt32(ra) > 5 || Convert.ToInt32(ra) < 0)
                                             {
-                                                Console.WriteLine();
-                                                Console.WriteLine("Invalid number! Please try again!");
+                                             
+                                               MessageBox.Show("Invalid number! Please try again!");
                                                 Console.WriteLine();
                                             }
                                             else
@@ -326,15 +347,13 @@ namespace ProjectCafe
                                         }
                                         catch
                                         {
-                                            Console.WriteLine();
-                                            Console.WriteLine("Invalid number! Please try again!");
+                                            MessageBox.Show("Invalid number! Please try again!");
                                             Console.WriteLine();
                                         }
                                     }
                                 gt:
                                     cafes[Convert.ToInt32(c) - 1].AddNewReview(new Review(Users[Convert.ToInt32(q) - 1], DateTime.Now, op, Convert.ToInt32(ra)));
-                                    Console.WriteLine();
-                                    Console.WriteLine("Thank you for your rate!");
+                                    MessageBox.Show("Thank you for your rate!");
                                     Console.WriteLine();
                                     break;
                                 case "5":
@@ -354,8 +373,8 @@ namespace ProjectCafe
                                         {
                                             if (Convert.ToInt32(h) > Users.Count || Convert.ToInt32(h) <= 0)
                                             {
-                                                Console.WriteLine();
-                                                Console.WriteLine("Invalid number! Please Try Again!");
+                                              
+                                                MessageBox.Show("Invalid number! Please Try Again!");
                                                 Console.WriteLine();
                                             }
                                             else
@@ -363,8 +382,7 @@ namespace ProjectCafe
                                         }
                                         catch (Exception)
                                         {
-                                            Console.WriteLine();
-                                            Console.WriteLine("Invalid number! Please Try Again!");
+                                            MessageBox.Show("Invalid number! Please Try Again!");
                                             Console.WriteLine();
                                         }
                                     }
@@ -381,11 +399,9 @@ namespace ProjectCafe
                                     {
                                         case "1":
                                             Console.WriteLine("Write Your Oppinion");
-                                            Console.WriteLine();
                                             String opin = Console.ReadLine();
                                             Console.WriteLine();
                                             Console.WriteLine("Write Your Rate (0-5)");
-                                            Console.WriteLine();
                                             String rt;
                                             while (true)
                                             {
@@ -394,25 +410,29 @@ namespace ProjectCafe
                                                 {
                                                     if (Convert.ToInt32(rt) > 5 || Convert.ToInt32(rt) < 0)
                                                     {
-                                                        Console.WriteLine("Invalid number! Please try again!");
+
+                                                        MessageBox.Show("Invalid number! Please try again!");
+                                                        Console.WriteLine();
                                                     }
                                                     else
                                                         goto gtt;
                                                 }
                                                 catch
                                                 {
-                                                    Console.WriteLine("Invalid number! Please try again!");
+                                                    MessageBox.Show("Invalid number! Please try again!");
+                                                    Console.WriteLine();
                                                 }
                                             }
                                         gtt:
                                             cafes[Convert.ToInt32(c) - 1].AddNewReview(new Review(Users[Convert.ToInt32(h) - 1], DateTime.Now, opin, Convert.ToInt32(rt)));
-                                            Console.WriteLine("Thank you for your rate!");
+                                          MessageBox.Show("Thank you for your rate!");
+                                            Console.WriteLine();
                                             break;
                                         case "2":
-                                            Console.WriteLine("Thank you for your visit!");
+                                            MessageBox.Show("Thank you for your visit!");
                                             break;
                                         default:
-                                            Console.WriteLine("Invalid number! Please try again!");
+                                            MessageBox.Show("Invalid number! Please try again!");
                                             break;
                                     }
                                     break;
@@ -436,7 +456,7 @@ namespace ProjectCafe
                                             if (Convert.ToInt32(cnum) > cafes.Count || Convert.ToInt32(cnum) <= 0)
                                             {
                                                 Console.WriteLine();
-                                                Console.WriteLine("Invalid number! Please Try Again!");
+                                                MessageBox.Show("Invalid number! Please Try Again!");
                                                 Console.WriteLine();
                                             }
                                             else
@@ -445,11 +465,12 @@ namespace ProjectCafe
                                         catch (Exception)
                                         {
                                             Console.WriteLine();
-                                            Console.WriteLine("Invalid number! Please Try Again!");
+                                            MessageBox.Show("Invalid number! Please Try Again!");
                                             Console.WriteLine();
                                         }
                                     }
                                     Console.WriteLine();
+                                    Console.WriteLine("Distance of "+ cafes[int.Parse(c)-1].Name + " from "+ cafes[int.Parse(cnum)-1].Name +" is`");
                                     Console.WriteLine(cafes[int.Parse(c) - 1].DistanceFrom(cafes[int.Parse(cnum) - 1]));
                                     Console.WriteLine();
                                     break;
@@ -457,8 +478,7 @@ namespace ProjectCafe
                                 case "8":
                                     goto x;
                                 default:
-                                    Console.WriteLine("Invalid number!Please try again!");
-                                    Console.WriteLine();
+                                    MessageBox.Show("Invalid number!Please try again!");
                                     break;
                             }
                         }
@@ -472,16 +492,18 @@ namespace ProjectCafe
                         }
                         Console.WriteLine(Users.Count + 1 + "." + "Exit To Main Menu");
                         string u;
+                        Console.WriteLine();
                         while (true)
                         {
+                           
                             u = Console.ReadLine();
                             try
                             {
                                 if (Convert.ToInt32(u) > Users.Count + 1 || Convert.ToInt32(u) <= 0)
                                 {
                                     Console.WriteLine();
-                                    Console.WriteLine("Invalid number! Please Try Again!");
-                                    Console.WriteLine();
+                                   MessageBox.Show("Invalid number! Please Try Again!");
+                                    
                                 }
                                 else
                                     break;
@@ -489,8 +511,8 @@ namespace ProjectCafe
                             catch (Exception)
                             {
                                 Console.WriteLine();
-                                Console.WriteLine("Invalid number! Please Try Again");
-                                Console.WriteLine();
+                              MessageBox.Show("Invalid number! Please Try Again");
+                              
                             }
                         }
                         if (Convert.ToInt32(u) == (Users.Count + 1))
@@ -527,21 +549,22 @@ namespace ProjectCafe
                                         {
                                             if (Convert.ToInt32(m) > cafes.Count || Convert.ToInt32(m) <= 0)
                                             {
-                                                Console.WriteLine("Invalid number! Please Try Again!");
+                                                MessageBox.Show("Invalid number! Please Try Again!");
+                                                Console.WriteLine();
                                             }
                                             else
                                                 break;
                                         }
                                         catch (Exception)
                                         {
-                                            Console.WriteLine("Invalid number! Please Try Again!");
+                                            MessageBox.Show("Invalid number! Please Try Again!");
+                                            Console.WriteLine();
                                         }
                                     }
                                     Console.WriteLine();
+                                    MessageBox.Show("This cafe has been added to your favorite cafes!");
                                     if (!Users[Convert.ToInt32(u) - 1].favoriteCafes.Contains(cafes[Convert.ToInt32(m) - 1]))
                                         Users[Convert.ToInt32(u) - 1].favoriteCafes.Add(cafes[Convert.ToInt32(m) - 1]);
-                                    Console.WriteLine("This cafe have been added to your favorite cafes.");
-                                    Console.WriteLine();
                                     break;
                                 case "2":
                                     foreach (var item in Users[Convert.ToInt32(u) - 1].favoriteCafes)
@@ -552,6 +575,9 @@ namespace ProjectCafe
                                     break;
                                 case "3":
                                     goto p;
+                                default:
+                                    MessageBox.Show("Invalid Number! Please try again!");
+                                    break;
                             }
                         }
                     p:
@@ -565,7 +591,7 @@ namespace ProjectCafe
                         if (cafes1.Count == 0)
                         {
                             Console.WriteLine();
-                            Console.WriteLine("Sorry! This cafe can't be found.");
+                            MessageBox.Show("Sorry! This cafe can't be found.");
                             Console.WriteLine();
                             break;
                         }
@@ -579,7 +605,7 @@ namespace ProjectCafe
 
                         break;
                     default:
-                        Console.WriteLine("Invalid number! Please try again!");
+                        MessageBox.Show("Invalid number! Please try again!");
                         Console.WriteLine();
                         break;
                 }
