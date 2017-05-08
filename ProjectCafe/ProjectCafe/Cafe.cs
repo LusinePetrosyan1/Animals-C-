@@ -84,13 +84,13 @@ namespace ProjectCafe
         {
             return (CafeAddress.Location.GetDistanceTo(cafe2.CafeAddress.Location));
         }
-        public void Nearby(List<Cafe> cafes)
+        public void Nearby(List<Cafe> cafes,double x)
         {
             Console.WriteLine(this.Name+"'s" +" "+ "nearby cafes");
             Console.WriteLine();
             foreach (var item in cafes)
             {
-                if (DistanceFrom(item) < 1000.0 && DistanceFrom(item) > 0)
+                if (DistanceFrom(item) < x && DistanceFrom(item) > 0)
                 {
                     Console.WriteLine(item);
                 }
