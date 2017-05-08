@@ -13,14 +13,19 @@ namespace ProjectCafe
         public int Age { get; set; }
         public string Mail { get; set; }
         public List<Cafe> favoriteCafes;
-
-        public User(String name, String surname, int age, string mail)
+        public string Type { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public User(String name, String surname, int age, string mail, string type,string username, string password)
         {
             Name = name;
             Surname = surname;
             Age = age;
             Mail = mail;
             favoriteCafes = new List<Cafe>();
+            Type = type;
+            Username = username;
+            Password = password;
         }
         public override string ToString()
         {
