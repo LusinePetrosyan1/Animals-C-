@@ -52,6 +52,7 @@ namespace ProjectCafe
                 Console.WriteLine("3.Show list of Cafes");
                 Console.WriteLine("4.Show list of Users");
                 Console.WriteLine("5.Search Cafe");
+                Console.WriteLine("6.Sort cafes by Popularity");
                 Console.WriteLine();
                 String l = Console.ReadLine();
                 Console.WriteLine();
@@ -119,6 +120,7 @@ namespace ProjectCafe
                                     if (user.Username == UserName)
                                     {
                                         MessageBox.Show("This username is already taken! Choose another one!");
+                                        Console.WriteLine();
                                         a = false;
                                         break;
                                     }
@@ -402,8 +404,7 @@ namespace ProjectCafe
                             Console.WriteLine("5.Visit");
                             Console.WriteLine("6.Print Timetable");
                             Console.WriteLine("7.Distance From");
-                            Console.WriteLine("8.Sort by Popularity");
-                            Console.WriteLine("9.Exit to main menu");
+                            Console.WriteLine("8.Exit to main menu");
 
                             Console.WriteLine();
                             string k = Console.ReadLine();
@@ -673,18 +674,8 @@ namespace ProjectCafe
                                     Console.WriteLine(cafes[int.Parse(c) - 1].DistanceFrom(cafes[int.Parse(cnum) - 1]));
                                     Console.WriteLine();
                                     break;
+                              
                                 case "8":
-                                    Console.WriteLine("Cafes Sorted by Popularity`");
-                                    cafes.Sort();
-                                    for (int i = 0; i < cafes.Count; i++)
-                                    {
-                                        Console.Write(i + 1 + ".");
-                                        Console.WriteLine(cafes[i]);
-                                    }
-                                    Console.WriteLine();
-                                    break;
-
-                                case "9":
                                     goto x;
                                 default:
                                     MessageBox.Show("Invalid number!Please try again!");
@@ -857,6 +848,18 @@ namespace ProjectCafe
                         Console.WriteLine();
 
                         break;
+                    case "6":
+                        Console.WriteLine("Cafes Sorted by Popularity`");
+                        Console.WriteLine();
+                        cafes.Sort();
+                        for (int i = 0; i < cafes.Count; i++)
+                        {
+                            Console.Write(i + 1 + ".");
+                            Console.WriteLine(cafes[i]);
+                        }
+                        Console.WriteLine();
+                        break;
+
                     default:
                         MessageBox.Show("Invalid number! Please try again!");
                         Console.WriteLine();
