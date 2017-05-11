@@ -47,10 +47,10 @@ namespace ProjectCafe
                 Console.WriteLine("Welcome!");
                 Console.WriteLine("Choose what you want to do.");
                 Console.WriteLine();
-                Console.WriteLine("1.User registration");
-                Console.WriteLine("2.Create new Cafe");
+                Console.WriteLine("1.Registration");
+                Console.WriteLine("2.Login");
                 Console.WriteLine("3.Show list of Cafes");
-                Console.WriteLine("4.Show list of Users");
+                Console.WriteLine("4.Create new Cafe");
                 Console.WriteLine("5.Search Cafe");
                 Console.WriteLine("6.Sort cafes by Popularity");
                 Console.WriteLine();
@@ -170,7 +170,7 @@ namespace ProjectCafe
 
                         }
                         break;
-                    case "2":
+                    case "4":
                         Console.WriteLine("Only administrators can use this function!");
                         Console.WriteLine("If you are an administrator please login!");
                         while (true)
@@ -298,7 +298,7 @@ namespace ProjectCafe
                         String[] closetime = new String[7];
                         while (true)
                         {
-                        closetime = Console.ReadLine().Split(' ');
+                            closetime = Console.ReadLine().Split(' ');
                             if (closetime.Length != 7)
                             {
                                 MessageBox.Show("Invalid input! Please try again!");
@@ -420,12 +420,13 @@ namespace ProjectCafe
                                         try
                                         {
                                             x = Convert.ToDouble(Console.ReadLine());
-                                            if (x <= 0) {
+                                            if (x <= 0)
+                                            {
                                                 MessageBox.Show("Invalid number! Please try again!");
                                                 Console.WriteLine();
                                             }
                                             else
-                                            break;
+                                                break;
                                         }
                                         catch (Exception)
                                         {
@@ -574,7 +575,7 @@ namespace ProjectCafe
                                                 break;
                                         }
                                     }
-                            sq:
+                                sq:
                                     Console.WriteLine();
                                     cafes[int.Parse(c) - 1].Visit(Users[userindex]);
                                     Console.WriteLine("Do you want to write review?");
@@ -587,52 +588,52 @@ namespace ProjectCafe
                                     switch (yesorno)
                                     {
                                         case "1":
-                                           Console.WriteLine();
-                                    Console.WriteLine("Write Your Oppinion");
-                                    op = Console.ReadLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine("Write Your Rate (0-5)");
-                                    while (true)
-                                    {
-                                        ra = Console.ReadLine();
-                                        try
-                                        {
-                                            if (Convert.ToInt32(ra) > 5 || Convert.ToInt32(ra) < 0)
+                                            Console.WriteLine();
+                                            Console.WriteLine("Write Your Oppinion");
+                                            op = Console.ReadLine();
+                                            Console.WriteLine();
+                                            Console.WriteLine("Write Your Rate (0-5)");
+                                            while (true)
                                             {
-                                             
-                                               MessageBox.Show("Invalid number! Please try again!");
+                                                ra = Console.ReadLine();
+                                                try
+                                                {
+                                                    if (Convert.ToInt32(ra) > 5 || Convert.ToInt32(ra) < 0)
+                                                    {
+
+                                                        MessageBox.Show("Invalid number! Please try again!");
+                                                        Console.WriteLine();
+                                                    }
+                                                    else
+                                                        goto gq;
+                                                }
+                                                catch
+                                                {
+                                                    MessageBox.Show("Invalid number! Please try again!");
+                                                    Console.WriteLine();
+                                                }
+                                            }
+                                        gq:
+                                            over = false;
+                                            for (int i = 0; i < cafes[Convert.ToInt32(c) - 1].Reviews.Count; i++)
+                                            {
+                                                Review rev = cafes[Convert.ToInt32(c) - 1].Reviews[i];
+                                                if (rev.User.Username == Users[userindex].Username)
+                                                {
+                                                    rev.Date = DateTime.Now;
+                                                    rev.Opinion = op;
+                                                    rev.Rate = int.Parse(ra);
+                                                    over = true;
+                                                    MessageBox.Show("Thank you for your rate!");
+                                                    break;
+                                                }
+                                            }
+                                            if (!over)
+                                            {
+                                                cafes[Convert.ToInt32(c) - 1].AddNewReview(new Review(Users[userindex], DateTime.Now, op, Convert.ToInt32(ra)));
+                                                MessageBox.Show("Thank you for your rate!");
                                                 Console.WriteLine();
                                             }
-                                            else
-                                                goto gq;
-                                        }
-                                        catch
-                                        {
-                                            MessageBox.Show("Invalid number! Please try again!");
-                                            Console.WriteLine();
-                                        }
-                                    }
-                                gq:
-                                    over=false;
-                                    for (int i = 0; i < cafes[Convert.ToInt32(c) - 1].Reviews.Count; i++)
-                                    {
-                                        Review rev = cafes[Convert.ToInt32(c) - 1].Reviews[i];
-                                        if (rev.User.Username == Users[userindex].Username)
-                                        {
-                                            rev.Date = DateTime.Now;
-                                            rev.Opinion = op;
-                                            rev.Rate = int.Parse(ra);
-                                            over = true;
-                                            MessageBox.Show("Thank you for your rate!");
-                                            break;
-                                        }
-                                    }
-                                    if (!over)
-                                    {
-                                        cafes[Convert.ToInt32(c) - 1].AddNewReview(new Review(Users[userindex], DateTime.Now, op, Convert.ToInt32(ra)));
-                                        MessageBox.Show("Thank you for your rate!");
-                                        Console.WriteLine();
-                                    }
                                             break;
                                     }
                                     break;
@@ -674,7 +675,7 @@ namespace ProjectCafe
                                     Console.WriteLine(cafes[int.Parse(c) - 1].DistanceFrom(cafes[int.Parse(cnum) - 1]));
                                     Console.WriteLine();
                                     break;
-                              
+
                                 case "8":
                                     goto x;
                                 default:
@@ -684,88 +685,32 @@ namespace ProjectCafe
                         }
                     x:
                         break;
-                    case "4":
-                        Console.WriteLine("Only administrators can use this function!");
-                        Console.WriteLine("If you are an administrator please login!");
+                    case "2":
+                        int useri = 0;
                         while (true)
                         {
+                            Console.WriteLine("Please enter your Username!");
+                            string username = Console.ReadLine();
                             Console.WriteLine();
-                            Console.WriteLine("1.Login");
-                            Console.WriteLine("2.Exit to main menu");
+                            Console.WriteLine("Please enter your Password!");
+                            string password = Console.ReadLine();
                             Console.WriteLine();
-                            string ch = Console.ReadLine();
-                            switch (ch)
-                            {
-                                case "1":
-                                    Console.WriteLine();
-                                    Console.WriteLine("Enter username");
-                                    Console.WriteLine();
-                                    string us = Console.ReadLine();
-                                    Console.WriteLine();
-                                    Console.WriteLine("Enter password");
-                                    Console.WriteLine();
-                                    string ps = Console.ReadLine();
-                                    foreach (var item in Users)
-                                    {
-                                        if (item.Username == us && item.Password == ps)
-                                        {
-                                            if (item.Type == "admin")
-                                            {
-                                                Console.WriteLine();
-                                                Console.WriteLine("Welcome " + item.Name);
-                                                Console.WriteLine();
-                                                goto sa;
-                                            }
-                                        }
-                                    }
-                                    Console.WriteLine();
-                                    MessageBox.Show("Incorrect username or password");
-                                    break;
-                                case "2":
-                                    goto z;
-                                default:
-                                    MessageBox.Show("Invalid number! Please Try Again!");
-                                    break;
-                            }
-                        }
-                    sa:
-                        for (int i = 0; i < Users.Count; i++)
-                        {
-                            Console.Write(i + 1 + ".");
-                            Console.WriteLine(Users[i]);
-                        }
-                        Console.WriteLine(Users.Count + 1 + "." + "Exit To Main Menu");
-                        string u;
-                        Console.WriteLine();
-                        while (true)
-                        {
 
-                            u = Console.ReadLine();
-                            try
+
+                            for (int i = 0; i < Users.Count; i++)
                             {
-                                if (Convert.ToInt32(u) > Users.Count + 1 || Convert.ToInt32(u) <= 0)
+                                User item = Users[i];
+                                if (item.Username == username && item.Password == password)
                                 {
-                                    Console.WriteLine();
-                                    MessageBox.Show("Invalid number! Please Try Again!");
-
+                                    useri = i;
+                                    goto sk;
                                 }
-                                else
-                                    break;
                             }
-                            catch (Exception)
-                            {
-                                Console.WriteLine();
-                                MessageBox.Show("Invalid number! Please Try Again");
+                            MessageBox.Show("Wrong username or password! Please try again!");
+                        }
 
-                            }
-                        }
-                        if (Convert.ToInt32(u) == (Users.Count + 1))
-                        {
-                            goto z;
-                        }
-                        Console.WriteLine();
-                        Console.WriteLine(Users[Convert.ToInt32(u) - 1]);
-                        Console.WriteLine();
+                    sk:
+                        Console.WriteLine("Choose what you want to do!");
                         while (true)
                         {
                             Console.WriteLine("1.Save Cafe");
@@ -805,13 +750,15 @@ namespace ProjectCafe
                                             Console.WriteLine();
                                         }
                                     }
+
+                                    if (!Users[Convert.ToInt32(useri)].favoriteCafes.Contains(cafes[Convert.ToInt32(m) - 1]))
+                                        Users[Convert.ToInt32(useri)].favoriteCafes.Add(cafes[Convert.ToInt32(m) - 1]);
                                     Console.WriteLine();
                                     MessageBox.Show("This cafe has been added to your favorite cafes!");
-                                    if (!Users[Convert.ToInt32(u) - 1].favoriteCafes.Contains(cafes[Convert.ToInt32(m) - 1]))
-                                        Users[Convert.ToInt32(u) - 1].favoriteCafes.Add(cafes[Convert.ToInt32(m) - 1]);
+
                                     break;
                                 case "2":
-                                    foreach (var item in Users[Convert.ToInt32(u) - 1].favoriteCafes)
+                                    foreach (var item in Users[Convert.ToInt32(useri)].favoriteCafes)
                                     {
                                         Console.WriteLine(item);
                                     }
