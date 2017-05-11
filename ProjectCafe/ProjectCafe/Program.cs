@@ -470,7 +470,8 @@ namespace ProjectCafe
                                                 Console.WriteLine();
                                                 Console.WriteLine("Enter password");
                                                 Console.WriteLine();
-                                                string ps = Console.ReadLine();
+                                                SecureStringPass.GetPass();
+                                                string ps = SecureStringPass.pass;
                                                 userindex = 0;
                                                 for (int i = 0; i < Users.Count; i++)
                                                 {
