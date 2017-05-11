@@ -19,6 +19,7 @@ namespace ProjectCafe
             //Console.WriteLine(Encode.Encrypt(adsf));
             //string sdas = Console.ReadLine();
             //Console.WriteLine(Encode.Decrypt(sdas));
+
             List<User> Users = new List<User>();
             List<Cafe> cafes = new List<Cafe>();
             StreamReader reader;
