@@ -7,6 +7,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Reflection;
+using System.Security;
 
 namespace ProjectCafe
 {
@@ -14,6 +15,10 @@ namespace ProjectCafe
     {
         static void Main(string[] args)
         {
+            //string adsf = Console.ReadLine();
+            //Console.WriteLine(Encode.Encrypt(adsf));
+            //string sdas = Console.ReadLine();
+            //Console.WriteLine(Encode.Decrypt(sdas));
             List<User> Users = new List<User>();
             List<Cafe> cafes = new List<Cafe>();
             StreamReader reader;
@@ -24,7 +29,7 @@ namespace ProjectCafe
                 while ((line = reader.ReadLine()) != null)
                 {
                     String[] linearr = line.Split(' ');
-                    Users.Add(new User(linearr[0], linearr[1], Convert.ToInt32(linearr[2]), linearr[3], linearr[4], linearr[5], linearr[6]));
+                    Users.Add(new User(linearr[0], linearr[1], Convert.ToInt32(linearr[2]), linearr[3], linearr[4], linearr[5],linearr[6]));
                 }
                 reader.Close();
             }
@@ -140,7 +145,8 @@ namespace ProjectCafe
                             String Password;
                             while (true)
                             {
-                                Password = Console.ReadLine();
+                                SecureStringPass.GetPass();
+                                Password = SecureStringPass.pass;
                                 if (Password == "")
                                 {
                                     MessageBox.Show("Invalid password! Try again!");
@@ -154,13 +160,13 @@ namespace ProjectCafe
 
                             using (writer = new StreamWriter("Users.txt", true))
                             {
-                                writer.Write(userName + " " + userSurname + " " + age + " " + userMail + " " + "user" + " " + UserName + " " + Password + "\r\n");
+                                writer.Write(userName + " " + userSurname + " " + age + " " + userMail + " " + "user" + " " + UserName + " " + Encode.Encrypt(Password) + "\r\n");
                                 writer.Flush();
                                 writer.Close();
                             }
                             try
                             {
-                                Users.Add(new User(userName, userSurname, age, userMail, "user", UserName, Password));
+                                Users.Add(new User(userName, userSurname, age, userMail, "user", UserName, Encode.Encrypt(Password)));
                                 break;
                             }
                             catch (Exception)
@@ -188,10 +194,11 @@ namespace ProjectCafe
                                     string us = Console.ReadLine();
                                     Console.WriteLine();
                                     Console.WriteLine("Enter password");
-                                    string ps = Console.ReadLine();
+                                    SecureStringPass.GetPass();
+                                    string ps = SecureStringPass.pass;
                                     foreach (var item in Users)
                                     {
-                                        if (item.Username == us && item.Password == ps)
+                                        if (item.Username == us && item.Password == Encode.Encrypt(ps))
                                         {
                                             if (item.Type == "admin")
                                             {
@@ -464,12 +471,13 @@ namespace ProjectCafe
                                                 Console.WriteLine();
                                                 Console.WriteLine("Enter password");
                                                 Console.WriteLine();
-                                                string ps = Console.ReadLine();
+                                                SecureStringPass.GetPass();
+                                                string ps = SecureStringPass.pass;
                                                 userindex = 0;
                                                 for (int i = 0; i < Users.Count; i++)
                                                 {
                                                     User item = Users[i];
-                                                    if (item.Username == us && item.Password == ps)
+                                                    if (item.Username == us && item.Password ==Encode.Encrypt(ps))
                                                     {
                                                         userindex = i;
                                                         goto ss;
@@ -554,12 +562,13 @@ namespace ProjectCafe
                                                 Console.WriteLine();
                                                 Console.WriteLine("Enter password");
                                                 Console.WriteLine();
-                                                string ps = Console.ReadLine();
+                                                SecureStringPass.GetPass();
+                                                string ps = SecureStringPass.pass;
                                                 userindex = 0;
                                                 for (int i = 0; i < Users.Count; i++)
                                                 {
                                                     User item = Users[i];
-                                                    if (item.Username == us && item.Password == ps)
+                                                    if (item.Username == us && item.Password == Encode.Encrypt(ps))
                                                     {
                                                         userindex = i;
                                                         goto sq;
@@ -827,8 +836,6 @@ namespace ProjectCafe
                 }
             }
             return list;
-
-
         }
     }
 }
