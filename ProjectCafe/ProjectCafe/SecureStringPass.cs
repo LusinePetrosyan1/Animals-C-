@@ -12,7 +12,7 @@ namespace ProjectCafe
         public static void GetPass()
         {
             ConsoleKeyInfo key;
-
+            pass = "";
             do
             {
                 key = Console.ReadKey(true);

@@ -703,14 +703,15 @@ namespace ProjectCafe
                             string username = Console.ReadLine();
                             Console.WriteLine();
                             Console.WriteLine("Please enter your Password!");
-                            string password = Console.ReadLine();
+                            SecureStringPass.GetPass();
+                            string password = SecureStringPass.pass;
                             Console.WriteLine();
 
 
                             for (int i = 0; i < Users.Count; i++)
                             {
                                 User item = Users[i];
-                                if (item.Username == username && item.Password == password)
+                                if (item.Username == username && item.Password == Encode.Encrypt(password))
                                 {
                                     useri = i;
                                     goto sk;
