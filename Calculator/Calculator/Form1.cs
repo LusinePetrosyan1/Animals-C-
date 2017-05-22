@@ -64,6 +64,22 @@ namespace Calculator
         private void button13_Click(object sender, EventArgs e)
         {
             textBox1.Text += "÷";
+            
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "×";
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "-";
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "+";
         }
     }
 }
