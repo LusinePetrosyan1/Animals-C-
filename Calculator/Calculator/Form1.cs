@@ -43,17 +43,27 @@ namespace Calculator
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "1";
+            textBox1.Text += "6";
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "2";
+            textBox1.Text += "1";
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             textBox1.Text += "3";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "2";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "÷";
         }
     }
 }
