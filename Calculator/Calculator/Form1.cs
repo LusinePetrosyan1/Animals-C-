@@ -81,5 +81,15 @@ namespace Calculator
         {
             textBox1.Text += "+";
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "0";
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += ".";
+        }
     }
 }
