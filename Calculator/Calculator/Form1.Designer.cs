@@ -97,7 +97,7 @@
             // 
             // button22
             // 
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.button22.Location = new System.Drawing.Point(64, 60);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(50, 50);
@@ -107,7 +107,7 @@
             // 
             // button21
             // 
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.button21.Location = new System.Drawing.Point(12, 60);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(50, 50);
