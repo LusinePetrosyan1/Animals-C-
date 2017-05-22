@@ -18,7 +18,7 @@ namespace Calculator
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "7";
+            textBox1.Text += "7" ;
         }
 
         private void button2_Click(object sender, EventArgs e)
