@@ -51,9 +51,9 @@ namespace Calculator
                 answer = Double.Parse(values[0]) + Double.Parse(values[1])+"";
                 express=express.Replace(then,answer);
             }
-            while (express.Contains('-'))
+            while (express.Substring(1,express.Length-1).Contains('-') )
             {
-                int k = express.IndexOf('-');
+                int k = express.IndexOf('-',1);
                 string[] values = getValues(express, k);
                 string then = values[0] + "-" + values[1];
                 answer =Double.Parse(values[0]) - Double.Parse(values[1])+"";
@@ -79,27 +79,28 @@ namespace Calculator
         public static string[] getValues(string express, int index)
         {
             string[] output = new string[2];
-            char left = express[index - 1];
-            char right = express[index + 1];
+            char left;
+            char right;
             String leftvalue = "";
             String rightvalue = "";
             string nums = "0123456789.-";
-            int k = 2;
-            while (nums.Contains("" + left) && index - k >= 0)
+
+            for (int i = index-1; i >=0 && nums.Contains(express[i]); i--)
             {
-                leftvalue = left + leftvalue;
-                left = express[index - k];
-                k++;
-            }
-            leftvalue = left + leftvalue;
-            k = 2;
-            while (nums.Contains("" + right) && index + k < express.Length)
+                leftvalue = express[i] + leftvalue;
+                if (express[i] == '-')
             {
-                rightvalue = rightvalue + right;
-                right = express[index + k];
-                k++;
+                    break;
+                }
             }
-            rightvalue = rightvalue + right;
+            for (int i = index+1; i < express.Length && nums.Contains(express[i]); i++)
+            {
+                if (i != index + 1 && express[i] == '-')
+            {
+                    break;
+                }
+                rightvalue = rightvalue + express[i]; 
+            }
             output[0] = leftvalue;
             output[1] = rightvalue;
             return output;
@@ -126,9 +127,7 @@ namespace Calculator
                 {
                     int start = stack.Pop();
                     int length = -start + i + 1;
-                   b.Add(a.Substring(start+1, length-2));
-                    
-                   
+                    b.Add(a.Substring(start+1, length-2));
                 }
             }
             return b;

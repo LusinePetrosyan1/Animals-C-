@@ -135,5 +135,11 @@ namespace Calculator
         {
             textBox1.Text = "√" + "( "+ textBox1.Text +" )";
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.SelectionStart = textBox1.Text.Length - 1;
+            textBox1.SelectionLength = 0;
+        }
     }
 }
