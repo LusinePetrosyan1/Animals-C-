@@ -35,6 +35,18 @@ namespace Calculator
                     express=express.Replace(then,answer);
                 }
             }
+            while (express.Contains('√')) {
+                int k = express.IndexOf('√');
+                string then = express;
+                double ans = 0;
+                if (Double.Parse(express.Substring(1,express.Length-1)) < 0)
+                {
+                    throw new ArithmeticException();
+                }
+                    ans = Math.Sqrt(Double.Parse(express.Substring(1,express.Length-1)));
+                answer = ans + "";
+                express = express.Replace(then, answer);
+            }
             while (express.Contains("%"))
             {
                 int k = express.IndexOf("%");
@@ -58,21 +70,6 @@ namespace Calculator
                 string then = values[0] + "-" + values[1];
                 answer = "" + (Double.Parse(values[0]) - Double.Parse(values[1]));
                 express=express.Replace(then, answer);
-            }
-            while (express.Contains('√')) {
-                int k = express.IndexOf('√');
-                string then = express;
-                double ans = 0;
-                if (Double.Parse(express.Substring(1,express.Length-1)) < 0)
-                {
-                    throw new ArithmeticException();
-                }
-                    ans = Math.Sqrt(Double.Parse(express.Substring(1,express.Length-1)));
-                answer = ans + "";
-                express = express.Replace(then, answer);
-                
-               
-                
             }
             return answer;
         }
