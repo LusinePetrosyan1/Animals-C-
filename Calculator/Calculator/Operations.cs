@@ -118,8 +118,8 @@ namespace Calculator
             }
             return b;
         }
-        public static void Changes(string line){
-            List<String> sep = Separate(line);
+        public static string Changes(string line){
+           List<String> sep = Separate(line);
             for (int i = 0; i < sep.Count; i++)
             {
                 string then = sep[i];
@@ -132,6 +132,8 @@ namespace Calculator
                     }
                 }
             }
+            string b = sep[sep.Count - 1];
+            return b;
         }
     }
 }

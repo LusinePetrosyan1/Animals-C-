@@ -99,6 +99,8 @@ namespace Calculator
 
         private void button12_Click(object sender, EventArgs e)
         {
+            string a = textBox1.Text;
+            textBox1.Text=Operations.Changes(a);
         }
     }
 }
