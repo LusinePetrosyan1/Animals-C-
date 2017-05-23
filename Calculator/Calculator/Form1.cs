@@ -15,7 +15,7 @@ namespace Calculator
         public Form1()
         {
             InitializeComponent();
-            
+
         }
         string memory;
         string line = "";
@@ -120,6 +120,7 @@ namespace Calculator
         {
             //string a = textBox1.Text;
             textBox1.Text = Operations.Changes(line);
+            line = textBox1.Text;
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -141,10 +142,11 @@ namespace Calculator
             if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
             {
                 {
-                    a = (Double.Parse(b) * (-1))+"";
+                    a = (Double.Parse(b) * (-1)) + "";
                 }
             }
-            else {
+            else
+            {
                 a = b;
             }
             textBox1.Text = a + "";
@@ -153,13 +155,14 @@ namespace Calculator
 
         private void button18_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "√" + "("+ textBox1.Text +")";
+            textBox1.Text = "√" + "(" + textBox1.Text + ")";
             line = "(" + "√" + "(" + line + ")" + ")";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.SelectionStart = textBox1.Text.Length - 1;
+            if (textBox1.Text != "" && textBox1.Text != null)
+                textBox1.SelectionStart = textBox1.Text.Length - 1;
             textBox1.SelectionLength = 0;
         }
 
@@ -170,25 +173,43 @@ namespace Calculator
 
         private void button22_Click(object sender, EventArgs e)
         {
-            textBox1.Text = memory;
+            if (memory != null && memory != "")
+                textBox1.Text = memory;
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
             string b = textBox1.Text;
-            if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
-            {
-                memory =Double.Parse(b)*(-1)+"";
-            }
+            if (b != null & b != "")
+                if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
+                {
+                    memory = Double.Parse(b) * (-1) + "";
+                }
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
             string b = textBox1.Text;
-            if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
+            if (b != null && b != "")
+                if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
+                {
+                    memory = Double.Parse(b) + "";
+                }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            if (line != null && line!="" && textBox1.Text != null && textBox1.Text!="")
             {
-                memory = Double.Parse(b) + "";
+                line = line.Substring(0, line.Length - 1);
+                textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
             }
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            line = "";
+            textBox1.Text = "";
         }
     }
 }
