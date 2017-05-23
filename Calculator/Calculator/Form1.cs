@@ -15,9 +15,9 @@ namespace Calculator
         public Form1()
         {
             InitializeComponent();
-
+            textBox1.Select();            
         }
-        string memory;
+        string memory = "";
         string line = "";
         private void button1_Click(object sender, EventArgs e)
         {
@@ -162,7 +162,7 @@ namespace Calculator
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox1.Text != null)
-                textBox1.SelectionStart = textBox1.Text.Length - 1;
+            textBox1.SelectionStart = textBox1.Text.Length - 1;
             textBox1.SelectionLength = 0;
         }
 
@@ -174,10 +174,15 @@ namespace Calculator
         private void button22_Click(object sender, EventArgs e)
         {
             if (memory != null && memory != "")
-                textBox1.Text = memory;
+            textBox1.Text = memory;
         }
 
         private void button23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button24_Click(object sender, EventArgs e)
         {
             string b = textBox1.Text;
             if (b != null & b != "")
@@ -186,20 +191,9 @@ namespace Calculator
                     memory = Double.Parse(b) * (-1) + "";
                 }
         }
-
-        private void button24_Click(object sender, EventArgs e)
-        {
-            string b = textBox1.Text;
-            if (b != null && b != "")
-                if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
-                {
-                    memory = Double.Parse(b) + "";
-                }
-        }
-
         private void button26_Click(object sender, EventArgs e)
         {
-            if (line != null && line!="" && textBox1.Text != null && textBox1.Text!="")
+            if (line != null && line != "" && textBox1.Text != null && textBox1.Text != "")
             {
                 line = line.Substring(0, line.Length - 1);
                 textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
@@ -211,5 +205,18 @@ namespace Calculator
             line = "";
             textBox1.Text = "";
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
