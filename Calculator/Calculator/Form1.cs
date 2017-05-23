@@ -200,7 +200,7 @@ namespace Calculator
             if (b != null & b != "")
                 if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
                 {
-                    memory = Double.Parse(b)*(-1) + "";
+                    memory = Double.Parse(b) * (-1) + "";
                 }
         }
 
