@@ -49,7 +49,7 @@ namespace Calculator
         public List<String> Separate(string a)
 
         {
-            if (a[0] != '(') {
+            if (a[0] != '(' ) {
                 a = '(' + a;
             }
             if (a[a.Length - 1] != ')') {
