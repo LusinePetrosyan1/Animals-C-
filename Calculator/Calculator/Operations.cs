@@ -40,15 +40,15 @@ namespace Calculator
                 int k = express.IndexOf("%");
                 string[] values = getValues(express, k);
                 string then =values[0]+"%"+values[1];
-                answer = Double.Parse(values[0]) * Double.Parse(values[1])+"";
-                express=express.Replace(then,answer);
+                answer = Double.Parse(values[0]) * Double.Parse(values[1])/100 +"";
+               express= express.Replace(then,answer);
             }
             while (express.Contains('+'))
             {
                 int k = express.IndexOf('+');
                 string[] values = getValues(express, k);
                 string then =values[0]+"+"+values[1];
-                answer = Double.Parse(values[0]) + Double.Parse(values[1]) + "";
+                answer = Double.Parse(values[0]) + Double.Parse(values[1])+"";
                 express=express.Replace(then,answer);
             }
             while (express.Substring(1,express.Length-1).Contains('-') )
@@ -56,8 +56,23 @@ namespace Calculator
                 int k = express.IndexOf('-',1);
                 string[] values = getValues(express, k);
                 string then = values[0] + "-" + values[1];
-                answer = Double.Parse(values[0]) - Double.Parse(values[1])+"";
+                answer = "" + (Double.Parse(values[0]) - Double.Parse(values[1]));
                 express=express.Replace(then, answer);
+            }
+            while (express.Contains('√')) {
+                int k = express.IndexOf('√');
+                string then = express;
+                double ans = 0;
+                if (Double.Parse(express) < 0)
+                {
+                    throw new ArithmeticException();
+                }
+                    ans = Math.Sqrt(Double.Parse(express));
+                answer = ans + "";
+                express = express.Replace(then, answer);
+                
+               
+                
             }
             return answer;
         }
@@ -74,14 +89,14 @@ namespace Calculator
             {
                 leftvalue = express[i] + leftvalue;
                 if (express[i] == '-')
-                {
+            {
                     break;
                 }
             }
             for (int i = index+1; i < express.Length && nums.Contains(express[i]); i++)
             {
                 if (i != index + 1 && express[i] == '-')
-                {
+            {
                     break;
                 }
                 rightvalue = rightvalue + express[i]; 

@@ -14,11 +14,13 @@ namespace Calculator
     {
         public Form1()
         {
-            InitializeComponent() ;
+            InitializeComponent();
+           
         }
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "7" ;
+            textBox1.Text += "7";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace Calculator
         private void button13_Click(object sender, EventArgs e)
         {
             textBox1.Text += "÷";
-            
+
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -100,7 +102,38 @@ namespace Calculator
         private void button12_Click(object sender, EventArgs e)
         {
             string a = textBox1.Text;
-            textBox1.Text=Operations.Changes(a);
+            textBox1.Text = Operations.Changes(a);
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += ")";
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "(";
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            String b = textBox1.Text;
+            String a = "";
+            if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
+            {
+                {
+                    a = (Int64.Parse(b) * (-1))+"";
+                }
+            }
+            else {
+                a = b;
+            }
+            textBox1.Text = a + "";
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "√" + "( "+ textBox1.Text +" )";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
