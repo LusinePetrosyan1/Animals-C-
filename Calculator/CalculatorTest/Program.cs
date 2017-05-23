@@ -10,8 +10,8 @@ namespace CalculatorTest
     {
         static void Main(string[] args)
         {
-            string[] a = Operations.getValues("654157+324147", 6) ;
-            List<String> b = Operations.Separate("(21+4521)-(64+89)+45");
+            string[] a = Opera2.getValues("654157+324147", 6) ;
+            List<String> b = Opera2.Separate("(21+4521)-(64+89)+45");
         }
     }
 }

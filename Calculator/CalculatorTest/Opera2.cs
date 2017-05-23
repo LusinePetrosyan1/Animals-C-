@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CalculatorTest
 {
-    class Operations
+    class Opera2
     {
         public string Solve(string express)
         {
