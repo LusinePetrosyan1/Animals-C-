@@ -17,7 +17,7 @@ namespace Calculator
             InitializeComponent();
             
         }
-        string memory;
+        string memory = "";
         string line = "";
         private void button1_Click(object sender, EventArgs e)
         {
@@ -175,20 +175,27 @@ namespace Calculator
 
         private void button23_Click(object sender, EventArgs e)
         {
-            string b = textBox1.Text;
-            if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
-            {
-                memory =Double.Parse(b)*(-1)+"";
-            }
+
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
-            string b = textBox1.Text;
-            if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
-            {
-                memory = Double.Parse(b) + "";
-            }
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button24_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
