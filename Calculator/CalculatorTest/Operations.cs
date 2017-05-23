@@ -8,14 +8,36 @@ namespace CalculatorTest
 {
     class Operations
     {
-        //public string Solve(string express)
-        //{
-        //    if (express.Contains("×"))
-        //    {
-        //        int k = express.IndexOf("×");
-        //        string[] values = getValues(express, k);
-        //    }
-        //}
+        public string Solve(string express)
+        {
+            string answer="";
+            if (express.Contains("×"))
+            {
+                int k = express.IndexOf("×");
+                string[] values = getValues(express, k);
+                 answer= ""+Int32.Parse(values[0])*Int32.Parse(values[1]);
+            }
+            else if (express.Contains("÷"))
+            {
+                int k = express.IndexOf("÷");
+                string[] values = getValues(express, k);
+                if (values[1] == "0")
+                {
+                    throw new DivideByZeroException();
+                }
+                else
+                {
+                    answer= "" + Int32.Parse(values[0]) / Int32.Parse(values[1]);
+                }
+            }
+            else if (express.Contains("%"))
+            {
+                int k = express.IndexOf("%");
+                string[] values = getValues(express, k);
+                answer = "" + Int32.Parse(values[0]) * Int32.Parse(values[1]);
+            }
+            return answer;
+        }
         public static string[] getValues(string express, int index)
         {
             string[] output = new string[2];
