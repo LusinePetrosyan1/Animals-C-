@@ -16,8 +16,8 @@ namespace Calculator
                 int k = express.IndexOf("×");
                 string[] values = getValues(express, k);
                 string then =values[0]+"×"+values[1];
-                answer = "" + Double.Parse(values[0]) * Int32.Parse(values[1]);
-                express.Replace(then,answer);
+                answer = "" + Double.Parse(values[0]) * Double.Parse(values[1]);
+                express=express.Replace(then,answer);
             }
             while (express.Contains("÷"))
             {
@@ -31,8 +31,8 @@ namespace Calculator
                 }
                 else
                 {
-                    answer = "" + Double.Parse(values[0]) / Int32.Parse(values[1]);
-                    express.Replace(then,answer);
+                    answer = Double.Parse(values[0]) / Double.Parse(values[1])+"";
+                    express=express.Replace(then,answer);
                 }
             }
             while (express.Contains("%"))
@@ -40,24 +40,39 @@ namespace Calculator
                 int k = express.IndexOf("%");
                 string[] values = getValues(express, k);
                 string then =values[0]+"%"+values[1];
-                answer = "" + Int32.Parse(values[0]) * Int32.Parse(values[1]);
-                express.Replace(then,answer);
+                answer = Double.Parse(values[0]) * Double.Parse(values[1])/100 +"";
+               express= express.Replace(then,answer);
             }
             while (express.Contains('+'))
             {
                 int k = express.IndexOf('+');
                 string[] values = getValues(express, k);
                 string then =values[0]+"+"+values[1];
-                answer = "" + Double.Parse(values[0] + Double.Parse(values[1]));
-                express.Replace(then,answer);
+                answer = Double.Parse(values[0]) + Double.Parse(values[1])+"";
+                express=express.Replace(then,answer);
             }
             while (express.Contains('-'))
             {
                 int k = express.IndexOf('-');
                 string[] values = getValues(express, k);
                 string then = values[0] + "-" + values[1];
-                answer = "" + Double.Parse(values[0]) + Double.Parse(values[1]);
-                express.Replace(then, answer);
+                answer = "" + (Double.Parse(values[0]) - Double.Parse(values[1]));
+                express=express.Replace(then, answer);
+            }
+            while (express.Contains('√')) {
+                int k = express.IndexOf('√');
+                string then = express;
+                double ans = 0;
+                if (Double.Parse(express) < 0)
+                {
+                    throw new ArithmeticException();
+                }
+                    ans = Math.Sqrt(Double.Parse(express));
+                answer = ans + "";
+                express = express.Replace(then, answer);
+                
+               
+                
             }
             return answer;
         }
@@ -100,7 +115,6 @@ namespace Calculator
                 a ='(' + a + ')';
             }
             List<String> b = new List<string>();
-            int j = 0;
             Stack<int> stack = new Stack<int>();
             for (int i = 0; i < a.Length; i++)
             {
@@ -112,8 +126,9 @@ namespace Calculator
                 {
                     int start = stack.Pop();
                     int length = -start + i + 1;
-                    j++;
-                    b[j] = a.Substring(start+1, length-1);
+                   b.Add(a.Substring(start+1, length-2));
+                    
+                   
                 }
             }
             return b;
@@ -128,7 +143,7 @@ namespace Calculator
                 {
                     if (sep[j].Contains(then))
                     {
-                        sep[j].Replace(then, change);
+                        sep[j]=sep[j].Replace(then, change);
                     }
                 }
             }
