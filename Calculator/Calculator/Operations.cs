@@ -19,10 +19,12 @@ namespace Calculator
                 answer = "" + Double.Parse(values[0]) * Int32.Parse(values[1]);
                 express.Replace(then,answer);
             }
-            else if (express.Contains("÷"))
+            while (express.Contains("÷"))
             {
                 int k = express.IndexOf("÷");
                 string[] values = getValues(express, k);
+                string then =values[0]+"÷"+values[1];
+
                 if (values[1] == "0")
                 {
                     throw new DivideByZeroException();
@@ -30,25 +32,32 @@ namespace Calculator
                 else
                 {
                     answer = "" + Double.Parse(values[0]) / Int32.Parse(values[1]);
+                    express.Replace(then,answer);
                 }
             }
-            else if (express.Contains("%"))
+            while (express.Contains("%"))
             {
                 int k = express.IndexOf("%");
                 string[] values = getValues(express, k);
+                string then =values[0]+"%"+values[1];
                 answer = "" + Int32.Parse(values[0]) * Int32.Parse(values[1]);
+                express.Replace(then,answer);
             }
-            else if (express.Contains('+'))
+            while (express.Contains('+'))
             {
                 int k = express.IndexOf('+');
                 string[] values = getValues(express, k);
+                string then =values[0]+"+"+values[1];
                 answer = "" + Double.Parse(values[0] + Double.Parse(values[1]));
+                express.Replace(then,answer);
             }
-            else if (express.Contains('-'))
+            while (express.Contains('-'))
             {
                 int k = express.IndexOf('-');
                 string[] values = getValues(express, k);
+                string then = values[0] + "-" + values[1];
                 answer = "" + Double.Parse(values[0]) + Double.Parse(values[1]);
+                express.Replace(then, answer);
             }
             return answer;
         }
