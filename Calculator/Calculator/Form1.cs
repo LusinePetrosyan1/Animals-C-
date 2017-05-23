@@ -15,7 +15,7 @@ namespace Calculator
         public Form1()
         {
             InitializeComponent();
-            
+
         }
         string memory = "";
         string line = "";
@@ -78,6 +78,7 @@ namespace Calculator
             textBox1.Text += "÷";
             line += "÷";
 
+
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -118,8 +119,15 @@ namespace Calculator
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //string a = textBox1.Text;
-            textBox1.Text = Operations.Changes(line);
+            try
+            {
+                textBox1.Text = Operations.Changes(line);
+
+            }
+            catch(DivideByZeroException)
+            {
+                textBox1.Text = "Error!";
+            }
         }
 
         private void button19_Click(object sender, EventArgs e)
@@ -141,10 +149,11 @@ namespace Calculator
             if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
             {
                 {
-                    a = (Double.Parse(b) * (-1))+"";
+                    a = (Double.Parse(b) * (-1)) + "";
                 }
             }
-            else {
+            else
+            {
                 a = b;
             }
             textBox1.Text = a + "";
@@ -153,8 +162,17 @@ namespace Calculator
 
         private void button18_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "√" + "("+ textBox1.Text +")";
-            line = "(" + "√" + "(" + line + ")" + ")";
+
+            try
+            {
+                textBox1.Text = "√" + "(" + textBox1.Text + ")";
+                line = "(" + "√" + "(" + line + ")" + ")";
+            }
+            catch (Exception)
+            {
+                textBox1.Text="Error!";
+                
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -173,29 +191,6 @@ namespace Calculator
             textBox1.Text = memory;
         }
 
-        private void button23_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button24_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
