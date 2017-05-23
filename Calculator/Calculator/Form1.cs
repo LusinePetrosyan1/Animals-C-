@@ -179,7 +179,12 @@ namespace Calculator
 
         private void button23_Click(object sender, EventArgs e)
         {
-
+            string b = textBox1.Text;
+            if (b != null & b != "")
+                if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
+                {
+                    memory = Double.Parse(b) * (-1) + "";
+                }
         }
 
         private void button24_Click(object sender, EventArgs e)
@@ -188,7 +193,7 @@ namespace Calculator
             if (b != null & b != "")
                 if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
                 {
-                    memory = Double.Parse(b) * (-1) + "";
+                    memory = Double.Parse(b) + "";
                 }
         }
         private void button26_Click(object sender, EventArgs e)
@@ -216,7 +221,5 @@ namespace Calculator
         {
 
         }
-
-
     }
 }
