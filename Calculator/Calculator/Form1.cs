@@ -96,5 +96,9 @@ namespace Calculator
         {
             textBox1.Text += "%";
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

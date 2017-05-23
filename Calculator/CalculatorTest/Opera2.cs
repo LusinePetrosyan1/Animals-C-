@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace CalculatorTest
 {
-    class Operations
+    class Opera2
     {
         public string Solve(string express)
         {
-            string answer="" ;
+            string answer = "";
             if (express.Contains("×"))
             {
                 int k = express.IndexOf("×");
                 string[] values = getValues(express, k);
-                 answer= ""+Int32.Parse(values[0])*Int32.Parse(values[1]);
+                answer = "" + Double.Parse(values[0]) * Double.Parse(values[1]);
             }
             else if (express.Contains("÷"))
             {
@@ -27,14 +27,26 @@ namespace CalculatorTest
                 }
                 else
                 {
-                    answer= "" + Int32.Parse(values[0]) / Int32.Parse(values[1]);
+                    answer = "" + Double.Parse(values[0]) / Double.Parse(values[1]);
                 }
             }
-            else if (express.Contains("%"))
+            else if (express.Contains('%'))
             {
-                int k = express.IndexOf("%");
+                int k = express.IndexOf('%');
                 string[] values = getValues(express, k);
-                answer = "" + Int32.Parse(values[0]) * Int32.Parse(values[1]);
+                answer = "" + Double.Parse(values[0]) * Double.Parse(values[1]);
+            }
+            else if (express.Contains('+'))
+            {
+                int k = express.IndexOf('+');
+                string[] values = getValues(express, k);
+                answer = "" + Double.Parse(values[0] + Double.Parse(values[1]));
+            }
+            else if (express.Contains('-'))
+            {
+                int k = express.IndexOf('-');
+                string[] values = getValues(express, k);
+                answer = "" + Double.Parse(values[0]) + Double.Parse(values[1]);
             }
             return answer;
         }
@@ -81,7 +93,7 @@ namespace CalculatorTest
                 {
                     int start = stack.Pop();
                     int length = -start + i + 1;
-                    b.Add(a.Substring(start, length));
+                    b.Add(a.Substring(start + 1, length - 1));
                     j++;
 
                 }
