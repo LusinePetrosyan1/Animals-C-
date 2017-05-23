@@ -10,7 +10,7 @@ namespace CalculatorTest
     {
         public string Solve(string express)
         {
-            string answer="";
+            string answer="" ;
             if (express.Contains("×"))
             {
                 int k = express.IndexOf("×");
