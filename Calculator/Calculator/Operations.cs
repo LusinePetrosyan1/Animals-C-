@@ -10,7 +10,7 @@ namespace Calculator
     {
         public static string Solve(string express)
         {
-            string answer = "";
+            string answer = express;
             while (express.Contains("×"))
             {
                 int k = express.IndexOf("×");
@@ -63,11 +63,11 @@ namespace Calculator
                 int k = express.IndexOf('√');
                 string then = express;
                 double ans = 0;
-                if (Double.Parse(express) < 0)
+                if (Double.Parse(express.Substring(1,express.Length-1)) < 0)
                 {
                     throw new ArithmeticException();
                 }
-                    ans = Math.Sqrt(Double.Parse(express));
+                    ans = Math.Sqrt(Double.Parse(express.Substring(1,express.Length-1)));
                 answer = ans + "";
                 express = express.Replace(then, answer);
                 
@@ -140,9 +140,13 @@ namespace Calculator
                 string change = Solve(sep[i]);
                 for (int j = 0; j < sep.Count; j++)
                 {
-                    if (sep[j].Contains(then))
+                    if (sep[j].Contains('('+then+')'))
                     {
-                        sep[j]=sep[j].Replace(then, change);
+                        sep[j] = sep[j].Replace('(' + then + ')', change);
+                    }
+                    else if (sep[j].Contains(then))
+                    {
+                        sep[j] = sep[j].Replace(then, change);
                     }
                 }
             }
