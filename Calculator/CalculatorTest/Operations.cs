@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace CalculatorTest
 {
     class Operations
     {
@@ -19,13 +19,13 @@ namespace Calculator
         public static string[] getValues(string express, int index)
         {
             string[] output = new string[2];
-            char left = express[index - 1];
+            char left=express[index-1];
             char right = express[index + 1];
             String leftvalue = "";
             String rightvalue = "";
-            string nums = "0123456789";
-            int k = 2;
-            while (nums.Contains("" + left) && index - k >= 0)
+            string nums="0123456789";
+            int k=2;
+            while (nums.Contains("" + left) && index-k>=0)
             {
                 leftvalue = left + leftvalue;
                 left = express[index - k];
@@ -33,9 +33,9 @@ namespace Calculator
             }
             leftvalue = left + leftvalue;
             k = 2;
-            while (nums.Contains("" + right) && index + k < express.Length)
+            while (nums.Contains("" + right)&& index+k<express.Length)
             {
-                rightvalue = rightvalue + right;
+                rightvalue =rightvalue+right;
                 right = express[index + k];
                 k++;
             }
