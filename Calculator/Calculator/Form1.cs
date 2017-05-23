@@ -133,6 +133,7 @@ namespace Calculator
 
         private void button18_Click(object sender, EventArgs e)
         {
+          
             textBox1.Text = "√" + "( "+ textBox1.Text +" )";
         }
 
@@ -140,6 +141,11 @@ namespace Calculator
         {
             textBox1.SelectionStart = textBox1.Text.Length - 1;
             textBox1.SelectionLength = 0;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            string a = "";
         }
     }
 }

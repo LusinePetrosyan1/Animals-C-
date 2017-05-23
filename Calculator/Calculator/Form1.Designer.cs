@@ -116,6 +116,7 @@
             this.button21.TabIndex = 72;
             this.button21.Text = "MC";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button20
             // 
@@ -341,7 +342,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 348);
+            this.ClientSize = new System.Drawing.Size(291, 348);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button24);
