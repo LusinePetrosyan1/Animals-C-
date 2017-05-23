@@ -54,6 +54,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -61,7 +63,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(262, 38);
+            this.textBox1.Size = new System.Drawing.Size(315, 38);
             this.textBox1.TabIndex = 77;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -341,11 +343,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button26
+            // 
+            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.button26.Location = new System.Drawing.Point(277, 60);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(50, 50);
+            this.button26.TabIndex = 78;
+            this.button26.Text = "C";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // button27
+            // 
+            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.button27.Location = new System.Drawing.Point(277, 119);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(50, 50);
+            this.button27.TabIndex = 79;
+            this.button27.Text = "AC";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 348);
+            this.ClientSize = new System.Drawing.Size(338, 343);
+            this.Controls.Add(this.button27);
+            this.Controls.Add(this.button26);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button24);
@@ -407,6 +433,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button27;
     }
 }
 
