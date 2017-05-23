@@ -16,7 +16,7 @@ namespace Calculator
                 int k = express.IndexOf("×");
                 string[] values = getValues(express, k);
                 string then =values[0]+"×"+values[1];
-                answer = "" + Double.Parse(values[0]) * Double.Parse(values[1]);
+                answer = Double.Parse(values[0]) * Double.Parse(values[1])+"";
                 express=express.Replace(then,answer);
             }
             while (express.Contains("÷"))
@@ -56,7 +56,7 @@ namespace Calculator
                 int k = express.IndexOf('-');
                 string[] values = getValues(express, k);
                 string then = values[0] + "-" + values[1];
-                answer = "" + (Double.Parse(values[0]) - Double.Parse(values[1]));
+                answer =Double.Parse(values[0]) - Double.Parse(values[1])+"";
                 express=express.Replace(then, answer);
             }
             while (express.Contains('√')) {
