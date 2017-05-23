@@ -16,8 +16,8 @@ namespace Calculator
                 int k = express.IndexOf("×");
                 string[] values = getValues(express, k);
                 string then =values[0]+"×"+values[1];
-                answer = "" + Double.Parse(values[0]) * Int32.Parse(values[1]);
-                express.Replace(then,answer);
+                answer = Double.Parse(values[0]) * Double.Parse(values[1]) +"";
+                express=express.Replace(then,answer);
             }
             while (express.Contains("÷"))
             {
@@ -31,8 +31,8 @@ namespace Calculator
                 }
                 else
                 {
-                    answer = "" + Double.Parse(values[0]) / Int32.Parse(values[1]);
-                    express.Replace(then,answer);
+                    answer = Double.Parse(values[0]) / Double.Parse(values[1])+"";
+                    express=express.Replace(then,answer);
                 }
             }
             while (express.Contains("%"))
@@ -40,51 +40,52 @@ namespace Calculator
                 int k = express.IndexOf("%");
                 string[] values = getValues(express, k);
                 string then =values[0]+"%"+values[1];
-                answer = "" + Int32.Parse(values[0]) * Int32.Parse(values[1]);
-                express.Replace(then,answer);
+                answer = Double.Parse(values[0]) * Double.Parse(values[1])+"";
+                express=express.Replace(then,answer);
             }
             while (express.Contains('+'))
             {
                 int k = express.IndexOf('+');
                 string[] values = getValues(express, k);
                 string then =values[0]+"+"+values[1];
-                answer = "" + Double.Parse(values[0] + Double.Parse(values[1]));
-                express.Replace(then,answer);
+                answer = Double.Parse(values[0]) + Double.Parse(values[1]) + "";
+                express=express.Replace(then,answer);
             }
-            while (express.Contains('-'))
+            while (express.Substring(1,express.Length-1).Contains('-') )
             {
-                int k = express.IndexOf('-');
+                int k = express.IndexOf('-',1);
                 string[] values = getValues(express, k);
                 string then = values[0] + "-" + values[1];
-                answer = "" + Double.Parse(values[0]) + Double.Parse(values[1]);
-                express.Replace(then, answer);
+                answer = Double.Parse(values[0]) - Double.Parse(values[1])+"";
+                express=express.Replace(then, answer);
             }
             return answer;
         }
         public static string[] getValues(string express, int index)
         {
             string[] output = new string[2];
-            char left = express[index - 1];
-            char right = express[index + 1];
+            char left;
+            char right;
             String leftvalue = "";
             String rightvalue = "";
             string nums = "0123456789.-";
-            int k = 2;
-            while (nums.Contains("" + left) && index - k >= 0)
+
+            for (int i = index-1; i >=0 && nums.Contains(express[i]); i--)
             {
-                leftvalue = left + leftvalue;
-                left = express[index - k];
-                k++;
+                leftvalue = express[i] + leftvalue;
+                if (express[i] == '-')
+                {
+                    break;
+                }
             }
-            leftvalue = left + leftvalue;
-            k = 2;
-            while (nums.Contains("" + right) && index + k < express.Length)
+            for (int i = index+1; i < express.Length && nums.Contains(express[i]); i++)
             {
-                rightvalue = rightvalue + right;
-                right = express[index + k];
-                k++;
+                if (i != index + 1 && express[i] == '-')
+                {
+                    break;
+                }
+                rightvalue = rightvalue + express[i]; 
             }
-            rightvalue = rightvalue + right;
             output[0] = leftvalue;
             output[1] = rightvalue;
             return output;
@@ -100,7 +101,6 @@ namespace Calculator
                 a ='(' + a + ')';
             }
             List<String> b = new List<string>();
-            int j = 0;
             Stack<int> stack = new Stack<int>();
             for (int i = 0; i < a.Length; i++)
             {
@@ -112,8 +112,7 @@ namespace Calculator
                 {
                     int start = stack.Pop();
                     int length = -start + i + 1;
-                    j++;
-                    b[j] = a.Substring(start+1, length-1);
+                    b.Add(a.Substring(start+1, length-2));
                 }
             }
             return b;
@@ -128,7 +127,7 @@ namespace Calculator
                 {
                     if (sep[j].Contains(then))
                     {
-                        sep[j].Replace(then, change);
+                        sep[j]=sep[j].Replace(then, change);
                     }
                 }
             }

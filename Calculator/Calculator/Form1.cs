@@ -102,5 +102,11 @@ namespace Calculator
             string a = textBox1.Text;
             textBox1.Text=Operations.Changes(a);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            textBox1.SelectionStart = textBox1.Text.Length - 1;
+            textBox1.SelectionLength = 0;
+        }
     }
 }
