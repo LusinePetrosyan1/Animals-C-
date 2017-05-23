@@ -15,7 +15,9 @@ namespace Calculator
         public Form1()
         {
             InitializeComponent();
+            
         }
+        string memory;
         string line = "";
         private void button1_Click(object sender, EventArgs e)
         {
@@ -139,7 +141,7 @@ namespace Calculator
             if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
             {
                 {
-                    a = (Int64.Parse(b) * (-1))+"";
+                    a = (Double.Parse(b) * (-1))+"";
                 }
             }
             else {
@@ -163,7 +165,30 @@ namespace Calculator
 
         private void button21_Click(object sender, EventArgs e)
         {
-            string a = "";
+            memory = "";
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = memory;
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            string b = textBox1.Text;
+            if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
+            {
+                memory =Double.Parse(b)*(-1)+"";
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            string b = textBox1.Text;
+            if (!b.Contains('+') && !b.Contains('×') && !b.Contains('÷') && !b.Contains('%') && (!b.Contains('-') || b.IndexOf('-') == 0))
+            {
+                memory = Double.Parse(b) + "";
+            }
         }
     }
 }

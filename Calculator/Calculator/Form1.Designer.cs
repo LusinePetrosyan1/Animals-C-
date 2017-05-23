@@ -86,6 +86,7 @@
             this.button24.TabIndex = 75;
             this.button24.Text = "M+";
             this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
             // button23
             // 
@@ -96,6 +97,7 @@
             this.button23.TabIndex = 74;
             this.button23.Text = "M-";
             this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button22
             // 
@@ -106,6 +108,7 @@
             this.button22.TabIndex = 73;
             this.button22.Text = "MR";
             this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
             // button21
             // 

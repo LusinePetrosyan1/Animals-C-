@@ -150,5 +150,7 @@ namespace Calculator
             string b = sep[sep.Count - 1];
             return b;
         }
+
+        
     }
 }
