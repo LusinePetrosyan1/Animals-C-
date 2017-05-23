@@ -76,8 +76,6 @@ namespace Calculator
         public static string[] getValues(string express, int index)
         {
             string[] output = new string[2];
-            char left;
-            char right;
             String leftvalue = "";
             String rightvalue = "";
             string nums = "0123456789.-";
