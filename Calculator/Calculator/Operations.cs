@@ -47,7 +47,14 @@ namespace Calculator
 
 
         public List<String> Separate(string a)
+
         {
+            if (a[0] != '(') {
+                a = '(' + a;
+            }
+            if (a[a.Length - 1] != ')') {
+                a = a + ')';
+            }
             List<String> b = new List<string>();
             int j = 0;
             Stack<int> stack = new Stack<int>();

@@ -59,7 +59,7 @@ namespace CalculatorTest
                 {
                     int start = stack.Pop();
                     int length = -start + i + 1;
-                   b.Add(a.Substring(start, length));
+                    b.Add(a.Substring(start, length));
                     j++;
 
                 }
