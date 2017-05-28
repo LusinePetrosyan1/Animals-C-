@@ -10,6 +10,7 @@ namespace Calculator
     {
         public static string Solve(string express)
         {
+            
             string answer = express;
             while (express.Contains("×"))
             {
