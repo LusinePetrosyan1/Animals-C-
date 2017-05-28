@@ -179,8 +179,10 @@ namespace Calculator
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox1.Text != null)
-                textBox1.SelectionStart = textBox1.Text.Length - 1;
-            textBox1.SelectionLength = 0;
+            {
+                textBox1.SelectionStart = textBox1.Text.Length;
+                textBox1.SelectionLength = 0;
+            }
         }
 
        
