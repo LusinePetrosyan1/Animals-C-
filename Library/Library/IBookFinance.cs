@@ -8,9 +8,9 @@ namespace Library
 {
     interface IBookFinance
     {
-        public decimal Money;
-        public decimal PenaltyCoast;
-        public decimal Penalty;
-        public void AddPenalty();
+        decimal Money { get; set; }
+        decimal PenaltyCoast { get; set; }
+        decimal Penalty { get; set; }
+        void AddPenalty(double days);
     }
 }
