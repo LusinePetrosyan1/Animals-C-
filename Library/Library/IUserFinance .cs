@@ -8,7 +8,7 @@ namespace Library
 {
     interface IUserFinance
     {
-        public decimal Money;
-        public void AddMoney();
+        decimal Money { get; set; }
+        void AddMoney(decimal money);
     }
 }
