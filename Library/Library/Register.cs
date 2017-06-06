@@ -12,7 +12,7 @@ namespace Library
 {
     public partial class Register : Form
     {
-        public Register()
+        public Register ()
         {
             InitializeComponent();
         }

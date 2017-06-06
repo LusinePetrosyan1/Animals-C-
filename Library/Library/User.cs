@@ -63,9 +63,7 @@ namespace Library
                 Console.WriteLine(i + 1 + "." + " " + HistoryOfBooks[i].Name + " - " + HistoryOfBooks[i].Author);
             }
         }
-        public void AddReview(Review review) {
-
-        }
+        
 
 
 
