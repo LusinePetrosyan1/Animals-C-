@@ -16,6 +16,7 @@ namespace Library
         public string Description { get; set; }
         public List<string> Genre { get; set; }
         public List<Review> ReviewsBook { get; set; }
+        public Finance Finance { get; set; }
 
         public Book(string name,string author,int quantity,int date,int numberOfPages,string description,List<String> genre,List<Review> reviewsBook){
             Name = name;
