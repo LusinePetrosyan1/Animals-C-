@@ -18,6 +18,7 @@ namespace Library
         public List<Book> ReservedBooks { get; set; }
         public List<Book> HistoryOfBooks { get; set; }
         public Finance finance { get; set; }
+        public bool hasPenalty { get; set; }
 
 
         public User(string name, string surname, string login, string password, string type)
@@ -63,8 +64,16 @@ namespace Library
                 Console.WriteLine(i + 1 + "." + " " + HistoryOfBooks[i].Name + " - " + HistoryOfBooks[i].Author);
             }
         }
-        
 
+        public void BorrowBook(Book book) {
+
+        }
+
+        public void ReturnBook(Book book) {
+
+        }
+        public void ReserveBook(Book book) {
+        }
 
 
 

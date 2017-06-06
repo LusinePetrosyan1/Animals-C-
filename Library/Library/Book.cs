@@ -28,5 +28,9 @@ namespace Library
             Genre = genre;
             ReviewsBook = reviewsBook;
         }
+
+        public void AddReview(Review review) {
+            ReviewsBook.Add(review);
+        }
     }
 }
