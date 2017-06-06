@@ -8,14 +8,14 @@ namespace Library
 {
     class Calendar
     {
-        public DateTime DateOfHire { get; set; }
-        public int Duration { get; set; }
+        public DateTime DateOfBorrow { get; set; }
+        public double Duration { get; set; }
         public DateTime EndingDate { get; set; }
         public Calendar(DateTime dateOfHire, int duration)
         {
-            DateOfHire = dateOfHire;
+            DateOfBorrow = dateOfHire;
             Duration = duration;
-            EndingDate = DateOfHire.AddDays(Duration);
+            EndingDate = DateOfBorrow.AddDays(Duration);
         }
     }
 }

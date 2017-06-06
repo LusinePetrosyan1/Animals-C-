@@ -13,6 +13,10 @@ namespace Library
         public string Login { get; set; }
         public string Password { get; set; }
         public string Type { get; set; }
+        public List<Book> FavoriteBooks { get; set; }
+        public List<Book> BorrowedBooks { get; set; }
+        public List<Book> ReservedBooks { get; set;}
+       
 
         public User(string name, string surname, string login, string password, string type)
         {
@@ -22,5 +26,16 @@ namespace Library
             Password = password;
             Type = type;
         }
+
+        public void PrintBorrowedBooks() {
+            for (int i = 0; i < BorrowedBooks.Count; i++)
+            {
+
+            }
+        }
+
+
+
+
     }
 }
