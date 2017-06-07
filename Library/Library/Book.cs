@@ -18,6 +18,7 @@ namespace Library
         public List<Review> ReviewsBook { get; set; }
         public Finance Finance { get; set; }
         public List<string> BookID;
+        public int index;
         public string Language  { get; set; }
      
 
