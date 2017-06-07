@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class Book
+    class Book : IBookUser, IBookLib
     {
         public string Name { get; set; }
         public string Author { get; set; }
@@ -17,12 +17,13 @@ namespace Library
         public List<string> Genre { get; set; }
         public List<Review> ReviewsBook { get; set; }
         public Finance Finance { get; set; }
-        public List<string> BookID;
-        public int index;
-        public string Language  { get; set; }
-        public Calendar Calendar;
+        public List<string> BookID { get; set; };
+        public int Index { get; set; }
+        public string Language { get; set; }
+        public Calendar Calendar { get; set; }
 
-        public Book(string name,string author,int quantity,int date,int numberOfPages,string description,List<String> genre,List<Review> reviewsBook,string language){
+        public Book(string name, string author, int quantity, int date, int numberOfPages, string description, List<String> genre, List<Review> reviewsBook, string language)
+        {
             Name = name;
             Author = author;
             Quantity = quantity;
@@ -35,7 +36,8 @@ namespace Library
             BookID = new List<string>();
         }
 
-        public void AddReview(Review review) {
+        public void AddReview(Review review)
+        {
             ReviewsBook.Add(review);
         }
     }

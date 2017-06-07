@@ -13,12 +13,13 @@ namespace Library
         public string Login { get; set; }
         public string Password { get; set; }
         public string Type { get; set; }
-        public List<Book> FavoriteBooks { get; set; }
-        public List<Book> BorrowedBooks { get; set; }
-        public List<Book> ReservedBooks { get; set; }
-        public List<Book> HistoryOfBooks { get; set; }
+        public List<IBookUser> FavoriteBooks { get; set; }
+        public List<IBookUser> BorrowedBooks { get; set; }
+        public List<IBookUser> ReservedBooks { get; set; }
+        public List<IBookUser> HistoryOfBooks { get; set; }
         public Finance finance { get; set; }
-        public bool hasPenalty { get; set; }
+        public bool HasPenalty { get; set; }
+
 
 
         public User(string name, string surname, string login, string password, string type)
@@ -66,17 +67,19 @@ namespace Library
         }
 
         public void BorrowBook(Book book) {
-            if (Library.Books.Contains(book))
-            {
-                if (book.Quantity != 0) {
-                    BorrowedBooks.Add(book);
-                    HistoryOfBooks.Add(book);
-                    Guid guid = Guid.NewGuid();
-                    string uniqueID = guid.ToString();
-                    book.BookID.Add(uniqueID);
-                    
-                }
-            }
+           
+
+                IBookUser book1 = (IBookUser)book;
+                BorrowedBooks.Add(book1);
+                HistoryOfBooks.Add(book1);
+                Guid guid = Guid.NewGuid();
+                string uniqueID = guid.ToString();
+                book.BookID.Add(uniqueID);
+                book1.Index = book.BookID.Count - 1;
+                book1.Calendar.DateOfBorrow = DateTime.Now;
+                book1.Calendar.Duration = 0.008;
+          
+            
         }
 
         public void ReturnBook(Book book) {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class Calendar
+    class Calendar:IComparable<Calendar>
     {
         public DateTime DateOfBorrow { get; set; }
         public double Duration { get; set; }
@@ -16,6 +16,20 @@ namespace Library
             DateOfBorrow = dateOfHire;
             Duration = duration;
             EndingDate = DateOfBorrow.AddDays(Duration);
+        }
+
+        public int CompareTo(Calendar other)
+        {
+            if (EndingDate > other.EndingDate)
+            {
+                return 1;
+            }
+            else if (EndingDate < other.EndingDate)
+            {
+                return -1;
+            }
+            else
+                return 0;
         }
     }
 }
