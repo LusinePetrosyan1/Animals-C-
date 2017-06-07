@@ -16,5 +16,6 @@ namespace Library
         List<string> Genre { get; set; }
         Finance Finance { get; set; }
         int index { get; set; }
+        Calendar Calendar { get; set; }
     }
 }
