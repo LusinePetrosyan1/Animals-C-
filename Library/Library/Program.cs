@@ -19,6 +19,7 @@ namespace Library
         {
             Library lib1 = new Library("YSU", "Yerevan", "ysu.am", "516544");
             User us1 = new User("Aaa", "Vvv", "asd", "asdas", "user");
+            Book b1 = new Book("adasd",);
             lib1.Users.Add(us1);
             DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Library));
             using (FileStream str = new FileStream("Library.json", FileMode.OpenOrCreate))

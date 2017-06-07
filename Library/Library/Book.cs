@@ -27,6 +27,8 @@ namespace Library
         [DataMember]
         public List<Review> ReviewsBook { get; set; }
         [DataMember]
+        public List<IBookUser> BorrowedBooks { get; set; } 
+        [DataMember]
         public Finance Finance { get; set; }
         [DataMember]
         public List<string> BookID { get; set; }
@@ -37,7 +39,7 @@ namespace Library
         [DataMember]
         public Calendar Calendar { get; set; }
 
-        public Book(string name, string author, int quantity, int date, int numberOfPages, string description, List<String> genre, List<Review> reviewsBook, string language)
+        public Book(string name, string author, int quantity, int date, int numberOfPages, string description, List<String> genre, string language)
         {
             Name = name;
             Author = author;
@@ -46,7 +48,7 @@ namespace Library
             NumberOfPages = numberOfPages;
             Description = description;
             Genre = genre;
-            ReviewsBook = reviewsBook;
+            ReviewsBook = new List<Review>();
             Language = language;
             BookID = new List<string>();
         }

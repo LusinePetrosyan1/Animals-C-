@@ -80,7 +80,6 @@ namespace Library
         }
 
         public void BorrowBook(Book book) {
-           
 
                 IBookUser book1 = (IBookUser)book;
                 BorrowedBooks.Add(book1);
