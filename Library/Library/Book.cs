@@ -20,7 +20,7 @@ namespace Library
         public List<string> BookID;
         public int index;
         public string Language  { get; set; }
-     
+        public Calendar Calendar;
 
         public Book(string name,string author,int quantity,int date,int numberOfPages,string description,List<String> genre,List<Review> reviewsBook,string language){
             Name = name;
