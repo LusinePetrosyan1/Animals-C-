@@ -66,7 +66,17 @@ namespace Library
         }
 
         public void BorrowBook(Book book) {
-
+            if (Library.Books.Contains(book))
+            {
+                if (book.Quantity != 0) {
+                    BorrowedBooks.Add(book);
+                    HistoryOfBooks.Add(book);
+                    Guid guid = Guid.NewGuid();
+                    string uniqueID = guid.ToString();
+                    book.BookID.Add(uniqueID);
+                    
+                }
+            }
         }
 
         public void ReturnBook(Book book) {

@@ -17,6 +17,7 @@ namespace Library
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            Library library = new Library("Library", "Abovyan 3", "library.am","226021");
         }
     }
 }
