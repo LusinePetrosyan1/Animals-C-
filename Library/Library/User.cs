@@ -90,9 +90,8 @@ namespace Library
                 book1.Index = book.BookID.Count - 1;
                 book1.Calendar.DateOfBorrow = DateTime.Now;
                 book1.Calendar.Duration = 0.008;
-            book.Quantity--;
-          
-            
+                book.Quantity--;
+                book.BorrowedBooks.Add(book1);
         }
 
         public void ReturnBook(Book book) {
