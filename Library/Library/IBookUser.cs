@@ -17,5 +17,6 @@ namespace Library
         Finance Finance { get; set; }
         int Index { get; set; }
         Calendar Calendar { get; set; }
+        Reserve Reserve { get; set; }
     }
 }

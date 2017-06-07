@@ -17,12 +17,13 @@ namespace Library
         public List<string> Genre { get; set; }
         public List<Review> ReviewsBook { get; set; }
         public Finance Finance { get; set; }
-        public List<string> BookID { get; set; };
+        public List<string> BookID { get; set; }
         public int Index { get; set; }
         public string Language { get; set; }
         public Calendar Calendar { get; set; }
+        public Reserve Reserve { get; set; }
 
-        public Book(string name, string author, int quantity, int date, int numberOfPages, string description, List<String> genre, List<Review> reviewsBook, string language)
+        public Book(string name, string author, int quantity, int date, int numberOfPages, string description, List<String> genre, string language)
         {
             Name = name;
             Author = author;
@@ -31,7 +32,6 @@ namespace Library
             NumberOfPages = numberOfPages;
             Description = description;
             Genre = genre;
-            ReviewsBook = reviewsBook;
             Language = language;
             BookID = new List<string>();
         }

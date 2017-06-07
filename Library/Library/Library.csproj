@@ -69,6 +69,7 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reserve.cs" />
     <Compile Include="Review.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserForm.cs">
