@@ -18,7 +18,7 @@ namespace Library
             EndingDate = DateOfBorrow.AddDays(Duration);
         }
 
-        public int CompareTo(Calendar other)
+        public int CompareTo (Calendar other)
         {
             if (EndingDate > other.EndingDate)
             {
