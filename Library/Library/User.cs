@@ -73,7 +73,7 @@ namespace Library
             FavoriteBooks.Add(book);
         }
         public void PrintHistory() {
-            for (int i = 0;  i<HistoryOfBooks.Count;i ++)
+            for (int i = 0;  i< HistoryOfBooks.Count;i ++)
             {
                 Console.WriteLine(i + 1 + "." + " " + HistoryOfBooks[i].Name + " - " + HistoryOfBooks[i].Author);
             }
