@@ -73,7 +73,7 @@ namespace Library
             FavoriteBooks.Add(book);
         }
         public void PrintHistory() {
-            for (int i = 0;  i<HistoryOfBooks.Count;i ++)
+            for (int i = 0;  i< HistoryOfBooks.Count;i ++)
             {
                 Console.WriteLine(i + 1 + "." + " " + HistoryOfBooks[i].Name + " - " + HistoryOfBooks[i].Author);
             }
@@ -81,7 +81,7 @@ namespace Library
 
         public void BorrowBook(Book book) {
 
-                IBookUser book1 = (IBookUser)book;
+                IBookUser book1 = book;
                 BorrowedBooks.Add(book1);
                 HistoryOfBooks.Add(book1);
                 Guid guid = Guid.NewGuid();
@@ -90,6 +90,7 @@ namespace Library
                 book1.Index = book.BookID.Count - 1;
                 book1.Calendar.DateOfBorrow = DateTime.Now;
                 book1.Calendar.Duration = 0.008;
+            book.Quantity--;
           
             
         }
@@ -98,6 +99,11 @@ namespace Library
 
         }
         public void ReserveBook(Book book) {
+            for (int i = 0; i <book.Quantity ; i++)
+            {
+
+            }
+
         }
 
 

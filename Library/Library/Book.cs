@@ -15,7 +15,7 @@ namespace Library
         [DataMember]
         public string Author { get; set; }
         [DataMember]
-        public int Quantity { get; set; }
+        public int Quantity  { get; set; }
         [DataMember]
         public int Date { get; set; }
         [DataMember]
@@ -38,6 +38,7 @@ namespace Library
         public string Language { get; set; }
         [DataMember]
         public Calendar Calendar { get; set; }
+        public Reserve Reserve { get; set; }
 
         public Book(string name, string author, int quantity, int date, int numberOfPages, string description, List<String> genre, string language)
         {
