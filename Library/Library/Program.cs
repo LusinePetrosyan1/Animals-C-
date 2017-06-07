@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.Serialization;
+using System.IO;
+using System.Runtime.Serialization.Json;
 
 namespace Library
 {
@@ -14,10 +17,18 @@ namespace Library
         [STAThread]
         static void Main()
         {
+            Library lib1 = new Library("YSU", "Yerevan", "ysu.am", "516544");
+            User us1 = new User("Aaa", "Vvv", "asd", "asdas", "user");
+            lib1.Users.Add(us1);
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Library));
+            using (FileStream str = new FileStream("Library.json", FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(str, lib1);
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-          
         }
     }
 }

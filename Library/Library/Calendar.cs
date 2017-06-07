@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Library
 {
+    [DataContract]
     class Calendar:IComparable<Calendar>
     {
+        [DataMember]
         public DateTime DateOfBorrow { get; set; }
+        [DataMember]
         public double Duration { get; set; }
+        [DataMember]
         public DateTime EndingDate { get; set; }
         public Calendar(DateTime dateOfHire, double duration)
         {
