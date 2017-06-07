@@ -15,7 +15,7 @@ namespace Library
         [DataMember]
         public string Author { get; set; }
         [DataMember]
-        public int Quantity { get; set; }
+        public int Quantity  { get; set; }
         [DataMember]
         public int Date { get; set; }
         [DataMember]
