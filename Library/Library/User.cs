@@ -47,11 +47,12 @@ namespace Library
             string history = book1.Name + " - " + book1.Author + " - " + Login + book1.Calendar.DateOfBorrow.ToShortDateString() + book1.Calendar.EndingDate.ToShortDateString();
             Library.History.Add(history);
         }
-        public void Reserve(Book book,int duration) {
+        public void Reserve(Book book, int duration)
+        {
             book.ReservedUser.Enqueue(this);
             book.Durations.Enqueue(duration);
-            this.Money -= duration * book.BookSample.Cost;
-            book.EndingDates.Enqueue(EndingDate);
+            Money -= duration * book.BookSample.Cost;
+            Library.Capital += duration * book.BookSample.Cost;
 
         }
         public void AddFavoriteBooks(Book book)
