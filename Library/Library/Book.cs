@@ -12,8 +12,9 @@ namespace Library
     {
         public BookSample BookSample { get; set; }
         public int Quantity { get; set; }
-        Queue<User> ReservedUser { get; set; }
-        List<Review> ReviewList { get; set; }
+        public Queue<User> ReservedUser { get; set; }
+        public Queue<DateTime> EndingDates { get; set; }
+        public List<Review> ReviewList { get; set; }
 
         public Book(BookSample bookSample, int quantity, List<Review> reviewList, Queue<User> reservedUser)
         {

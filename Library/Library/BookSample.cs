@@ -32,5 +32,7 @@ namespace Library
             Cost = cost;
             PenaltyCost = penaltyCost;
         }
+
+       
     }
 }
