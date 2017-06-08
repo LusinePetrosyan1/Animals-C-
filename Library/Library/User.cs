@@ -24,10 +24,6 @@ namespace Library
         public List<BookSample> HistoryBooks { get; set; }
         public decimal Money { get; set; }
 
-
-
-
-
         public User(string name, string surname, string login, string password, decimal money)
         {
             Name = name;
@@ -36,12 +32,5 @@ namespace Library
             Password = password;
             Money = money;
         }
-
-      
-
-
-
-
-
     }
 }
