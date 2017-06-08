@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="IBookUser.cs" />
     <Compile Include="IBookLib.cs" />
+    <Compile Include="ILibraryFinance.cs" />
     <Compile Include="IUserFinance .cs" />
     <Compile Include="IBookFinance.cs" />
     <Compile Include="Library.cs" />
