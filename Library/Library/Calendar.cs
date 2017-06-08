@@ -13,14 +13,11 @@ namespace Library
         [DataMember]
         public DateTime DateOfBorrow { get; set; }
         [DataMember]
-        public double Duration { get; set; }
-        [DataMember]
         public DateTime EndingDate { get; set; }
-        public Calendar(DateTime dateOfHire, double duration)
+        public Calendar(DateTime dateOfHire, DateTime endingDate)
         {
             DateOfBorrow = dateOfHire;
-            Duration = duration;
-            EndingDate = DateOfBorrow.AddDays(Duration);
+            EndingDate = endingDate;
         }
 
         public int CompareTo (Calendar other)

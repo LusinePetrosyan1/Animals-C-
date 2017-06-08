@@ -19,8 +19,6 @@ namespace Library
         [DataMember]
         public string Password { get; set; }
         [DataMember]
-        public string Type { get; set; }
-        [DataMember]
         public List<IBookUser> FavoriteBooks { get; set; }
         [DataMember]
         public List<IBookUser> BorrowedBooks { get; set; }
@@ -28,8 +26,6 @@ namespace Library
         public List<IBookUser> ReservedBooks { get; set; }
         [DataMember]
         public List<IBookUser> HistoryOfBooks { get; set; }
-        [DataMember]
-        public IUserFinance finance { get; set; }
         [DataMember]
         public bool HasPenalty { get; set; }
 
@@ -97,7 +93,6 @@ namespace Library
         public void ReturnBook(Book book,string key ) {
             decimal penalty = (DateTime.Now.Day - book.Calendar.EndingDate.Day)*book.Finance.PenaltyCost;
             finance.Money -= penalty;
-           
 
         }
         public void ReserveBook(Book book) {
