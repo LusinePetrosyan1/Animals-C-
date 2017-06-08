@@ -25,6 +25,7 @@ namespace Library
                         int day = (int)(bookS.Calendar.DateOfBorrow - bookS.Calendar.EndingDate).TotalDays;
                         decimal Penalty = day * bookS.PenaltyCost;
                         user.Money -= Penalty;
+                        Library.Capital += Penalty;
                     }
                 }
             }
@@ -32,6 +33,7 @@ namespace Library
             {
                 BookSample book = Book.BookSample;
                 book.Calendar.DateOfBorrow = DateTime.Now;
+                book.Calendar.EndingDate = DateTime.Now.AddDays(Book.Durations.Dequeue());
                 Book.ReservedUser.Dequeue().BorrowedBooks.Add(book);
                 Book.Quantity--;
             }

@@ -13,6 +13,7 @@ namespace Library
         public BookSample BookSample { get; set; }
         public int Quantity { get; set; }
         public Queue<User> ReservedUser { get; set; }
+        public Queue<int> Durations { get; set; }
         public List<Review> ReviewList { get; set; }
 
         public Book(BookSample bookSample, int quantity, List<Review> reviewList, Queue<User> reservedUser)

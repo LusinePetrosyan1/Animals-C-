@@ -12,7 +12,8 @@ namespace Library
     {
         public List<Book> Books { get; set; }
         public List<User> Users { get; set; }
-        public decimal Money { get; set; }
+        public static decimal Capital { get; set; }
+        public  static List<String> History { get; set; }
     }
 
 }
