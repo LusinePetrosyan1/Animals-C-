@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    interface IUserFinance
+    interface ILibraryFinance
     {
         decimal Money { get; set; }
     }
