@@ -29,7 +29,7 @@ namespace Library
         [DataMember]
         public List<IBookUser> HistoryOfBooks { get; set; }
         [DataMember]
-        public Finance finance { get; set; }
+        public IUserFinance finance { get; set; }
         [DataMember]
         public bool HasPenalty { get; set; }
 
@@ -94,7 +94,10 @@ namespace Library
                 book.BorrowedBooks.Add(book1);
         }
 
-        public void ReturnBook(Book book) {
+        public void ReturnBook(Book book,string key) {
+            decimal penalty = (DateTime.Now.Day - book.Calendar.EndingDate.Day)*book.Finance.PenaltyCost;
+            finance.Money -= penalty;
+           
 
         }
         public void ReserveBook(Book book) {

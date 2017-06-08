@@ -15,11 +15,11 @@ namespace Library
         [DataMember]
         public decimal Penalty { get; set; }
         [DataMember]
-        public decimal PenaltyCoast { get; set; }
-        public Finance(decimal money, decimal penalCoast)
+        public decimal PenaltyCost { get; set; }
+        public Finance(decimal money, decimal penalCost)
         {
             Money = money;
-            PenaltyCoast = penalCoast;
+            PenaltyCost = penalCost;
         }
         public Finance(decimal money)
         {
@@ -31,7 +31,7 @@ namespace Library
         }
         public void AddPenalty(double days)
         {
-            Penalty = (int)days * PenaltyCoast;
+            Penalty = (int)days * PenaltyCost;
         }
     }
 }
