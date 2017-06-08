@@ -49,12 +49,27 @@ namespace Library
 
         }
 
-        public void Reserve(Book book,DateTime EndingDate) {
+        public void Reserve(Book book, DateTime EndingDate)
+        {
             book.ReservedUser.Enqueue(this);
             book.EndingDates.Enqueue(EndingDate);
 
-
         }
+        public void AddFavoriteBooks(Book book)
+        {
+            BookSample book1 = book.BookSample;
+            FavoriteBooks.Add(book1);
+        }
+
+        public void PrintFavoriteBooks()
+        {
+            for (int i = 0; i < FavoriteBooks.Count; i++)
+            {
+                Console.WriteLine(FavoriteBooks[i]);
+            }
+        }
+
+
 
 
 

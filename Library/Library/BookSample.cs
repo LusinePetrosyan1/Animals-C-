@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Library
-{
-    class BookSample
+{ class BookSample
     {
         public string Name { get; set; }
         public string Author { get; set; }
@@ -33,6 +32,11 @@ namespace Library
             PenaltyCost = penaltyCost;
         }
 
-       
+        public override string ToString()
+        {
+            return Name + " - " + Author + " " + Year;
+        }
+
+
     }
 }

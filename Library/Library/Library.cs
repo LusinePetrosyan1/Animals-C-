@@ -13,7 +13,16 @@ namespace Library
         public List<Book> Books { get; set; }
         public List<User> Users { get; set; }
         public static decimal Capital { get; set; }
-        public  static List<String> History { get; set; }
+        public static List<String> History { get; set; }
+
+        public void PrintHistory()
+        {
+            for (int i = 0; i < History.Count; i++)
+            {
+                Console.WriteLine(History[i]);
+            }
+
+        }
     }
 
 }
