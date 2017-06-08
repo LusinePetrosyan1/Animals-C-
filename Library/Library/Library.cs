@@ -10,8 +10,9 @@ namespace Library
     [DataContract]
     class Library
     {
-        
-
-        }
+        public List<Book> Books { get; set; }
+        public List<User> Users { get; set; }
+        public decimal Money { get; set; }
     }
+
 }
