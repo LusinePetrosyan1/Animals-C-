@@ -47,18 +47,9 @@ namespace Library
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-            ListBox a = new ListBox();
-           
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Register thirdform = new Register();
-            this.Hide();
-            thirdform.ShowDialog();
-            this.Close();
         }
     }
 }
