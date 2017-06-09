@@ -41,6 +41,12 @@ namespace Library
             passwordf = textBox4.Text;
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Register thirdform = new Register();
+            this.Hide();
+            thirdform.ShowDialog();
+            this.Close();
+        }
     }
 }
