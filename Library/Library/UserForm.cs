@@ -12,9 +12,19 @@ namespace Library
 {
     public partial class UserForm : Form
     {
+        User user1;
+
         public UserForm()
         {
             InitializeComponent();
+        }
+        public UserForm(User user)
+        {
+            user1 = user;
+            InitializeComponent();
+            label1.Text = user1.Name;
+            label2.Text = user1.Surname;
+            label3.Text = user1.Money + "";
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Library
-{ class BookSample
+{ public class BookSample
     {
         public string Name { get; set; }
         public string Author { get; set; }

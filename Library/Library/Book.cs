@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace Library
 {
     [DataContract]
-    class Book
+    public class Book
     {
         public BookSample BookSample { get; set; }
         public int Quantity { get; set; }

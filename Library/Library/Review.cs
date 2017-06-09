@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Library
 {
 
-    class Review
+    public class Review
     {
         public User User { get; set; }
         public DateTime Date { get; set; }

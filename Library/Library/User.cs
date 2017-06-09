@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace Library
 {
     [DataContract]
-    class User
+    public class User
     {
         [DataMember]
         public string Name { get; set; }
