@@ -41,14 +41,6 @@ namespace Library
             passwordf = textBox4.Text;
         }
 
-        private void Register_Load(object sender, EventArgs e)
-        {
-            User user = new User(namef, surNamef, userNamef, passwordf, 0);
-            Library.Users.Add(user);
-            Hide();
-            Form1 a = new Form1();
-            a.Show();
-            
-        }
+        
     }
 }

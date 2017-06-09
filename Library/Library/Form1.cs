@@ -48,9 +48,9 @@ namespace Library
 
         private void button2_Click(object sender, EventArgs e)
         {
-           Register secondform = new Register();
+           Register secondforms = new Register();
             Hide();
-            secondform.ShowDialog();
+            secondforms.ShowDialog();
             Close();
         }
     }
