@@ -42,7 +42,8 @@ namespace Library
             }
             UserForm secondform = new UserForm();
             Hide();
-            secondform.Show();
+            secondform.ShowDialog();
+            Close();
         }
     }
 }
