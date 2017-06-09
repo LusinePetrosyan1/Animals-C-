@@ -11,9 +11,17 @@ namespace Library
     class Library
     {
         public List<Book> Books { get; set; }
-        public List<User> Users { get; set; }
+        public static List<User> Users { get; set; }
         public static decimal Capital { get; set; }
         public static List<String> History { get; set; }
+
+        public Library()
+        {
+            Books = new List<Book>();
+            Users = new List<User>();
+            History = new List<string>();
+            Capital = 0;
+        }
 
         public void PrintHistory()
         {
