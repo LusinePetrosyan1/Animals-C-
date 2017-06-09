@@ -28,5 +28,17 @@ namespace Library
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                money = Decimal.Parse(textBox1.Text);
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
