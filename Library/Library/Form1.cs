@@ -43,6 +43,16 @@ namespace Library
             UserForm secondform = new UserForm();
             Hide();
             secondform.Show();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Register myForm = new Register();
+            this.Hide();
+            myForm.ShowDialog();
+            this.Close();
+
         }
     }
 }
