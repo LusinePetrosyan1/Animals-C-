@@ -40,18 +40,21 @@ namespace Library
                     break;
                 }
             }
-            UserForm secondform = new UserForm();
-            Hide();
-            secondform.ShowDialog();
-            Close();
+            if (User1 != null)
+            {
+                UserForm secondform = new UserForm(User1);
+                Hide();
+                secondform.ShowDialog();
+                Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-           Register secondforms = new Register();
-            Hide();
-            secondforms.ShowDialog();
-            Close();
+            Register thirdform = new Register();
+            this.Hide();
+            thirdform.ShowDialog();
+            this.Close();
         }
     }
 }

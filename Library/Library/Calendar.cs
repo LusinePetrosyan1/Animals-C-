@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace Library
 {
     [DataContract]
-  class Calendar : IComparable<Calendar>
+  public class Calendar : IComparable<Calendar>
     {
         [DataMember]
         public DateTime DateOfBorrow { get; set; }
