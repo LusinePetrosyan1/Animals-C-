@@ -42,6 +42,7 @@ namespace Library
             }
             if (User1 != null)
             {
+
                 UserForm secondform = new UserForm(User1);
                 Hide();
                 secondform.ShowDialog();
