@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddMoneyFormcs.cs">
+    <Compile Include="AddMoneyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddMoneyFormcs.Designer.cs">
-      <DependentUpon>AddMoneyFormcs.cs</DependentUpon>
+    <Compile Include="AddMoneyForm.Designer.cs">
+      <DependentUpon>AddMoneyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="BookSample.cs" />
@@ -81,8 +81,8 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddMoneyFormcs.resx">
-      <DependentUpon>AddMoneyFormcs.cs</DependentUpon>
+    <EmbeddedResource Include="AddMoneyForm.resx">
+      <DependentUpon>AddMoneyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

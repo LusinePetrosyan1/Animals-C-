@@ -49,7 +49,10 @@ namespace Library
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            AddMoneyForm a = new AddMoneyForm();
+            a.ShowDialog();
+            user1.Money += AddMoneyForm.money;
+            label3.Text = user1.Money + "";
         }
     }
 }

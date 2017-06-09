@@ -1,6 +1,6 @@
 ﻿namespace Library
 {
-    partial class AddMoneyFormcs
+    partial class AddMoneyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 52);
+            this.textBox1.Location = new System.Drawing.Point(98, 52);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
