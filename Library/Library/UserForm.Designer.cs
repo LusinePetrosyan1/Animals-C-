@@ -178,6 +178,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserForm";
             this.Text = "UserForm";
+            this.Load += new System.EventHandler(this.UserForm_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

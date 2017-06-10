@@ -12,6 +12,10 @@ namespace Library
 {
     public partial class BookInfoForm : Form
     {
+        private void BookInfoForm_Load(object sender, EventArgs e)
+        {
+
+        }
         public Book book1;
 
         public BookInfoForm()
@@ -20,11 +24,13 @@ namespace Library
         }
         public BookInfoForm(Book book)
         {
+            InitializeComponent();
             book1 = book;
             label13.Text = book.BookSample.Name;
             label12.Text = book.BookSample.Author;
             label11.Text = ""+book.BookSample.Year;
             label10.Text = ""+book.BookSample.NumberOfPages;
+            label9.Text = "";
             foreach (var item in book.BookSample.Genre)
             {
                 label9.Text += item + ",";
@@ -32,13 +38,8 @@ namespace Library
             label9.Text = label9.Text.Substring(0, label9.Text.Length - 1);
             label8.Text = book.BookSample.Cost + "Per Day";
             label7.Text = book.Quantity+"";
-            InitializeComponent();
         }
 
-        private void BookInfoForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void label13_Click(object sender, EventArgs e)
         {
