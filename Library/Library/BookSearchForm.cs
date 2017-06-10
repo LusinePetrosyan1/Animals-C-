@@ -33,7 +33,8 @@ namespace Library
 
         public BookSearchForm(List<BookSample> bookSamples,User user1)
         {
-             user2 = user1;
+            Books = new List<Book>();
+            user2 = user1;
             InitializeComponent();
             listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_MouseDoubleClick);
             BookSamples = bookSamples;
@@ -41,6 +42,16 @@ namespace Library
             {
                 listBox1.Items.Add(b.Name + " - " + b.Author + " " + b.Year+" "+b.Language);
             }
+                foreach (BookSample bs in bookSamples)
+                {
+                    foreach (Book b in Library.Books)
+                    {
+                        if (b.BookSample == bs)
+                        {
+                            Books.Add(b);
+                        }
+                    }
+                }
         }
         private void BookSearchForm_Load(object sender, EventArgs e)
         {
