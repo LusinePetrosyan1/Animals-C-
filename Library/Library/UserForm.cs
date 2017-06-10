@@ -54,5 +54,24 @@ namespace Library
             user1.Money += AddMoneyForm.money;
             label3.Text = user1.Money + "";
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<Book> book=new List<Book>();
+            foreach (Book b in Library.Books)
+            {
+                if (b.BookSample.Name.Contains(textBox1.Text))
+                {
+                    book.Add(b);
+                }
+            }
+            BookSearchForm bsf = new BookSearchForm(book);
+            bsf.ShowDialog();
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace Library
     [DataContract]
     public class Library
     {
-        public List<Book> Books { get; set; }
+        public static List<Book> Books { get; set; }
         public static List<User> Users { get; set; }
         public static decimal Capital { get; set; }
         public static List<String> History { get; set; }
