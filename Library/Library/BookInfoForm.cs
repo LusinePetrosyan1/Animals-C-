@@ -109,6 +109,8 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ReserveForm a = new ReserveForm(book1,user3);
+            a.ShowDialog();
 
         }
     }

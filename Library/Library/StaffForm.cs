@@ -16,5 +16,10 @@ namespace Library
         {
             InitializeComponent();
         }
+
+        private void StaffForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
