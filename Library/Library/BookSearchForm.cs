@@ -13,14 +13,16 @@ namespace Library
     public partial class BookSearchForm : Form
     {
         List<Book> Books;
+        User user2;
         List<BookSample> BookSamples;
         public BookSearchForm()
         {
             InitializeComponent();
         }
-        public BookSearchForm(List<Book> books)
+        public BookSearchForm(List<Book> books,User user1)
         {
             Books = books;
+            user2 = user1;
             InitializeComponent();
             listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_MouseDoubleClick);
             Books = books;
@@ -29,8 +31,9 @@ namespace Library
             }
         }
 
-        public BookSearchForm(List<BookSample> bookSamples)
+        public BookSearchForm(List<BookSample> bookSamples,User user1)
         {
+             user2 = user1;
             InitializeComponent();
             listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_MouseDoubleClick);
             BookSamples = bookSamples;
@@ -54,7 +57,7 @@ namespace Library
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
                 Hide();
-                BookInfoForm bif = new BookInfoForm(Books[index]);
+                BookInfoForm bif = new BookInfoForm(Books[index],user2);
                 bif.ShowDialog();
             }
         }

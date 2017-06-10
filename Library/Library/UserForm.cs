@@ -65,7 +65,7 @@ namespace Library
                     book.Add(b);
                 }
             }
-            BookSearchForm bsf = new BookSearchForm(book);
+            BookSearchForm bsf = new BookSearchForm(book,user1);
             bsf.ShowDialog();
         }
 

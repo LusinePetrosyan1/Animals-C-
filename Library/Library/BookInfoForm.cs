@@ -17,13 +17,15 @@ namespace Library
 
         }
         public Book book1;
+        User user3;
 
         public BookInfoForm()
         {
             InitializeComponent();
         }
-        public BookInfoForm(Book book)
+        public BookInfoForm(Book book,User user)
         {
+            user3 = user;
             InitializeComponent();
             book1 = book;
             label13.Text = book1.BookSample.Name;
@@ -72,6 +74,11 @@ namespace Library
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
