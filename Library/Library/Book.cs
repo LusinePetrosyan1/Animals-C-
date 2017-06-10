@@ -16,12 +16,13 @@ namespace Library
         public Queue<int> Durations { get; set; }
         public List<Review> ReviewList { get; set; }
 
-        public Book(BookSample bookSample, int quantity, List<Review> reviewList, Queue<User> reservedUser)
+        public Book(BookSample bookSample, int quantity)
         {
             BookSample = bookSample;
             Quantity = quantity;
-            ReviewList = reviewList;
-            ReservedUser = reservedUser;
+            ReviewList = new List<Review>();
+            ReservedUser = new Queue<User>();
+            Durations = new Queue<int>();
         }
 
         public void AddReview(Review rev)

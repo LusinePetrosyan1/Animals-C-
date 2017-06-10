@@ -23,7 +23,7 @@ namespace Library
             listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_MouseDoubleClick);
             Books = books;
             foreach(Book b in Books){
-                listBox1.Items.Add(b.BookSample.Name);
+                listBox1.Items.Add(b.BookSample.Name + " - " + b.BookSample.Author + " " + b.BookSample.Year);
             }
         }
         private void BookSearchForm_Load(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace Library
             int index = this.listBox1.IndexFromPoint(e.Location);
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
-                MessageBox.Show(index.ToString());
+
             }
         }
     }
