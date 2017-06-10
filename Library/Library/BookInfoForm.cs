@@ -88,7 +88,12 @@ namespace Library
 
         private void button5_Click(object sender, EventArgs e)
         {
+            user3.AddFavoriteBooks(book1);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

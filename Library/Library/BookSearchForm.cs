@@ -57,7 +57,9 @@ namespace Library
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
                 Hide();
-                BookInfoForm bif = new BookInfoForm(Books[index],user2);
+                Book book1 = Books[index];
+                
+                    BookInfoForm bif = new BookInfoForm(book1,user2);
                 bif.ShowDialog();
             }
         }
