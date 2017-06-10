@@ -30,6 +30,7 @@ namespace Library
         private void button2_Click(object sender, EventArgs e)
         {
             user1.PrintFavoriteBooks();
+            Update();
         }
 
         private void UserForm_Load(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace Library
             AddMoneyForm a = new AddMoneyForm();
             a.ShowDialog();
             user1.Money += AddMoneyForm.money;
-            label3.Text = user1.Money + "";
+            UpdateMoney();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -67,26 +68,30 @@ namespace Library
             }
             BookSearchForm bsf = new BookSearchForm(book,user1);
             bsf.ShowDialog();
+            UpdateMoney();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             user1.PrintBorrowedBooks();
+            UpdateMoney();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             user1.PrintHistoryOfBorrowedBooks();
+            UpdateMoney();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             user1.PrintReservedBooks();
+            UpdateMoney();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-          Form1 thirdform = new Form1();
+            Form1 thirdform = new Form1();
             this.Hide();
             thirdform.ShowDialog();
             this.Close();
@@ -95,6 +100,10 @@ namespace Library
         private void UserForm_Load_1(object sender, EventArgs e)
         {
 
+        }
+        public void UpdateMoney()
+        {
+            label3.Text = user1.Money + "";
         }
     }
 }

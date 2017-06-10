@@ -82,13 +82,28 @@ namespace Library
         {
             BorrowForm bf = new BorrowForm(book1, user3);
             bf.ShowDialog();
+            Update();
             
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-            
+            Update();
+        }
+        public void Update()
+        {
+            label13.Text = book1.BookSample.Name;
+            label12.Text = book1.BookSample.Author;
+            label11.Text = "" + book1.BookSample.Year;
+            label10.Text = "" + book1.BookSample.NumberOfPages;
+            label9.Text = "";
+            foreach (var item in book1.BookSample.Genre)
+            {
+                label9.Text += item + ",";
+            }
+            label9.Text = label9.Text.Substring(0, label9.Text.Length - 1);
+            label8.Text = book1.BookSample.Cost + " Per Day";
+            label7.Text = book1.Quantity + "";
         }
     }
 }

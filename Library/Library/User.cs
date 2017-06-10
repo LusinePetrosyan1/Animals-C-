@@ -48,7 +48,7 @@ namespace Library
             Calendar calendar = new Calendar(a, b);
             book1.Calendar = calendar;
             BorrowedBooks.Add(book1);
-            int m = (int)(a - b).TotalDays;
+            int m = (int)(b-a).TotalDays;
             HistoryBooks.Add(book1);
             Money -= book1.Cost * m;
             Library.Capital += book1.Cost * m;
