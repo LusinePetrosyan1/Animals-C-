@@ -157,6 +157,7 @@
             this.button7.TabIndex = 11;
             this.button7.Text = "Add Money";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // UserForm
             // 
