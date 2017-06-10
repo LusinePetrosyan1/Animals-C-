@@ -80,10 +80,9 @@ namespace Library
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //TextBox a = new TextBox();
-            //a.Show();
-            //DateTime b = Convert.ToDateTime(a.Text);
-            user3.BorrowBook(book1, DateTime.Now);
+            BorrowForm bf = new BorrowForm(book1, user3);
+            bf.ShowDialog();
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
