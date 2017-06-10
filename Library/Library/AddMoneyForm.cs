@@ -11,10 +11,10 @@ using System.Windows.Forms;
 namespace Library
 {
     
-    public partial class AddMoneyFormcs : Form
+    public partial class AddMoneyForm : Form
     {
-        decimal money;
-        public AddMoneyFormcs()
+        public static decimal money;
+        public AddMoneyForm()
         {
             InitializeComponent();
         }
@@ -27,6 +27,19 @@ namespace Library
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                money = Decimal.Parse(textBox1.Text);
+                Hide();
+            }
+            catch
+            {
+
+            }
         }
     }
 }
