@@ -53,8 +53,8 @@ namespace Library
             int index = this.listBox1.IndexFromPoint(e.Location);
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
-                BookInfoForm bif = new BookInfoForm(Books[index]);
                 Hide();
+                BookInfoForm bif = new BookInfoForm(Books[index]);
                 bif.ShowDialog();
             }
         }
