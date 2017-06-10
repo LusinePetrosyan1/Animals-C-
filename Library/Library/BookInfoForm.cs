@@ -36,7 +36,7 @@ namespace Library
                 label9.Text += item + ",";
             }
             label9.Text = label9.Text.Substring(0, label9.Text.Length - 1);
-            label8.Text = book.BookSample.Cost + "Per Day";
+            label8.Text = book.BookSample.Cost + " Per Day";
             label7.Text = book.Quantity+"";
         }
 
