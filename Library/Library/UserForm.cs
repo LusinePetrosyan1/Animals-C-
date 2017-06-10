@@ -20,7 +20,7 @@ namespace Library
         }
         public UserForm(User user)
         {
-            user1 = user;
+            user1 = user ;
             InitializeComponent();
             label1.Text = user1.Name;
             label2.Text = user1.Surname;
