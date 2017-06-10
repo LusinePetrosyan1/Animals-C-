@@ -27,28 +27,16 @@ namespace Library
             label3.Text = user1.Money + "";
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            ListBox listBox1 = new ListBox();
+            List<String> b = user1.PrintFavoriteBooks();
+            for (int i = 0; i < b.Count; i++)
+            {
+                listBox1.Items.Add(b[i]);
+            }
+            listBox1.Show();
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
 
         }
     }

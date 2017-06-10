@@ -51,7 +51,6 @@
             this.label1.Size = new System.Drawing.Size(86, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -62,7 +61,6 @@
             this.label2.Size = new System.Drawing.Size(86, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -107,7 +105,6 @@
             this.button3.TabIndex = 7;
             this.button3.Text = "Show Borrowed Books";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -117,7 +114,6 @@
             this.button4.TabIndex = 8;
             this.button4.Text = "Show History Of All Borrowed Books";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -155,7 +151,6 @@
             this.button7.TabIndex = 11;
             this.button7.Text = "Add Money";
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // UserForm
             // 
@@ -176,7 +171,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UserForm";
             this.Text = "UserForm";
-            this.Load += new System.EventHandler(this.UserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

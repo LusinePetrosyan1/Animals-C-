@@ -31,6 +31,11 @@ namespace Library
             Login = login;
             Password = password;
             Money = money;
+            FavoriteBooks = new List<BookSample>();
+            BorrowedBooks = new List<BookSample>();
+            ReservedBooks = new List<BookSample>();
+            HistoryBooks = new List<BookSample>();
+        
 
         }
 
@@ -60,13 +65,21 @@ namespace Library
             BookSample book1 = book.BookSample;
             FavoriteBooks.Add(book1);
         }
-
-        public void PrintFavoriteBooks()
+       
+        public List<String> PrintFavoriteBooks()
         {
-            for (int i = 0; i < FavoriteBooks.Count; i++)
+            List<String> a = new List<string>();
+            string m = "";
+            for (int i = 0; i <FavoriteBooks.Count; i++)
             {
-                Console.WriteLine(FavoriteBooks[i]);
+                m = FavoriteBooks[i]+"";
+                a.Add(m);
             }
+            return a;
         }
+        
+
+
+
     }
 }

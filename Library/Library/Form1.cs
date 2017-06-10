@@ -52,7 +52,7 @@ namespace Library
 
         private void button2_Click(object sender, EventArgs e)
         {
-           Form1 thirdform = new Form1();
+           Register thirdform = new Register();
             this.Hide();
             thirdform.ShowDialog();
             this.Close();
