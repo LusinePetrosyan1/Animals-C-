@@ -20,21 +20,16 @@ namespace Library
         }
         public UserForm(User user)
         {
-            user1 = user;
+            user1 = user ;
             InitializeComponent();
             label1.Text = user1.Name;
             label2.Text = user1.Surname;
             label3.Text = user1.Money + "";
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
+            user1.PrintFavoriteBooks();
         }
 
         private void UserForm_Load(object sender, EventArgs e)
@@ -72,6 +67,29 @@ namespace Library
             }
             BookSearchForm bsf = new BookSearchForm(book);
             bsf.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            user1.PrintBorrowedBooks();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            user1.PrintHistoryOfBorrowedBooks();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            user1.PrintReservedBooks();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+          Form1 thirdform = new Form1();
+            this.Hide();
+            thirdform.ShowDialog();
+            this.Close();
         }
     }
 }
