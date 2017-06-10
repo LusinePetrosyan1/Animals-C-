@@ -56,7 +56,6 @@ namespace Library
                 BookInfoForm bif = new BookInfoForm(Books[index]);
                 Hide();
                 bif.ShowDialog();
-
             }
         }
     }
