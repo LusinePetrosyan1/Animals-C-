@@ -21,7 +21,7 @@ namespace Library
         public BookInfoForm(Book book)
         {
             book1 = book;
-            label13.Text = book.BookSample.Name;
+            label13.Text = book1.BookSample.Name;
             label12.Text = book.BookSample.Author;
             label11.Text = ""+book.BookSample.Year;
             label10.Text = ""+book.BookSample.NumberOfPages;
