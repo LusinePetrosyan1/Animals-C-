@@ -65,19 +65,28 @@ namespace Library
             BookSample book1 = book.BookSample;
             FavoriteBooks.Add(book1);
         }
-       
-        public List<String> PrintFavoriteBooks()
+
+        public void PrintFavoriteBooks()
         {
-            List<String> a = new List<string>();
-            string m = "";
-            for (int i = 0; i <FavoriteBooks.Count; i++)
-            {
-                m = FavoriteBooks[i]+"";
-                a.Add(m);
-            }
-            return a;
+            BookSearchForm a = new BookSearchForm(FavoriteBooks);
+            a.ShowDialog();
         }
-        
+        public void PrintBorrowedBooks()
+        {
+            BookSearchForm a = new BookSearchForm(BorrowedBooks);
+            a.ShowDialog();
+        }
+        public void PrintHistoryOfBorrowedBooks()
+        {
+            BookSearchForm a = new BookSearchForm(HistoryBooks);
+            a.ShowDialog();
+        }
+        public void PrintReservedBooks()
+        {
+            BookSearchForm a = new BookSearchForm(ReservedBooks);
+            a.ShowDialog();
+        }
+
 
 
 

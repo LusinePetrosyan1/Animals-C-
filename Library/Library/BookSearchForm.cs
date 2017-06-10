@@ -13,6 +13,7 @@ namespace Library
     public partial class BookSearchForm : Form
     {
         List<Book> Books;
+        List<BookSample> BookSamples;
         public BookSearchForm()
         {
             InitializeComponent();
@@ -23,7 +24,18 @@ namespace Library
             listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_MouseDoubleClick);
             Books = books;
             foreach(Book b in Books){
-                listBox1.Items.Add(b.BookSample.Name);
+                listBox1.Items.Add(b.BookSample.Name+" - "+ b.BookSample.Author+" "+b.BookSample.Year+" "+b.BookSample.Language);
+            }
+        }
+
+        public BookSearchForm(List<BookSample> bookSamples)
+        {
+            InitializeComponent();
+            listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_MouseDoubleClick);
+            BookSamples = bookSamples;
+            foreach (BookSample b in BookSamples)
+            {
+                listBox1.Items.Add(b.Name + " - " + b.Author + " " + b.Year+" "+b.Language);
             }
         }
         private void BookSearchForm_Load(object sender, EventArgs e)

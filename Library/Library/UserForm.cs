@@ -29,13 +29,8 @@ namespace Library
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ListBox listBox1 = new ListBox();
-            List<String> b = user1.PrintFavoriteBooks();
-            for (int i = 0; i < b.Count; i++)
-            {
-                listBox1.Items.Add(b[i]);
-            }
-            listBox1.Show() ;
+            user1.PrintFavoriteBooks();
+        }
 
         private void UserForm_Load(object sender, EventArgs e)
         {
@@ -72,6 +67,29 @@ namespace Library
             }
             BookSearchForm bsf = new BookSearchForm(book);
             bsf.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            user1.PrintBorrowedBooks();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            user1.PrintHistoryOfBorrowedBooks();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            user1.PrintReservedBooks();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+          Form1 thirdform = new Form1();
+            this.Hide();
+            thirdform.ShowDialog();
+            this.Close();
         }
     }
 }

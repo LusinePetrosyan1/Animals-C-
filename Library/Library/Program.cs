@@ -29,7 +29,7 @@ namespace Library
             Library.Users = new List<User>();
             Library.Books = new List<Book>();
             BookSample bs = new BookSample("Bookname", "BookAuthor", 1987, 544, "", null, "eng", 4564, 45);
-            Library.Books.Add(new Book(bs, 50, null, null));
+            Library.Books.Add(new Book(bs, 50));
             Library.Users.Add(new User("name", "surname", "login", "password", 100));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
