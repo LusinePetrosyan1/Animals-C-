@@ -35,5 +35,11 @@ namespace Library
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            user4.Reserve(book4, int.Parse(textBox1.Text));
+            Close();
+        }
     }
 }
