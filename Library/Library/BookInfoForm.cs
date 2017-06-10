@@ -82,15 +82,15 @@ namespace Library
         {
             BorrowForm bf = new BorrowForm(book1, user3);
             bf.ShowDialog();
-            Update();
+            UpdateAll();
             
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Update();
+            UpdateAll();
         }
-        public void Update()
+        public void UpdateAll()
         {
             label13.Text = book1.BookSample.Name;
             label12.Text = book1.BookSample.Author;
@@ -104,6 +104,17 @@ namespace Library
             label9.Text = label9.Text.Substring(0, label9.Text.Length - 1);
             label8.Text = book1.BookSample.Cost + " Per Day";
             label7.Text = book1.Quantity + "";
+            user3.AddFavoriteBooks(book1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
