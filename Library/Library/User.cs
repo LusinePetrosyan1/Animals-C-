@@ -68,22 +68,22 @@ namespace Library
 
         public void PrintFavoriteBooks()
         {
-            BookSearchForm a = new BookSearchForm(FavoriteBooks);
+            BookSearchForm a = new BookSearchForm(FavoriteBooks,this);
             a.ShowDialog();
         }
         public void PrintBorrowedBooks()
         {
-            BookSearchForm a = new BookSearchForm(BorrowedBooks);
+            BookSearchForm a = new BookSearchForm(BorrowedBooks,this);
             a.ShowDialog();
         }
         public void PrintHistoryOfBorrowedBooks()
         {
-            BookSearchForm a = new BookSearchForm(HistoryBooks);
+            BookSearchForm a = new BookSearchForm(HistoryBooks,this);
             a.ShowDialog();
         }
         public void PrintReservedBooks()
         {
-            BookSearchForm a = new BookSearchForm(ReservedBooks);
+            BookSearchForm a = new BookSearchForm(ReservedBooks,this);
             a.ShowDialog();
         }
 
