@@ -20,6 +20,7 @@ namespace Library
         }
         public BookSearchForm(List<Book> books)
         {
+            Books = books;
             InitializeComponent();
             listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_MouseDoubleClick);
             Books = books;
@@ -52,6 +53,9 @@ namespace Library
             int index = this.listBox1.IndexFromPoint(e.Location);
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
+                BookInfoForm bif = new BookInfoForm(Books[index]);
+                Hide();
+                bif.ShowDialog();
 
             }
         }

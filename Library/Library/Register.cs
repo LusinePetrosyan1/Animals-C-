@@ -48,5 +48,10 @@ namespace Library
             thirdform.ShowDialog();
             this.Close();
         }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
