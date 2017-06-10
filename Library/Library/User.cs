@@ -35,7 +35,7 @@ namespace Library
             BorrowedBooks = new List<BookSample>();
             ReservedBooks = new List<BookSample>();
             HistoryBooks = new List<BookSample>();
-        
+
 
         }
 
@@ -48,7 +48,7 @@ namespace Library
             Calendar calendar = new Calendar(a, b);
             book1.Calendar = calendar;
             BorrowedBooks.Add(book1);
-            int m = (int)(b-a).TotalDays;
+            int m = (int)(b - a).TotalDays;
             HistoryBooks.Add(book1);
             Money -= book1.Cost * m;
             Library.Capital += book1.Cost * m;
@@ -62,7 +62,7 @@ namespace Library
             book.Durations.Enqueue(duration);
             Money -= duration * book.BookSample.Cost;
             Library.Capital += duration * book.BookSample.Cost;
-
+            ReservedBooks.Add(book.BookSample);
         }
         public void AddFavoriteBooks(Book book)
         {
@@ -72,22 +72,22 @@ namespace Library
 
         public void PrintFavoriteBooks()
         {
-            BookSearchForm a = new BookSearchForm(FavoriteBooks,this);
+            BookSearchForm a = new BookSearchForm(FavoriteBooks, this);
             a.ShowDialog();
         }
         public void PrintBorrowedBooks()
         {
-            BookSearchForm a = new BookSearchForm(BorrowedBooks,this);
+            BookSearchForm a = new BookSearchForm(BorrowedBooks, this);
             a.ShowDialog();
         }
         public void PrintHistoryOfBorrowedBooks()
         {
-            BookSearchForm a = new BookSearchForm(HistoryBooks,this);
+            BookSearchForm a = new BookSearchForm(HistoryBooks, this);
             a.ShowDialog();
         }
         public void PrintReservedBooks()
         {
-            BookSearchForm a = new BookSearchForm(ReservedBooks,this);
+            BookSearchForm a = new BookSearchForm(ReservedBooks, this);
             a.ShowDialog();
         }
 
