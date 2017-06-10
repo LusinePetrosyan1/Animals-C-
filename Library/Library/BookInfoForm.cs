@@ -17,7 +17,7 @@ namespace Library
 
         }
         public Book book1;
-        User user3;
+        User user3 ;
 
         public BookInfoForm()
         {
