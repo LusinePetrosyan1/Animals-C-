@@ -43,12 +43,16 @@ namespace Library
         {
             book.Quantity--;
             BookSample book1 = book.BookSample;
-            book1.Calendar.DateOfBorrow = DateTime.Now;
-            book1.Calendar.EndingDate = endingDate;
+            DateTime a = DateTime.Now;
+            DateTime b = endingDate;
+            Calendar calendar = new Calendar(a, b);
+            book1.Calendar = calendar;
             BorrowedBooks.Add(book1);
+            int m = (int)(a - b).TotalDays;
             HistoryBooks.Add(book1);
-            Money -= book1.Cost * (int)(book1.Calendar.EndingDate - book1.Calendar.DateOfBorrow).TotalDays;
-            Library.Capital += book1.Cost * (int)(book1.Calendar.EndingDate - book1.Calendar.DateOfBorrow).TotalDays;
+            Money -= book1.Cost * m;
+            Library.Capital += book1.Cost * m;
+            Library.History = new List<string>();
             string history = book1.Name + " - " + book1.Author + " - " + Login + book1.Calendar.DateOfBorrow.ToShortDateString() + book1.Calendar.EndingDate.ToShortDateString();
             Library.History.Add(history);
         }
@@ -68,22 +72,22 @@ namespace Library
 
         public void PrintFavoriteBooks()
         {
-            BookSearchForm a = new BookSearchForm(FavoriteBooks);
+            BookSearchForm a = new BookSearchForm(FavoriteBooks,this);
             a.ShowDialog();
         }
         public void PrintBorrowedBooks()
         {
-            BookSearchForm a = new BookSearchForm(BorrowedBooks);
+            BookSearchForm a = new BookSearchForm(BorrowedBooks,this);
             a.ShowDialog();
         }
         public void PrintHistoryOfBorrowedBooks()
         {
-            BookSearchForm a = new BookSearchForm(HistoryBooks);
+            BookSearchForm a = new BookSearchForm(HistoryBooks,this);
             a.ShowDialog();
         }
         public void PrintReservedBooks()
         {
-            BookSearchForm a = new BookSearchForm(ReservedBooks);
+            BookSearchForm a = new BookSearchForm(ReservedBooks,this);
             a.ShowDialog();
         }
 

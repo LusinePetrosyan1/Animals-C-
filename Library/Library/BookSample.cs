@@ -28,6 +28,7 @@ namespace Library
             Language = language;
             Cost = cost;
             PenaltyCost = penaltyCost;
+            
         }
 
         public override string ToString()
