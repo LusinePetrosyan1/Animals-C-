@@ -23,9 +23,13 @@ namespace Library
             InitializeComponent();
             user1 = user;
             ListViewItem itm;
+            String[] arr = new String[3];
             foreach (BookSample bs in books)
             {
-                itm = new ListViewItem(bs.Name);
+                arr[0] = bs.Name;
+                arr[1] = bs.Author;
+                arr[2] = bs.Calendar.DateOfBorrow+"";
+                itm = new ListViewItem(arr);
                 listView1.Items.Add(itm);
                 foreach (Book b in Library.Books)
                 {

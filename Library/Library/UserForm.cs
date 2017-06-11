@@ -48,7 +48,9 @@ namespace Library
             AddMoneyForm a = new AddMoneyForm();
             a.ShowDialog();
             user1.Money += AddMoneyForm.money;
+            AddMoneyForm.money = 0;
             UpdateMoney();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

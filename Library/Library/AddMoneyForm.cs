@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    
+
     public partial class AddMoneyForm : Form
     {
         public static decimal money;
@@ -33,13 +33,20 @@ namespace Library
         {
             try
             {
-                money = Decimal.Parse(textBox1.Text);
-
-                Hide();
+                if (Decimal.Parse(textBox1.Text) <= 0)
+                {
+                    MessageBox.Show("Please enter number that is bigger than 0.");
+                   
+                }
+                else
+                {
+                    money = Decimal.Parse(textBox1.Text);
+                    Hide();
+                }
             }
-            catch
+            catch (Exception)
             {
-
+                MessageBox.Show("Please enter a natural number.");
             }
         }
     }

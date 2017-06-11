@@ -39,13 +39,18 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+           
+
             if (user4.Money < (int)price)
             {
                 MessageBox.Show("You don't have enough money to reserve this book.");
             }
             else
-            user4.Reserve(book4, int.Parse(textBox1.Text));
-            Close();
+            {
+                user4.Reserve(book4, int.Parse(textBox1.Text));
+                Close();
+            }
         }
     }
 }
