@@ -34,6 +34,7 @@ namespace Library
             try
             {
                 money = Decimal.Parse(textBox1.Text);
+
                 Hide();
             }
             catch
