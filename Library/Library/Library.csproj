@@ -103,6 +103,12 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Review.cs" />
+    <Compile Include="ShowReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowReviewForm.Designer.cs">
+      <DependentUpon>ShowReviewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Staff.cs" />
     <Compile Include="StaffForm.cs">
       <SubType>Form</SubType>
@@ -153,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowReviewForm.resx">
+      <DependentUpon>ShowReviewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>

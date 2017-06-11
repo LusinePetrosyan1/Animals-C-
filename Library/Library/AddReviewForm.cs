@@ -40,6 +40,13 @@ namespace Library
             string op = textBox1.Text;
             int rate =(int) numericUpDown1.Value;
             Review a = new Review(user5, DateTime.Now, textBox1.Text, Convert.ToInt32(numericUpDown1.Value));
+            for (int i = 0; i < book5.ReviewList.Count; i++)
+            {
+                if (book5.ReviewList[i].User.Login == user5.Login) {
+                    book5.ReviewList.RemoveAt(i);
+                    break;
+                }
+            }
             book5.AddReview(a);
             Close();
         }

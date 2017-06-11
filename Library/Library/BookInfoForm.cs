@@ -119,5 +119,12 @@ namespace Library
             AddReviewForm a = new AddReviewForm(book1,user3);
             a.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ShowReviewForm a = new ShowReviewForm(book1.ReviewList);
+            a.ShowDialog();
+        
+        }
     }
 }
