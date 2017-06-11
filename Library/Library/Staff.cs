@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Library
 {
+    [DataContract]
     public class Staff:User
     {
         public Staff(string name, string surname, string login, string password, decimal money) : base(name, surname, login, password, money)

@@ -18,10 +18,15 @@ namespace Library
         public string Login { get; set; }
         [DataMember]
         public string Password { get; set; }
+        [DataMember]
         public List<BookSample> FavoriteBooks { get; set; }
+        [DataMember]
         public List<BookSample> BorrowedBooks { get; set; }
+        [DataMember]
         public List<BookSample> ReservedBooks { get; set; }
+        [DataMember]
         public List<BookSample> HistoryBooks { get; set; }
+        [DataMember]
         public decimal Money { get; set; }
 
         public User(string name, string surname, string login, string password, decimal money)
@@ -35,8 +40,6 @@ namespace Library
             BorrowedBooks = new List<BookSample>();
             ReservedBooks = new List<BookSample>();
             HistoryBooks = new List<BookSample>();
-
-
         }
 
         public void BorrowBook(Book book, DateTime endingDate)

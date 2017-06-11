@@ -10,10 +10,15 @@ namespace Library
     [DataContract]
     public class Book
     {
+        [DataMember]
         public BookSample BookSample { get; set; }
+        [DataMember]
         public int Quantity { get; set; }
+        [DataMember]
         public Queue<User> ReservedUser { get; set; }
+        [DataMember]
         public Queue<int> Durations { get; set; }
+        [DataMember]
         public List<Review> ReviewList { get; set; }
 
         public Book(BookSample bookSample, int quantity)

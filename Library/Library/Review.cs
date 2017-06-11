@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Library
 {
-
+    [DataContract]
     public class Review
     {
+        [DataMember]
         public User User { get; set; }
+        [DataMember]
         public DateTime Date { get; set; }
+        [DataMember]
         public string Opinion { get; set; }
+        [DataMember]
         public int Rate { get; set; }
 
 

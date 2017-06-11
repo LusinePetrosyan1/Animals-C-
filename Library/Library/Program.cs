@@ -17,19 +17,11 @@ namespace Library
         [STAThread]
         static void Main()
         {
-            //Library lib1 = new Library("YSU", "Yerevan", "ysu.am", "516544");
-            //User us1 = new User("Aaa", "Vvv", "asd", "asdas", "user");
-            //Book b1 = new Book("sad","asd",50,1998,550,"asd",new List<string> {"com"},"eng");
-            //lib1.Users.Add(us1);
-            //DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Library));
-            //using (FileStream str = new FileStream("Library.json", FileMode.OpenOrCreate))
-            //{
-            //    jsonFormatter.WriteObject(str, lib1);
-            //}
             Library.Users = new List<User>();
             Library.Books = new List<Book>();
             Library.ReturnBooks = new List<Book>();
             Library.ReturnUsers = new List<User>();
+            Library.Staff= new List<Staff>();
             BookSample bs1 = new BookSample("Jane Eyre", "Charlotte Bronte", 1887, 544, new List<String> { "Novel" }, "eng", 5, 10);
             BookSample bs2 = new BookSample("Wuthering Heights", "Emily Bronte", 1910, 125, new List<String> { "Novel" }, "eng", 6, 11);
             BookSample bs3 = new BookSample("Cathcher in the Rye", "J.D. Salinger", 1987, 241, new List<String> { "Realistic fiction", "Coming-of-age fiction" }, "eng", 5, 15);
@@ -63,13 +55,73 @@ namespace Library
             Library.Books = new List<Book> {book1,book2,book3,book4,book5,book6,book7,book8,book9,book10,book11,book12,book13,book14,book15};
 
 
+            //Library.Users.Add(new User("name", "surname", "login", "password", 100));
+            //Library.Staff.Add(new Staff("Khacho", "Khechoyan", "khachatur98", "Sagatelovich", 0));
+            //DESERIALIZATION
+            DataContractJsonSerializer jsonFormatter2 = new DataContractJsonSerializer(typeof(List<User>));
+            FileStream str2 = new FileStream("Users.json",FileMode.Open);
+            Library.Users =(List<User>) jsonFormatter2.ReadObject(str2);
+            str2.Close();
 
-            Library.Books.Add(new Book(bs1, 3));
-            Library.Users.Add(new User("name", "surname", "login", "password", 100));
-            Library.Users.Add(new Staff("Khacho", "Khechoyan", "khachatur98", "Sagatelovich", 0));
+            jsonFormatter2 = new DataContractJsonSerializer(typeof(List<Book>));
+            str2 = new FileStream("Books.json", FileMode.Open);
+            Library.Books = (List<Book>)jsonFormatter2.ReadObject(str2);
+            str2.Close();
+
+            jsonFormatter2 = new DataContractJsonSerializer(typeof(List<Staff>));
+            str2 = new FileStream("Staff.json", FileMode.Open);
+            Library.Staff = (List<Staff>)jsonFormatter2.ReadObject(str2);
+            str2.Close();
+
+            jsonFormatter2 = new DataContractJsonSerializer(typeof(List<String>));
+            str2 = new FileStream("History.json", FileMode.Open);
+            Library.History = (List<String>)jsonFormatter2.ReadObject(str2);
+            str2.Close();
+
+            jsonFormatter2 = new DataContractJsonSerializer(typeof(List<Book>));
+            str2 = new FileStream("ReturnBooks.json", FileMode.Open);
+            Library.ReturnBooks = (List<Book>)jsonFormatter2.ReadObject(str2);
+            str2.Close();
+
+            jsonFormatter2 = new DataContractJsonSerializer(typeof(List<User>));
+            str2 = new FileStream("ReturnUsers.json", FileMode.Open);
+            Library.ReturnUsers = (List<User>)jsonFormatter2.ReadObject(str2);
+            str2.Close();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(List<Book>));
+            using (FileStream str = new FileStream("Books.json", FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(str, Library.Books);
+            }
+            jsonFormatter = new DataContractJsonSerializer(typeof(List<User>));
+            using (FileStream str = new FileStream("Users.json", FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(str, Library.Users);
+            }
+            jsonFormatter = new DataContractJsonSerializer(typeof(List<Staff>));
+            using (FileStream str = new FileStream("Staff.json", FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(str, Library.Staff);
+            }
+            jsonFormatter = new DataContractJsonSerializer(typeof(List<String>));
+            using (FileStream str = new FileStream("History.json", FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(str, Library.History);
+            }
+            jsonFormatter = new DataContractJsonSerializer(typeof(List<Book>));
+            using (FileStream str = new FileStream("ReturnBooks.json", FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(str, Library.ReturnBooks);
+            }
+            jsonFormatter = new DataContractJsonSerializer(typeof(List<User>));
+            using (FileStream str = new FileStream("ReturnUsers.json", FileMode.OpenOrCreate))
+            {
+                jsonFormatter.WriteObject(str, Library.ReturnUsers);
+            }
         }
     }
 }
