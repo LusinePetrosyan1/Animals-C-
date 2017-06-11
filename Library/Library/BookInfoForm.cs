@@ -113,5 +113,11 @@ namespace Library
             a.ShowDialog();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddReviewForm a = new AddReviewForm();
+            a.ShowDialog();
+        }
     }
 }

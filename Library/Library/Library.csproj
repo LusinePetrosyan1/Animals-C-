@@ -54,6 +54,12 @@
     <Compile Include="AddMoneyForm.Designer.cs">
       <DependentUpon>AddMoneyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReviewForm.Designer.cs">
+      <DependentUpon>AddReviewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="BookInfoForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="AddMoneyForm.resx">
       <DependentUpon>AddMoneyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddReviewForm.resx">
+      <DependentUpon>AddReviewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookInfoForm.resx">
       <DependentUpon>BookInfoForm.cs</DependentUpon>
