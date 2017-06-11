@@ -73,6 +73,7 @@ namespace Library
             label8.Text = book1.BookSample.Cost + " Per Day";
             label7.Text = book1.Quantity + "";
             user3.AddFavoriteBooks(book1);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -105,5 +105,11 @@ namespace Library
         {
             label3.Text = user1.Money + "";
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            GiveBookUserForm gbuf = new GiveBookUserForm(user1.BorrowedBooks, user1);
+            gbuf.ShowDialog();
+        }
     }
 }
