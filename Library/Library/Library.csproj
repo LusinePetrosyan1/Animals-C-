@@ -102,12 +102,6 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReturnForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReturnForm.Designer.cs">
-      <DependentUpon>ReturnForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Review.cs" />
     <Compile Include="ShowReviewForm.cs">
       <SubType>Form</SubType>
@@ -159,9 +153,6 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReturnForm.resx">
-      <DependentUpon>ReturnForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowReviewForm.resx">
       <DependentUpon>ShowReviewForm.cs</DependentUpon>

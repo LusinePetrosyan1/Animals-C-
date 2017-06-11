@@ -30,5 +30,14 @@ namespace Library
             ReviewList.Add(rev);
         }
 
+        public double AverageRate()
+        {
+            double a = 0;
+            for (int i = 0; i < ReviewList.Count; i++)
+            {
+                a += ReviewList[i].Rate;
+            }
+            return a / ReviewList.Count;
+        }
     }
 }
