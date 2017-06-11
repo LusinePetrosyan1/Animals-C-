@@ -45,7 +45,6 @@ namespace Library
                 c = 0;
             }
             return c;
-            
         }
     }
 }

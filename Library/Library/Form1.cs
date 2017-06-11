@@ -54,7 +54,7 @@ namespace Library
                     sf.ShowDialog();
                     Close();
                 }
-                if (User1 is User)
+                else if (User1 is User)
                 {
                     UserForm secondform = new UserForm(User1);
                     Hide();
