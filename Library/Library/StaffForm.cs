@@ -20,6 +20,9 @@ namespace Library
         public StaffForm(User user)
         {
             InitializeComponent();
+            label1.Text = user.Name;
+            label2.Text = user.Surname;
+
         }
         private void StaffForm_Load(object sender, EventArgs e)
         {

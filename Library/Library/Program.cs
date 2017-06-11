@@ -65,6 +65,7 @@ namespace Library
 
             Library.Books.Add(new Book(bs1, 3));
             Library.Users.Add(new User("name", "surname", "login", "password", 100));
+            Library.Users.Add(new Staff("Khacho", "Khechoyan", "khachatur98", "Sagatelovich", 0));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
