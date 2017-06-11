@@ -33,6 +33,8 @@ namespace Library
             label11.Text = ""+book.BookSample.Year;
             label10.Text = ""+book.BookSample.NumberOfPages;
             label9.Text = "";
+            label16.Text = book1.AverageRate()+"";
+
             foreach (var item in book.BookSample.Genre)
             {
                 label9.Text += item + ",";
@@ -43,40 +45,6 @@ namespace Library
         }
 
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -126,5 +94,7 @@ namespace Library
             a.ShowDialog();
         
         }
+
+        
     }
 }
