@@ -37,7 +37,7 @@ namespace Library
             {
                 a += ReviewList[i].Rate;
             }
-            return a / ReviewList.Count ;
+            return a / ReviewList.Count;
         }
     }
 }
