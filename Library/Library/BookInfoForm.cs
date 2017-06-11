@@ -116,7 +116,7 @@ namespace Library
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AddReviewForm a = new AddReviewForm();
+            AddReviewForm a = new AddReviewForm(book1,user3);
             a.ShowDialog();
         }
     }
