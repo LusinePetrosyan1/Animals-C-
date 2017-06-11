@@ -61,7 +61,7 @@ namespace Library
 
         private void button2_Click(object sender, EventArgs e)
         {
-           RegisterForm thirdform = new RegisterForm();
+           Register thirdform = new Register();
             this.Hide();
             thirdform.ShowDialog();
             this.Close();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class RegisterForm : Form
+    public partial class Register : Form
     {
-        public RegisterForm()
+        public Register()
         {
             InitializeComponent();
         }
