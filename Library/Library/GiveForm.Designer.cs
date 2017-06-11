@@ -36,7 +36,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 218);
+            this.button1.Location = new System.Drawing.Point(54, 244);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 37);
             this.button1.TabIndex = 1;
@@ -50,9 +50,9 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Users,
             this.Book});
-            this.listView1.Location = new System.Drawing.Point(2, 1);
+            this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(280, 217);
+            this.listView1.Size = new System.Drawing.Size(293, 217);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -71,11 +71,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(292, 293);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Name = "GiveForm";
-            this.Text = "GiveForm";
+            this.Text = "ReturnForm";
             this.Load += new System.EventHandler(this.GiveForm_Load);
             this.ResumeLayout(false);
 
