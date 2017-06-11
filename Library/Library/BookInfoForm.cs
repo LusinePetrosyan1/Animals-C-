@@ -73,6 +73,7 @@ namespace Library
             label8.Text = book1.BookSample.Cost + " Per Day";
             label7.Text = book1.Quantity + "";
             user3.AddFavoriteBooks(book1);
+            label16.Text = book1.AverageRate()+"";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace Library
         {
             AddReviewForm a = new AddReviewForm(book1,user3);
             a.ShowDialog();
+            UpdateAll();
         }
 
         private void button4_Click(object sender, EventArgs e)
