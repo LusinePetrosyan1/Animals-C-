@@ -20,6 +20,7 @@ namespace Library
         }
         public AddReviewForm(Book book, User user)
         {
+            InitializeComponent();
             book5 = book;
             user5 = user;
         }
@@ -41,6 +42,11 @@ namespace Library
             Review a = new Review(user5, DateTime.Now, textBox1.Text, Convert.ToInt32(numericUpDown1.Value));
             book5.AddReview(a);
             Close();
+        }
+
+        private void AddReviewForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,11 +42,20 @@ namespace Library
             }
             if (User1 != null)
             {
-
-                UserForm secondform = new UserForm(User1);
-                Hide();
-                secondform.ShowDialog();
-                Close();
+                if (User1 is Staff)
+                {
+                    StaffForm sf = new StaffForm(User1);
+                    Hide();
+                    sf.ShowDialog();
+                    Close();
+                }
+                if (User1 is User)
+                {
+                    UserForm secondform = new UserForm(User1);
+                    Hide();
+                    secondform.ShowDialog();
+                    Close();
+                }
             }
         }
 

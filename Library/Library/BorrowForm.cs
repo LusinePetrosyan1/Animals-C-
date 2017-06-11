@@ -15,7 +15,7 @@ namespace Library
         public Book book1;
         public User user1;
         public static DateTime end;
-        public static int price;
+        public static decimal price;
         public static Calendar cal;
         public BorrowForm()
         {
@@ -42,7 +42,7 @@ namespace Library
             }
             else
             {
-                price = (int)(end - DateTime.Now).TotalDays*(int)book1.BookSample.Cost;
+                price = (decimal)((int)((decimal)(end - DateTime.Now).TotalDays*book1.BookSample.Cost*100))/100;
                 label2.Text = price + "";
             }
         }
