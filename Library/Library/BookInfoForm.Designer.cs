@@ -133,7 +133,7 @@
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "label7";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            
             // 
             // label8
             // 
@@ -143,7 +143,7 @@
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 12;
             this.label8.Text = "label8";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+      
             // 
             // label9
             // 
@@ -153,7 +153,7 @@
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 11;
             this.label9.Text = "label9";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+           
             // 
             // label10
             // 
@@ -163,7 +163,7 @@
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 10;
             this.label10.Text = "label10";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+         
             // 
             // label11
             // 
@@ -173,7 +173,7 @@
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 9;
             this.label11.Text = "label11";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+           
             // 
             // label12
             // 
@@ -183,7 +183,7 @@
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 8;
             this.label12.Text = "label12";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            
             // 
             // label13
             // 
@@ -193,7 +193,7 @@
             this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 15;
             this.label13.Text = "label13";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            
             // 
             // label14
             // 
@@ -251,6 +251,7 @@
             this.label16.Size = new System.Drawing.Size(41, 13);
             this.label16.TabIndex = 20;
             this.label16.Text = "label16";
+        
             // 
             // BookInfoForm
             // 
