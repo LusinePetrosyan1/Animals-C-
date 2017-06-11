@@ -23,5 +23,10 @@ namespace Library
             Rate = rate;
 
         }
+
+        public override string ToString()
+        {
+            return (User + " " + '\n' + Date.ToShortDateString() + '\n' + Opinion + '\n' + Rate);
+        }
     }
 }
