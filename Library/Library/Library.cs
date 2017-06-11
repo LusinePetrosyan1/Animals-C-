@@ -14,6 +14,8 @@ namespace Library
         public static List<User> Users { get; set; }
         public static decimal Capital { get; set; }
         public static List<String> History { get; set; }
+        public static List<Book> ReturnBooks { get; set; }
+        public static List<User> ReturnUsers { get; set; }
        
         public Library()
         {

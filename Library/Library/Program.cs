@@ -28,6 +28,8 @@ namespace Library
             //}
             Library.Users = new List<User>();
             Library.Books = new List<Book>();
+            Library.ReturnBooks = new List<Book>();
+            Library.ReturnUsers = new List<User>();
             BookSample bs1 = new BookSample("Jane Eyre", "Charlotte Bronte", 1887, 544, new List<String> { "Novel" }, "eng", 5, 10);
             BookSample bs2 = new BookSample("Wuthering Heights", "Emily Bronte", 1910, 125, new List<String> { "Novel" }, "eng", 6, 11);
             BookSample bs3 = new BookSample("Cathcher in the Rye", "J.D. Salinger", 1987, 241, new List<String> { "Realistic fiction", "Coming-of-age fiction" }, "eng", 5, 15);
@@ -59,13 +61,14 @@ namespace Library
             Book book14 = new Book(bs14, 3);
             Book book15 = new Book(bs15, 3);
             Library.Books = new List<Book> {book1,book2,book3,book4,book5,book6,book7,book8,book9,book10,book11,book12,book13,book14,book15};
-
+            Library.ReturnBooks = new List<Book> { book12 };
 
 
 
             Library.Books.Add(new Book(bs1, 3));
             Library.Users.Add(new User("name", "surname", "login", "password", 100));
             Library.Users.Add(new Staff("Khacho", "Khechoyan", "khachatur98", "Sagatelovich", 0));
+            Library.ReturnUsers.Add(Library.Users[0]);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

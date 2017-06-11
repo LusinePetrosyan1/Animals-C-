@@ -71,7 +71,7 @@
             // 
             // Reserve
             // 
-            this.Reserve.Location = new System.Drawing.Point(116, 185);
+            this.Reserve.Location = new System.Drawing.Point(92, 184);
             this.Reserve.Name = "Reserve";
             this.Reserve.Size = new System.Drawing.Size(97, 48);
             this.Reserve.TabIndex = 4;
