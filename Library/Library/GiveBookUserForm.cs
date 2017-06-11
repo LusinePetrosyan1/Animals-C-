@@ -33,7 +33,7 @@ namespace Library
                 listView1.Items.Add(itm);
                 foreach (Book b in Library.Books)
                 {
-                    if (b.BookSample == bs)
+                    if (b.BookSample.Name == bs.Name && b.BookSample.Author == bs.Author)
                     {
                         books1.Add(b);
                     }

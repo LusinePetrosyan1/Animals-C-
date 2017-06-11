@@ -16,9 +16,10 @@ namespace Library
 
         public void ReturnBook(User user, Book Book)
         {
-            foreach (BookSample bookS in user.BorrowedBooks)
+            for (int i = user.BorrowedBooks.Count-1; i >=0; i--)
             {
-                if (bookS == Book.BookSample)
+                BookSample bookS = user.BorrowedBooks[i];
+                if (bookS.Name == Book.BookSample.Name && bookS.Author==Book.BookSample.Author)
                 {
                     Book.Quantity++;
                     user.BorrowedBooks.Remove(bookS);

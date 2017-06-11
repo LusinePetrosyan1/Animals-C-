@@ -12,6 +12,7 @@ namespace Library
         public static List<Book> Books { get; set; }
         public static List<User> Users { get; set; }
         public static List<Staff> Staff { get; set; }
+        public static List<User> UsersAndStaffs { get; set; }
         public static decimal Capital { get; set; }
         public static List<String> History { get; set; }
         public static List<Book> ReturnBooks { get; set; }

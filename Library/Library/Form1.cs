@@ -33,7 +33,7 @@ namespace Library
         private void button1_Click(object sender, EventArgs e)
         {
             bool q = false;
-            foreach (User user in Library.Users)
+            foreach (User user in Library.UsersAndStaffs)
             {
                 if (user.Login == username && user.Password == password)
                 {

@@ -46,7 +46,7 @@ namespace Library
                 {
                     foreach (Book b in Library.Books)
                     {
-                        if (b.BookSample == bs)
+                        if (b.BookSample.Name == bs.Name && b.BookSample.Author == bs.Author)
                         {
                             Books.Add(b);
                         }
