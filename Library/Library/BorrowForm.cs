@@ -49,11 +49,19 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool q = false;
+            bool a = false;
             if (end <= DateTime.Now)
             {
-                MessageBox.Show("Choose days after today :D");
+                q = true;
+                MessageBox.Show("Choose days after today.");
             }
-            else
+            if (user1.Money < price) {
+                a = true;
+                MessageBox.Show("You don't have enough money to borrow this book.");
+            }
+
+            if(!q && !a)
             {
                 user1.BorrowBook(book1, end);
                 Close();

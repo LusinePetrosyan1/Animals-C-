@@ -32,13 +32,18 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool q = false;
             foreach (User user in Library.Users)
             {
                 if (user.Login == username && user.Password == password)
                 {
+                    q = true;
                     User1 = user;
                     break;
                 }
+            }
+            if (!q) {
+                MessageBox.Show("Incorrect username or password.");
             }
             if (User1 != null)
             {

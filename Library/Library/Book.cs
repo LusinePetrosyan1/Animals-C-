@@ -39,8 +39,11 @@ namespace Library
             }
             double d = a / ReviewList.Count;
             d *= 10;
-            int bc =Convert.ToInt32(d);
-            double c = bc / 10;
+            int bc= (int)d;
+            double c =(double) bc / 10;
+            if (ReviewList.Count == 0) {
+                c = 0;
+            }
             return c;
             
         }
