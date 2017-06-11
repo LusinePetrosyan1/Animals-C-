@@ -63,7 +63,7 @@ namespace Library
             List<Book> book=new List<Book>();
             foreach (Book b in Library.Books)
             {
-                if (b.BookSample.Name.Contains(textBox1.Text))
+                if (b.BookSample.Name.ToLower().Contains(textBox1.Text.ToLower()))
                 {
                     book.Add(b);
                 }

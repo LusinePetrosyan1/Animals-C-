@@ -15,6 +15,8 @@ namespace Library
         Book book4;
         User user4;
         decimal price;
+        int duration;
+        bool q = false;
         public ReserveForm()
         {
             InitializeComponent();
@@ -28,7 +30,21 @@ namespace Library
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           price = book4.BookSample.Cost * int.Parse(textBox1.Text);
+            try
+            {
+                duration = int.Parse(textBox1.Text);
+                price = book4.BookSample.Cost * int.Parse(textBox1.Text);
+            }
+            catch
+            {
+                price = 0;
+
+            }
+            if (duration < 0)
+            {
+                price = 0;
+            }
+
             label3.Text = price + "";
         }
 
@@ -40,17 +56,31 @@ namespace Library
         private void button1_Click(object sender, EventArgs e)
         {
 
-           
 
             if (user4.Money < (int)price)
             {
                 MessageBox.Show("You don't have enough money to reserve this book.");
+                return;
             }
-            else
+
+            try
             {
                 user4.Reserve(book4, int.Parse(textBox1.Text));
-                Close();
+
             }
+            catch
+            {
+                MessageBox.Show("Please enter a possitive number.");
+                return;
+            }
+
+            if (duration <= 0)
+            {
+                MessageBox.Show("Please enter a possitive number");
+                return;
+            }
+            Close();
         }
+
     }
 }
