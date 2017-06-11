@@ -36,7 +36,7 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReturnForm rf = new ReturnForm(Library.ReturnUsers, Library.ReturnBooks);
+            GiveForm rf = new GiveForm(Library.ReturnUsers, Library.ReturnBooks);
             rf.ShowDialog();
 
         }
