@@ -12,7 +12,7 @@ namespace Library
 {
     public partial class StaffForm : Form
     {
-        public User user;
+        public User user1;
         public StaffForm()
         {
             InitializeComponent();
@@ -22,6 +22,7 @@ namespace Library
             InitializeComponent();
             label1.Text = user.Name;
             label2.Text = user.Surname;
+            user1 = user;
 
         }
         private void StaffForm_Load(object sender, EventArgs e)
@@ -36,9 +37,17 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GiveForm rf = new GiveForm(Library.ReturnUsers, Library.ReturnBooks);
+            GiveForm rf = new GiveForm(Library.ReturnUsers, Library.ReturnBooks,(Staff)user1);
             rf.ShowDialog();
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

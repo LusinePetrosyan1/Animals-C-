@@ -37,11 +37,11 @@ namespace Library
             {
                 a += ReviewList[i].Rate;
             }
-            double d=a/ReviewList.Count * 10;
-            long b = Convert.ToInt64(a);
-            double c = b / 10;
+            double d = a / ReviewList.Count;
+            d *= 10;
+            int bc =(int)(d);
+            double c = (double)(bc) / 10;
             return c;
-            
         }
     }
 }

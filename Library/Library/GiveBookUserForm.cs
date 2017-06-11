@@ -12,7 +12,7 @@ namespace Library
 {
     public partial class GiveBookUserForm : Form
     {
-        List<Book> books1;
+        List<Book> books1= new List<Book>();
         User user1;
         public GiveBookUserForm()
         {
@@ -44,7 +44,16 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            for (int i = listView1.Items.Count-1; i >=0 ; i--)
+            {
+                if (listView1.Items[i].Checked)
+                {
+                    Library.ReturnBooks.Add(books1[i]);
+                    Library.ReturnUsers.Add(user1);
+                    books1.RemoveAt(i);
+                    listView1.Items.RemoveAt(i);
+                }   
+            }
         }
     }
 }

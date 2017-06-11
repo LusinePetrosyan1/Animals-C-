@@ -18,10 +18,12 @@ namespace Library
         }
         List<User> users1;
         List<Book> books1;
-        public GiveForm(List<User> users,List<Book> books)
+        Staff Staff1;
+        public GiveForm(List<User> users,List<Book> books,Staff staff)
         {
             InitializeComponent();
             users1 = users;
+            Staff1 = staff;
             books1 = books;
             string[] arr = new string[3];
             ListViewItem itm;
@@ -47,8 +49,9 @@ namespace Library
                 itm = listView1.Items[i];
                 if (itm.Checked)
                 {
-                    Library.ReturnUsers.RemoveAt(i);
+                    Staff1.ReturnBook(users1[i], books1[i]);
                     Library.ReturnBooks.RemoveAt(i);
+                    Library.ReturnUsers.RemoveAt(i);
                     users1 = Library.ReturnUsers;
                     books1 = Library.ReturnBooks;
                     listView1.Items.RemoveAt(i);
