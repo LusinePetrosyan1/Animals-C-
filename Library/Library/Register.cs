@@ -39,7 +39,7 @@ namespace Library
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            passwordf = textBox4.Text;
+            passwordf = Encode.Encrypt(textBox4.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)

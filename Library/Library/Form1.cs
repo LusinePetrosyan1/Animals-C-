@@ -27,7 +27,7 @@ namespace Library
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            password = textBox2.Text;
+            password = Encode.Encrypt(textBox2.Text);
         }
 
         private void button1_Click(object sender, EventArgs e)

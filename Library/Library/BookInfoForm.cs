@@ -42,6 +42,16 @@ namespace Library
             label9.Text = label9.Text.Substring(0, label9.Text.Length - 1);
             label8.Text = book.BookSample.Cost + " Per Day";
             label7.Text = book.Quantity + "";
+            if (book.Quantity == 0)
+            {
+                button2.Enabled = false;
+                button1.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = true;
+                button1.Enabled = false;
+            }
         }
 
 
@@ -89,6 +99,16 @@ namespace Library
             label8.Text = book1.BookSample.Cost + " Per Day";
             label7.Text = book1.Quantity + "";
             label16.Text = book1.AverageRate() + "";
+            if (book1.Quantity == 0)
+            {
+                button2.Enabled = false;
+                button1.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = true;
+                button1.Enabled = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
