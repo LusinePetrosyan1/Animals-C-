@@ -32,7 +32,6 @@ namespace Library
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             ShowHistoryForm a = new ShowHistoryForm();
             a.ShowDialog();
         }
