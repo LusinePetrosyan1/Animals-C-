@@ -17,6 +17,7 @@ namespace Library
         [STAThread]
         static void Main()
         {
+            Library.History = new List<string>();
             Library.Users = new List<User>();
             Library.Books = new List<Book>();
             Library.ReturnBooks = new List<Book>();
