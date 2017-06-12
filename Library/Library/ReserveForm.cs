@@ -16,7 +16,6 @@ namespace Library
         User user4;
         decimal price;
         int duration;
-        bool q = false;
         public ReserveForm()
         {
             InitializeComponent();

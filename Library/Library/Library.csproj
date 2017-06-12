@@ -116,6 +116,12 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Review.cs" />
+    <Compile Include="ShowHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowHistoryForm.Designer.cs">
+      <DependentUpon>ShowHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowReviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowHistoryForm.resx">
+      <DependentUpon>ShowHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowReviewForm.resx">
       <DependentUpon>ShowReviewForm.cs</DependentUpon>

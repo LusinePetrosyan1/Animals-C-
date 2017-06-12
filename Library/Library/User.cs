@@ -57,7 +57,7 @@ namespace Library
             Money -= book1.Cost * m;
             Library.Capital += book1.Cost * m;
             Library.History = new List<string>();
-            string history = book1.Name + " - " + book1.Author + " - " + Login + book1.Calendar.DateOfBorrow.ToShortDateString() + book1.Calendar.EndingDate.ToShortDateString();
+            string history = book1.Name + " - " +  book1.Author + " - " + Login + " - "+ book1.Calendar.DateOfBorrow.ToShortDateString() +" - "+ book1.Calendar.EndingDate.ToShortDateString();
             Library.History.Add(history);
         }
         public void Reserve(Book book, int duration)
