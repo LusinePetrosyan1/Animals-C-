@@ -33,11 +33,13 @@ namespace Library
         private void button2_Click(object sender, EventArgs e)
         {
 
+            ShowHistoryForm a = new ShowHistoryForm();
+            a.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GiveForm rf = new GiveForm(Library.ReturnUsers, Library.ReturnBooks,(Staff)user1);
+            GiveForm rf = new GiveForm(Library.ReturnUsers, Library.ReturnBooks, (Staff)user1);
             rf.ShowDialog();
 
         }

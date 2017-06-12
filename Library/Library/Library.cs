@@ -23,14 +23,7 @@ namespace Library
             
         }
 
-        public void PrintHistory()
-        {
-            for (int i = 0; i < History.Count; i++)
-            {
-                Console.WriteLine(History[i]);
-            }
-
-        }
+       
     }
 
 }
