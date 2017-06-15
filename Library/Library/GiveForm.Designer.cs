@@ -76,7 +76,7 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Name = "GiveForm";
-            this.Text = "ReturnForm";
+            this.Text = "Return";
             this.Load += new System.EventHandler(this.GiveForm_Load);
             this.ResumeLayout(false);
 

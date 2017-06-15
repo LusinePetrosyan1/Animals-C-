@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(462, 285);
             this.Controls.Add(this.listBox1);
             this.Name = "ShowHistoryForm";
-            this.Text = "ShowHistoryForm";
+            this.Text = "ShowHistory";
             this.ResumeLayout(false);
 
         }

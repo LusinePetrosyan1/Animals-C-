@@ -90,7 +90,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Name = "ReserveForm";
-            this.Text = "ReserveForm";
+            this.Text = "Reserve";
             this.Load += new System.EventHandler(this.ReserveForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -94,7 +94,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "StaffForm";
-            this.Text = "StaffForm";
+            this.Text = "Staff";
             this.Load += new System.EventHandler(this.StaffForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

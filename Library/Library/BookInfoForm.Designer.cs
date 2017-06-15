@@ -133,7 +133,6 @@
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "label7";
-            
             // 
             // label8
             // 
@@ -143,7 +142,6 @@
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 12;
             this.label8.Text = "label8";
-      
             // 
             // label9
             // 
@@ -153,7 +151,6 @@
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 11;
             this.label9.Text = "label9";
-           
             // 
             // label10
             // 
@@ -163,7 +160,6 @@
             this.label10.Size = new System.Drawing.Size(41, 13);
             this.label10.TabIndex = 10;
             this.label10.Text = "label10";
-         
             // 
             // label11
             // 
@@ -173,7 +169,6 @@
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 9;
             this.label11.Text = "label11";
-           
             // 
             // label12
             // 
@@ -183,7 +178,6 @@
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 8;
             this.label12.Text = "label12";
-            
             // 
             // label13
             // 
@@ -193,7 +187,6 @@
             this.label13.Size = new System.Drawing.Size(41, 13);
             this.label13.TabIndex = 15;
             this.label13.Text = "label13";
-            
             // 
             // label14
             // 
@@ -251,7 +244,6 @@
             this.label16.Size = new System.Drawing.Size(41, 13);
             this.label16.TabIndex = 20;
             this.label16.Text = "label16";
-        
             // 
             // BookInfoForm
             // 
@@ -280,7 +272,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "BookInfoForm";
-            this.Text = "BookInfoForm";
+            this.Text = "Book Information";
             this.Load += new System.EventHandler(this.BookInfoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

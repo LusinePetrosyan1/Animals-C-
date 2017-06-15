@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(485, 307);
             this.Controls.Add(this.listBox1);
             this.Name = "BookSearchForm";
-            this.Text = "BookSearchForm";
+            this.Text = "Book Search";
             this.Load += new System.EventHandler(this.BookSearchForm_Load);
             this.ResumeLayout(false);
 

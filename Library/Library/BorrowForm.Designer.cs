@@ -79,7 +79,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.Name = "BorrowForm";
-            this.Text = "BorrowForm";
+            this.Text = "Borrow";
             this.Load += new System.EventHandler(this.BorrowForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

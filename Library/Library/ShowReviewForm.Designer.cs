@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
@@ -51,11 +51,11 @@
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // columnHeader1
+            // columnHeader5
             // 
-            this.columnHeader1.DisplayIndex = 0;
-            this.columnHeader1.Text = "Date";
-            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.DisplayIndex = 3;
+            this.columnHeader5.Text = "User";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // columnHeader3
             // 
@@ -69,11 +69,11 @@
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader4.Width = 283;
             // 
-            // columnHeader5
+            // columnHeader1
             // 
-            this.columnHeader5.DisplayIndex = 3;
-            this.columnHeader5.Text = "User";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader1.DisplayIndex = 0;
+            this.columnHeader1.Text = "Date";
+            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ShowReviewForm
             // 
@@ -82,7 +82,7 @@
             this.ClientSize = new System.Drawing.Size(451, 373);
             this.Controls.Add(this.listView1);
             this.Name = "ShowReviewForm";
-            this.Text = "ShowReviewForm";
+            this.Text = "Show Review";
             this.ResumeLayout(false);
 
         }

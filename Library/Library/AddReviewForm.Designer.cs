@@ -108,7 +108,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
             this.Name = "AddReviewForm";
-            this.Text = "AddReview";
+            this.Text = "Add Review";
             this.Load += new System.EventHandler(this.AddReviewForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
