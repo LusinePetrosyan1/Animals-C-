@@ -62,6 +62,7 @@ namespace Library
             if (!q && !m)
             {
                 User user1 = new User(namef, surNamef, userNamef, passwordf, 0);
+                Library.UsersAndStaffs.Add(user1);
                 Library.Users.Add(user1);
                 Form1 thirdform = new Form1();
                 this.Hide();
