@@ -84,7 +84,6 @@
             this.ClientSize = new System.Drawing.Size(341, 276);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
-            this.Name = "GiveBookUserForm";
             this.Text = "Return Book(User)";
             this.ResumeLayout(false);
 
